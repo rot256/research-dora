@@ -3,10 +3,12 @@ import circus.gates as gates
 from circus.ff import FieldElem, Field
 from circus.alloc import Namespace
 
+
 class Wire:
-    '''
+    """
     A reference counted expression defining a single wire
-    '''
+    """
+
     def __init__(self, field, children=[]):
         self.refs = 0
         self.field = field
@@ -32,7 +34,7 @@ class Wire:
 
     def unref(self):
         self.refs -= 1
-        assert self.refs >= 0, 'double unref'
+        assert self.refs >= 0, "double unref"
 
         if self.refs == 0:
             # release the reference to all children
@@ -49,10 +51,12 @@ class Wire:
             del self.ctx
             del self.label
 
+
 class Range:
-    '''
+    """
     Cont. range of wires
-    '''
+    """
+
     def __init__(self, field, n):
         self.field = field
         self.n = n
@@ -64,6 +68,7 @@ class Range:
     def __len__(self):
         return self.n
 
+
 class Add(Wire):
     def __init__(self, field, a, b):
         Wire.__init__(self, field, [a, b])
@@ -71,7 +76,7 @@ class Add(Wire):
         self.b = b
 
     def __repr__(self):
-        return f'Add({self.a}, {self.b})'
+        return f"Add({self.a}, {self.b})"
 
     def eval(self):
         try:
@@ -97,6 +102,7 @@ class Add(Wire):
         ctx.gate(gates.AddGate(self.field, self.label, lhs, rhs))
         return self.label
 
+
 class Mul(Wire):
     def __init__(self, field, a, b):
         Wire.__init__(self, field, [a, b])
@@ -104,7 +110,7 @@ class Mul(Wire):
         self.b = b
 
     def __repr__(self):
-        return f'Mul({self.a}, {self.b})'
+        return f"Mul({self.a}, {self.b})"
 
     def eval(self):
         try:
@@ -130,6 +136,7 @@ class Mul(Wire):
         ctx.gate(gates.MulGate(self.field, self.label, lhs, rhs))
         return self.label
 
+
 class MulConst(Wire):
     def __init__(self, field, wire, const):
         assert isinstance(wire, Wire), wire
@@ -140,7 +147,7 @@ class MulConst(Wire):
         self.const = const
 
     def __repr__(self):
-        return f'MulConst({self.wire}, {self.const})'
+        return f"MulConst({self.wire}, {self.const})"
 
     def eval(self):
         try:
@@ -164,6 +171,7 @@ class MulConst(Wire):
         ctx.gate(gates.MulConstGate(self.field, self.label, wire, self.const))
         return self.label
 
+
 class AddConst(Wire):
     def __init__(self, field, wire, const):
         assert isinstance(wire, Wire)
@@ -174,7 +182,7 @@ class AddConst(Wire):
         self.const = const
 
     def __repr__(self):
-        return f'AddConst({self.wire}, {self.const})'
+        return f"AddConst({self.wire}, {self.const})"
 
     def eval(self):
         try:
@@ -198,6 +206,7 @@ class AddConst(Wire):
         ctx.gate(gates.AddConstGate(self.field, self.label, wire, self.const))
         return self.label
 
+
 class AssertZero(Wire):
     def __init__(self, field, wire):
         self.wire = wire
@@ -207,6 +216,7 @@ class AssertZero(Wire):
         out = self.wire.compile(ctx)
         ctx.gate(gates.AssertZeroGate(self.field, out))
         self.wire.unref()
+
 
 class Call(Wire):
     def __init__(self, func, args):
@@ -223,7 +233,9 @@ class Call(Wire):
                 children.append(arg)
 
         # allocate outputs
-        self.rets = tuple([Rets(self, output.field, output.n) for output in func.outputs])
+        self.rets = tuple(
+            [Rets(self, output.field, output.n) for output in func.outputs]
+        )
         self.func = func
         self.args = args
         self.value = False
@@ -241,7 +253,7 @@ class Call(Wire):
                 args.append(tuple([a.eval() for a in arg]))
             else:
                 args.append(arg.eval())
-        
+
         # call function
         rets = self.func.eval(*args)
 
@@ -292,7 +304,8 @@ class Call(Wire):
         return self.refs
 
     def unref(self):
-        assert False, 'unref call'
+        assert False, "unref call"
+
 
 class Witness(Wire):
     def __init__(self, field, fn):
@@ -318,13 +331,15 @@ class Witness(Wire):
         ctx.gate(gates.WitnessGate(self.field, self.label, self.eval()))
         return self.label
 
+
 class Input(Wire):
-    '''
+    """
     A wire in a cont. range (input/output etc.)
 
     All the wires in have the same lifetime
     (as they are defined together, e.g. as the output of a call)
-    '''
+    """
+
     def __init__(self, arg, field, idx, resolve=None):
         Wire.__init__(self, field)
         self.arg = arg
@@ -348,19 +363,21 @@ class Input(Wire):
         return self.arg.eval()[self.idx]
 
     def __repr__(self):
-        return f'I({self.field}, {self.idx})'
+        return f"I({self.field}, {self.idx})"
+
 
 class Rets(Range):
-    '''
+    """
     Return range from function
-    '''
+    """
+
     def __init__(self, call, field, n):
         self.call = call
         Range.__init__(self, field, n)
 
     def compile(self, ctx, into=None):
         self.call.compile(ctx)
-    
+
     def eval(self):
         try:
             return self.value
@@ -368,10 +385,12 @@ class Rets(Range):
             self.call.eval()
             return self.value
 
+
 class Arg(Range):
-    '''
+    """
     Unassignable wire range
-    '''
+    """
+
     def __init__(self, field, n):
         self.field = field
         Range.__init__(self, field, n)
@@ -380,23 +399,27 @@ class Arg(Range):
         assert i < self.n
         return Input(self, self.field, i)
 
+
 class Return(Range):
-    '''
+    """
     Unreadable wire range
-    '''
+    """
+
     def __init__(self, field, n):
         self.assign = [None] * n
         Range.__init__(self, field, n)
 
     def __setitem__(self, i, wire):
-        assert self.assign[i] is None, 'double assigned return value'
+        assert self.assign[i] is None, "double assigned return value"
         wire.ref()
         self.assign[i] = wire
 
+
 class Backend:
-    '''
+    """
     Field backend for a circuit
-    '''
+    """
+
     def __init__(self, circuit, field):
         self.circuit = circuit
         self.field = field
@@ -458,6 +481,7 @@ class Backend:
         assert isinstance(self.circuit, Func)
         return self.circuit.output(self.field, n)
 
+
 def exp_range(w):
     if isinstance(w, tuple):
         assert False
@@ -478,7 +502,7 @@ class Func:
     def __init__(self, circuit, name, ins, out):
         self.name = name
         self.public = []
-        self.roots  = []
+        self.roots = []
         self.backends = {}
         self.inputs = []
         self.outputs = []
@@ -490,11 +514,11 @@ class Func:
 
         # check for known plugins
         if self.is_plugin:
-            if self.plugin_name == 'galois_disjunction_v0':
+            if self.plugin_name == "galois_disjunction_v0":
                 cond = args[0]
 
-                assert self.plugin_args[0] == 'switch'
-                assert self.plugin_args[1] == 'strict'
+                assert self.plugin_args[0] == "switch"
+                assert self.plugin_args[1] == "strict"
 
                 dispatch = iter(self.plugin_args[2:])
 
@@ -506,12 +530,12 @@ class Func:
                         return fn.eval(*args[1:])
 
             else:
-                assert False, 'unknown plugin'
+                assert False, "unknown plugin"
 
         # assign arguments
 
         wires = {}
-        for (inp, arg) in zip(self.inputs, args):
+        for inp, arg in zip(self.inputs, args):
             if isinstance(arg, tuple):
                 assert inp.n == len(arg)
                 for i, w in zip(inp.range, arg):
@@ -597,7 +621,7 @@ class Func:
 
             nxt = iter(out.range)
             for wire in out.assign:
-                assert wire is not None, 'unassigned output in function'
+                assert wire is not None, "unassigned output in function"
                 tbl = next(nxt)
                 lbl = wire.compile(ctx, tbl)
                 if lbl != tbl:
@@ -614,43 +638,43 @@ class Func:
         return self.ctx
 
     def compile(self):
-
         ctx = self._compile()
 
         ff_id = self.circuit.ff_id
 
         out = []
         for val in self.outputs:
-            out.append(f'{ff_id[val.field]}:{val.n}')
+            out.append(f"{ff_id[val.field]}:{val.n}")
 
         ins = []
         for val in self.inputs:
-            ins.append(f'{ff_id[val.field]}:{val.n}')
+            ins.append(f"{ff_id[val.field]}:{val.n}")
 
         yield f'@function({self.name}, @out: {",".join(out)}, @in: {",".join(ins)})'
 
         # handle plugin body
 
         if self.is_plugin:
-            yield f'  @plugin('
-            yield f'    {self.plugin_name},'
+            yield f"  @plugin("
+            yield f"    {self.plugin_name},"
             for i, arg in enumerate(self.plugin_args):
                 if i == len(self.plugin_args) - 1:
-                    yield f'    {arg}'
+                    yield f"    {arg}"
                 else:
-                    yield f'    {arg},'
-            yield '  );'
+                    yield f"    {arg},"
+            yield "  );"
             return
 
         # compile gates body
 
         for gate in convert(ctx.gates, ff_id):
-            yield f'  {gate}'
+            yield f"  {gate}"
 
-        yield f'@end'
+        yield f"@end"
 
     def __repr__(self):
         return self.name
+
 
 class Circuit:
     def __init__(self):
@@ -669,7 +693,7 @@ class Circuit:
 
     def func(self, out=[], ins=[], name=None):
         if name is None:
-            name = f'f{len(self.functs)}'
+            name = f"f{len(self.functs)}"
         assert name not in self.functs
 
         func = Func(self, name, ins, out)
@@ -677,7 +701,7 @@ class Circuit:
         return func
 
     def extract_witnesses(self):
-        try: 
+        try:
             self.ctx
         except AttributeError:
             self.compile()
@@ -697,16 +721,16 @@ class Circuit:
         except AttributeError:
             self.wit = self.extract_witnesses()
 
-        yield 'version 2.0.0;'
-        yield 'private_input;'
-        yield f'@type field {ff.size};'
-        yield '@begin'
+        yield "version 2.0.0;"
+        yield "private_input;"
+        yield f"@type field {ff.size};"
+        yield "@begin"
         for e in self.wit[ff]:
-            yield f'  <{e.value}>;'
-        yield '@end'
+            yield f"  <{e.value}>;"
+        yield "@end"
 
     def compile(self):
-        try: 
+        try:
             return self.ctx
         except AttributeError:
             self.ctx = Namespace()
@@ -714,26 +738,25 @@ class Circuit:
         for ff in self.backends.values():
             ff.compile(self.ctx)
 
-        yield 'version 2.0.0;'
-        yield 'circuit;'
+        yield "version 2.0.0;"
+        yield "circuit;"
 
-        yield ''
+        yield ""
         yield '// Circuit generated by the "Circus" Expression Compiler'
-        yield ''
+        yield ""
 
         for ff in self.backends:
-            yield f'@type field {ff.size};'
+            yield f"@type field {ff.size};"
 
-        yield '@begin'
+        yield "@begin"
         for func in self.functs.values():
             for gate in func.compile():
-                yield f'  {gate}'
+                yield f"  {gate}"
 
-        for (_ff, idx) in self.ff_id.items():
-            yield f'  @new({idx}: {gates.wrange(self.ctx.range())});'
-
+        for _ff, idx in self.ff_id.items():
+            yield f"  @new({idx}: {gates.wrange(self.ctx.range())});"
 
         for gate in convert(self.ctx.gates, self.ff_id):
-            yield f'  {gate}'
+            yield f"  {gate}"
 
-        yield '@end'
+        yield "@end"

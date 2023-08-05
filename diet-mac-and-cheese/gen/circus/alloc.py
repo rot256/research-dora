@@ -1,23 +1,24 @@
-
 INF = 1_000_000_000_000
 
+
 class Namespace:
-    '''
+    """
     Wire namespace during compilation.
 
-    Implements a single "heap allocation" 
+    Implements a single "heap allocation"
     of wires based on buckets (of different sizes)
-    '''
+    """
+
     def __init__(self, start=0):
         mst = range(start, INF)
         size = mst.stop - mst.start
 
-        self.buckets = { size : set([mst])}
-        self.buck_vals = [ size ]
+        self.buckets = {size: set([mst])}
+        self.buck_vals = [size]
 
         # neighbors of each free range
-        self.nxts = { mst.start: mst }
-        self.prvs = { mst.stop: mst }
+        self.nxts = {mst.start: mst}
+        self.prvs = {mst.stop: mst}
 
         # sanity check
         # (allows us to check if freed ranges has been alloced prior)
@@ -41,7 +42,6 @@ class Namespace:
         del self.nxts[r.start]
 
     def _add(self, r):
-       
         # merge with next range
         try:
             nei = self.nxts[r.stop]
@@ -84,20 +84,18 @@ class Namespace:
         self._del(r)
         return r
 
-
-
     def _alloc_n(self, n):
         # find smallest bucket that fits
         b = self.buck_vals
         while len(b) > 1:
             m = len(b) // 2 + (len(b) % 2)
             if n > b[m]:
-                b = b[m+1:]
+                b = b[m + 1 :]
             elif n == b[m]:
                 b = [b[m]]
             else:
                 b = b[:m]
-        
+
         assert len(b) == 1
 
         # perfect fit, yay!
@@ -128,17 +126,18 @@ class Namespace:
         return range(i1, i2)
 
     def alloc_n(self, n):
-        '''
+        """
         Allocate n consecutive wires
-        '''
+        """
         r = self._alloc_n(n)
-        for w in r: self.alloced.add(w)
+        for w in r:
+            self.alloced.add(w)
         return r
 
     def alloc(self):
-        '''
+        """
         Allocate a single wire
-        '''
+        """
         r = self.alloc_n(1)
         assert len(r) == 1
         return r.start
@@ -146,15 +145,16 @@ class Namespace:
     def _free(self, w):
         if w < self.start:
             return
-        assert w in self.alloced, f'freeing unalloced wire: {w}'
+        assert w in self.alloced, f"freeing unalloced wire: {w}"
         self.alloced.remove(w)
-        self._add(range(w, w+1))
+        self._add(range(w, w + 1))
 
     def free(self, r):
         if isinstance(r, range):
             # blow up into individual wires
             # (which are then merged back into ranges)
-            for w in r: self._free(w)
+            for w in r:
+                self._free(w)
         else:
             self._free(r)
 
@@ -162,7 +162,7 @@ class Namespace:
         return range(self.start, self.top)
 
     def gate(self, gate):
-        '''
+        """
         Add to the stream of gates
-        '''
+        """
         self.gates.append(gate)

@@ -1,5 +1,6 @@
 import random
 
+
 class FieldElem:
     def __init__(self, field, value):
         self.field = field
@@ -27,10 +28,11 @@ class FieldElem:
         return self.field._ff_sub(self.field.new(0), self)
 
     def __repr__(self):
-        return f'{self.value}'
+        return f"{self.value}"
 
     def __int__(self):
         return self.value
+
 
 class Field:
     def __init__(self, size):
@@ -67,4 +69,4 @@ class Field:
         return hash(self.size)
 
     def __repr__(self):
-        return f'F_p({self.size})'
+        return f"F_p({self.size})"

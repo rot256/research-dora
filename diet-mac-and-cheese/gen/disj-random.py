@@ -3,15 +3,14 @@ import random
 
 from circus import Circuit, Field
 
-if __name__ == '__main__':
-
-    GATES = 10_000 # per clause
+if __name__ == "__main__":
+    GATES = 10_000  # per clause
     INPUTS = [100]
     OUTPUTS = [100]
     CLAUSES = 1000
     BRANCHES = 5000
 
-    random.seed(0xdeadbeef)
+    random.seed(0xDEADBEEF)
 
     circuit = Circuit()
 
@@ -23,7 +22,7 @@ if __name__ == '__main__':
     def rand_func(fn, steps, inputs, outputs):
         import random
 
-        bf  = fn.backend(ff)
+        bf = fn.backend(ff)
 
         ins = []
         out = []
@@ -41,8 +40,8 @@ if __name__ == '__main__':
 
         for i in range(steps):
             n = random.randint(0, 4)
-            i = random.randint(0, len(exprs)-1)
-            j = random.randint(0, len(exprs)-1)
+            i = random.randint(0, len(exprs) - 1)
+            j = random.randint(0, len(exprs) - 1)
             c = ff.random()
             if n == 0:
                 exprs.append(bf.add(exprs[i], exprs[j]))
@@ -60,7 +59,7 @@ if __name__ == '__main__':
 
         return fn
 
-    print('create clauses...')
+    print("create clauses...")
 
     clauses = []
 
@@ -68,10 +67,10 @@ if __name__ == '__main__':
         clauses.append(rand_func(circuit.func(), GATES, INPUTS, OUTPUTS))
 
     def disjunction(fn, clauses):
-        bf  = fn.backend(ff)
+        bf = fn.backend(ff)
 
         # condition input
-        _   = bf.input(1)
+        _ = bf.input(1)
 
         # define inputs
         for ins in clauses[0].inputs:
@@ -87,20 +86,15 @@ if __name__ == '__main__':
             args.append(str(i))
             args.append(cl)
 
-        fn.plugin(
-            'galois_disjunction_v0',
-            'switch',
-            'strict',
-            *args
-        )
+        fn.plugin("galois_disjunction_v0", "switch", "strict", *args)
 
         return fn
 
-    print('create disj...')
+    print("create disj...")
 
     disj = disjunction(circuit.func(), clauses)
 
-    print('create branches...')
+    print("create branches...")
 
     for j in range(BRANCHES):
         # load some inputs
@@ -122,16 +116,16 @@ if __name__ == '__main__':
             for i in range(len(out)):
                 bf.assert_eq(out[i], out[i].eval())
 
-    print('compile to circuit...')
+    print("compile to circuit...")
 
     if len(sys.argv) > 1:
-        with open(sys.argv[1], 'w') as f:
+        with open(sys.argv[1], "w") as f:
             for line in circuit.compile():
-                f.write(line + '\n')
+                f.write(line + "\n")
 
-        with open(sys.argv[2], 'w') as f:
+        with open(sys.argv[2], "w") as f:
             for line in circuit.witness(ff):
-                f.write(line + '\n')
+                f.write(line + "\n")
     else:
         for line in circuit.compile():
             print(line)

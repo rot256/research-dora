@@ -3,15 +3,14 @@ import random
 
 from circus import *
 
-if __name__ == '__main__':
-
-    GATES = 10_000 # per clause
+if __name__ == "__main__":
+    GATES = 10_000  # per clause
     INPUTS = 100
     OUTPUTS = 100
     CLAUSES = 1000
     BRANCHES = 256
 
-    random.seed(0xdeadbeef)
+    random.seed(0xDEADBEEF)
 
     circuit = Circuit()
 
@@ -22,15 +21,15 @@ if __name__ == '__main__':
     def rand_func(fn, steps, inputs, outputs):
         import random
 
-        bf  = fn.backend(ff)
+        bf = fn.backend(ff)
         ins = bf.input(inputs)
         out = bf.output(outputs)
         exprs = [ins[i] for i in range(len(ins))]
 
         for i in range(steps):
             n = random.randint(0, 4)
-            i = random.randint(0, len(exprs)-1)
-            j = random.randint(0, len(exprs)-1)
+            i = random.randint(0, len(exprs) - 1)
+            j = random.randint(0, len(exprs) - 1)
             c = ff.random()
             if n == 0:
                 exprs.append(bf.add(exprs[i], exprs[j]))
@@ -42,21 +41,21 @@ if __name__ == '__main__':
                 exprs.append(bf.add(exprs[i], c))
 
         for i in range(len(out)):
-            out[i] = exprs[-(i+1)]
+            out[i] = exprs[-(i + 1)]
 
         return fn
 
     clauses = []
 
-    print('create clauses...')
+    print("create clauses...")
 
     for i in range(CLAUSES):
         clauses.append(rand_func(circuit.func(), GATES, INPUTS, OUTPUTS))
 
-    print('create branches...')
+    print("create branches...")
 
     for j in range(BRANCHES):
-        print('branch:', j)
+        print("branch:", j)
         inp = []
         for _ in range(INPUTS):
             inp.append(bf.private(lambda: ff.random()))
@@ -67,13 +66,13 @@ if __name__ == '__main__':
             for i in range(OUTPUTS):
                 bf.assert_eq(res[i], ff.new(out[i]))
 
-    print('compile...')
+    print("compile...")
 
     if len(sys.argv) > 1:
-        with open(sys.argv[1], 'w') as f:
+        with open(sys.argv[1], "w") as f:
             for line in circuit.compile():
-                f.write(line + '\n')
+                f.write(line + "\n")
 
-        with open(sys.argv[2], 'w') as f:
+        with open(sys.argv[2], "w") as f:
             for line in circuit.witness(ff):
-                f.write(line + '\n')
+                f.write(line + "\n")

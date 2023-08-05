@@ -1,6 +1,6 @@
 from circus import *
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # define a field
     ff = Field(340282366920938463463374607431768211297)
 
