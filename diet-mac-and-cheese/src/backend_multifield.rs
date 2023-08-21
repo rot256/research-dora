@@ -79,6 +79,10 @@ pub trait BackendConvT: PrimeBackendT {
 }
 
 pub trait BackendDisjunctionT: BackendT {
+    // finalize the disjunctions, by running the final Dora checks
+    fn finalize_disj(&mut self) -> Result<()>;
+
+    // execute a disjunction on the given inputs
     fn disjunction(
         &mut self,
         inputs: &[Self::Wire],
@@ -97,6 +101,10 @@ where
         _disj: &DisjunctionBody,
     ) -> Result<Vec<Self::Wire>> {
         unimplemented!("disjunction plugin is not sound for GF(2)")
+    }
+
+    fn finalize_disj(&mut self) -> Result<()> {
+        Ok(())
     }
 }
 
@@ -134,6 +142,10 @@ where
         _disj: &DisjunctionBody,
     ) -> Result<Vec<Self::Wire>> {
         unimplemented!("disjunction plugin is not sound for GF(2)")
+    }
+
+    fn finalize_disj(&mut self) -> Result<()> {
+        Ok(())
     }
 }
 
@@ -369,6 +381,13 @@ where
 impl<FP: PrimeFiniteField, C: AbstractChannel> BackendDisjunctionT
     for DietMacAndCheeseConvProver<FP, C>
 {
+    fn finalize_disj(&mut self) -> Result<()> {
+        for (_, disj) in std::mem::take(&mut self.dora) {
+            disj.dora.finalize(&mut self.dmc)?;
+        }
+        Ok(())
+    }
+
     fn disjunction(
         &mut self,
         inputs: &[Self::Wire],
@@ -711,6 +730,13 @@ impl<FP: PrimeFiniteField, C: AbstractChannel> BackendDisjunctionT
                 dora.mux(&mut self.dmc, inputs)
             }
         }
+    }
+
+    fn finalize_disj(&mut self) -> Result<()> {
+        for (_, dora) in std::mem::take(&mut self.dora) {
+            dora.finalize(&mut self.dmc)?;
+        }
+        Ok(())
     }
 }
 
@@ -1122,6 +1148,7 @@ where
     fn finalize(&mut self) -> Result<()> {
         debug!("Finalize in EvaluatorSingle");
         self.backend.finalize_conv()?;
+        self.backend.finalize_disj()?;
         self.backend.finalize()?;
         Ok(())
     }
