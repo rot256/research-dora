@@ -2,7 +2,8 @@ mod cli;
 
 use clap::Parser;
 use cli::{Cli, LpnSize, Prover::*};
-use diet_mac_and_cheese::backend_multifield::{EvaluatorCirc, Party};
+use diet_mac_and_cheese::backend_multifield::EvaluatorCirc;
+use diet_mac_and_cheese::backend_trait::Party;
 use diet_mac_and_cheese::circuit_ir::{CircInputs, TypeStore};
 use diet_mac_and_cheese::read_sieveir_phase2::{
     read_private_inputs, read_public_inputs, read_types,
@@ -129,7 +130,7 @@ fn run_text(args: &Cli) -> Result<()> {
                         rng,
                         inputs,
                         TypeStore::try_from(rel.header().types.clone())?,
-                        false,
+                        args.lpn == LpnSize::Small,
                         args.nobatching,
                     )?;
                     evaluator.load_backends(&mut channel, args.lpn == LpnSize::Small)?;
@@ -171,7 +172,7 @@ fn run_text(args: &Cli) -> Result<()> {
                 rng,
                 inputs,
                 TypeStore::try_from(rel.header().types.clone())?,
-                false,
+                args.lpn == LpnSize::Small,
                 args.nobatching,
             )?;
             evaluator.load_backends(&mut channel, args.lpn == LpnSize::Small)?;
@@ -248,7 +249,7 @@ fn run_flatbuffers(args: &Cli) -> Result<()> {
                         rng,
                         inputs,
                         fields,
-                        false,
+                        args.lpn == LpnSize::Small,
                         args.nobatching,
                     )?;
                     evaluator.load_backends(&mut channel, args.lpn == LpnSize::Small)?;
@@ -288,7 +289,7 @@ fn run_flatbuffers(args: &Cli) -> Result<()> {
                 rng,
                 inputs,
                 fields.clone(),
-                false,
+                args.lpn == LpnSize::Small,
                 args.nobatching,
             )?;
             evaluator.load_backends(&mut channel, args.lpn == LpnSize::Small)?;
