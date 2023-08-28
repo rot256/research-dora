@@ -20,7 +20,7 @@ class WitnessGate:
         f = ff_id[self.field]
         yield f"${self.out} <- @private({f});"
 
-    def run(self, wires):
+    def run(self, _circuit, wires):
         raise ValueError("not possible")
 
 
@@ -37,9 +37,8 @@ class AddGate:
     def convert(self, ff_id):
         yield f"${self.out} <- @add(${self.lhs}, ${self.rhs});"
 
-    def run(self, wires):
+    def run(self, _circuit, wires):
         wires[self.out] = wires[self.lhs] + wires[self.rhs]
-
 
 class CopyGate:
     def __init__(self, field, dst, srcs):
@@ -70,7 +69,7 @@ class CopyGate:
         yield f'{wrange(gate.dst)} <- {", ".join(srcs)};'
         """
 
-    def run(self, wires):
+    def run(self, _circuit, wires):
         for dst, src in zip(self._dst(), self._src()):
             wires[dst] = wires[src]
 
@@ -85,13 +84,31 @@ class CallGate:
         self.args = args
 
     def __repr__(self):
-        return f"CallGate({self.label}, {self.func}, {self.args})"
+        return f"CallGate({self.out}, {self.func}, {self.args})"
+
+    def run(self, circuit, wires):
+        # lookup function
+        fn = circuit.functs[self.func.name]
+
+        # collect arguments
+        args = []
+        for arg in self.args:
+            val = [wires[i] for i in arg]
+            args.append(tuple(val))
+        
+        # call function
+        out = fn.eval(*args)
+
+        # assign outputs
+        for ret, val in zip(self.out, out):
+            assert len(ret) == len(val)
+            for i, o in enumerate(ret.range): 
+                wires[o] = val[i]
 
     def convert(self, ff_id):
         args = [wrange(arg) for arg in self.args]
         rets = [wrange(ret.range) for ret in self.out]
         yield f'{", ".join(rets)} <- @call({self.func}, {", ".join(args)});'
-
 
 class MulGate:
     def __init__(self, field, out, lhs, rhs):
@@ -100,7 +117,7 @@ class MulGate:
         self.rhs = rhs
         self.field = field
 
-    def run(self, wires):
+    def run(self, _circuit, wires):
         wires[self.out] = wires[self.lhs] * wires[self.rhs]
 
     def convert(self, ff_map):
@@ -117,7 +134,7 @@ class MulConstGate:
         self.const = const
         self.field = field
 
-    def run(self, wires):
+    def run(self, _circuit, wires):
         wires[self.out] = wires[self.wire] * self.const
 
     def convert(self, ff_map):
@@ -134,7 +151,7 @@ class AddConstGate:
         self.const = const
         self.field = field
 
-    def run(self, wires):
+    def run(self, _circuit, wires):
         wires[self.out] = wires[self.wire] + self.const
 
     def convert(self, ff_map):
@@ -155,3 +172,6 @@ class AssertZeroGate:
     def convert(self, ff_id):
         f = ff_id[self.field]
         yield f"@assert_zero({f}: ${self.wire});"
+
+    def run(self, _circuit, wires):
+        pass

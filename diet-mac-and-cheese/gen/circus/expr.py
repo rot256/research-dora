@@ -396,7 +396,7 @@ class Arg(Range):
         Range.__init__(self, field, n)
 
     def __getitem__(self, i):
-        assert i < self.n
+        assert i < self.n, f"argument index out of range: {i} >= {self.n}"
         return Input(self, self.field, i)
 
 
@@ -499,7 +499,7 @@ def convert(gates, ff_id):
 
 
 class Func:
-    def __init__(self, circuit, name, ins, out):
+    def __init__(self, circuit, name):
         self.name = name
         self.public = []
         self.roots = []
@@ -510,8 +510,6 @@ class Func:
         self.is_plugin = False
 
     def eval(self, *args):
-        ctx = self._compile()
-
         # check for known plugins
         if self.is_plugin:
             if self.plugin_name == "galois_disjunction_v0":
@@ -533,7 +531,6 @@ class Func:
                 assert False, "unknown plugin"
 
         # assign arguments
-
         wires = {}
         for inp, arg in zip(self.inputs, args):
             if isinstance(arg, tuple):
@@ -541,12 +538,12 @@ class Func:
                 for i, w in zip(inp.range, arg):
                     wires[i] = w
             else:
-                assert inp.n == 1
+                assert inp.n == 1, f"takes tuple of arguments {inp.n} args"
                 wires[inp.range[0]] = arg
 
         # evaluate all gates in compiled function
-        for gate in ctx.gates:
-            gate.run(wires)
+        for gate in self.ctx.gates:
+            gate.run(self.circuit, wires)
 
         # return outputs
         rets = []
@@ -691,14 +688,21 @@ class Circuit:
         self.ff_id[ff] = len(self.ff_id)
         return bf
 
-    def func(self, out=[], ins=[], name=None):
+    def func(self, define, name=None):
         if name is None:
             name = f"f{len(self.functs)}"
         assert name not in self.functs
+        
+        # allocate function
+        fn = Func(self, name)
+        self.functs[name] = fn
 
-        func = Func(self, name, ins, out)
-        self.functs[name] = func
-        return func
+        # define function (populates body)
+        define(fn)
+
+        # compile function
+        fn._compile()
+        return fn
 
     def extract_witnesses(self):
         try:

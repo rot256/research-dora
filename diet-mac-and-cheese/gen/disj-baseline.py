@@ -4,7 +4,7 @@ import random
 from circus import *
 
 if __name__ == "__main__":
-    GATES = 10_000  # per clause
+    GATES = 10_000 # per clause
     INPUTS = 100
     OUTPUTS = 100
     CLAUSES = 1000
@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
     circuit = Circuit()
 
-    ff = Field(2305843009213693951)
+    ff = Field(340282366920938463463374607431768211297)
 
     bf = circuit.backend(ff)
 
@@ -43,28 +43,55 @@ if __name__ == "__main__":
         for i in range(len(out)):
             out[i] = exprs[-(i + 1)]
 
-        return fn
-
-    clauses = []
-
     print("create clauses...")
 
+    clauses = []
     for i in range(CLAUSES):
-        clauses.append(rand_func(circuit.func(), GATES, INPUTS, OUTPUTS))
+        clauses.append(
+            circuit.func(lambda f: rand_func(f, GATES, INPUTS, OUTPUTS))
+        )
+
+    print("create disjunction...")
+    
+    def disj(fn, clauses):
+        bf = fn.backend(ff)
+        inp = bf.input(INPUTS)
+
+        # call each clause
+        outputs = []
+
+        for cls in clauses:
+            res = cls.call(tuple([inp[i] for i in range(len(inp))]))
+            outputs.append([res[i] for i in range(len(res))])
+
+        # create output
+        while len(outputs) > 1:
+            a = outputs[: len(outputs) // 2]
+            b = outputs[len(outputs) // 2 :]
+
+            outputs = []
+            for xs, ys in zip(a, b):
+                outputs.append([bf.add(x, y) for x,y in zip(xs, ys)])
+
+            if len(outputs) % 2 == 1:
+                outputs.append(outputs[-1])
+        
+        out = bf.output(OUTPUTS)
+        for i in range(OUTPUTS):
+            out[i] = output[i]
+
+    disj = circuit.func(lambda fn: disj(fn, clauses))
 
     print("create branches...")
 
     for j in range(BRANCHES):
-        print("branch:", j)
-        inp = []
-        for _ in range(INPUTS):
-            inp.append(bf.private(lambda: ff.random()))
+        # sample random inputs        
+        inp = [bf.private(ff.random) for _ in range(INPUTS)]
+        out = disj.call(tuple(inp))
 
-        for cls in clauses:
-            res = cls.call(tuple(inp))
-            out = cls.eval([e.eval() for e in inp])
-            for i in range(OUTPUTS):
-                bf.assert_eq(res[i], ff.new(out[i]))
+        # call each clause
+        for i in range(OUTPUTS):
+            bf.assert_eq(out[i], ff.new(out[i].eval()))
 
     print("compile...")
 
@@ -76,3 +103,7 @@ if __name__ == "__main__":
         with open(sys.argv[2], "w") as f:
             for line in circuit.witness(ff):
                 f.write(line + "\n")
+
+    else:
+        for line in circuit.compile():
+            print(line)
