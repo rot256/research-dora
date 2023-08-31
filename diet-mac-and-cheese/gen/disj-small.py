@@ -53,8 +53,9 @@ def rand_func(fn, muls, inputs, outputs):
 
     return fn
 
-MULS = 125
+MULS = 1400
 CLAUSES = 50
+SEQ = 200
 STEPS = 1_000_000
 INPUTS = [10]
 OUTPUTS = [10]
@@ -96,20 +97,28 @@ disj = circuit.func(lambda fn: disjunction(fn, clauses))
 
 print("create branches...")
 
-for j in range(STEPS):
+total = 0
+
+assert STEPS % SEQ == 0
+
+for _ in range(STEPS // SEQ):
     # load some inputs
-    inps = []
     for n in INPUTS:
-        inp = []
+        out = []
         for _ in range(n):
-            inp.append(bf.private(lambda: ff.random()))
-        inps.append(tuple(inp))
+            out.append(bf.private(lambda: ff.random()))
 
-    # load the condition
-    cond = bf.private(lambda: random.randrange(0, CLAUSES))
+    # apply step function over-and-over
+    for j in range(SEQ):
+        print(total)
+        total += 1
 
-    # run disjunction
-    out = disj.call(cond, *inps)
+        # load the condition
+        cond = bf.private(lambda: random.randrange(0, CLAUSES))
+
+        # run disjunction
+        out = disj.call(cond, tuple(out))
+        out = [out[i] for i in range(len(out))]
 
     # assert outputs
     for i in range(len(out)):

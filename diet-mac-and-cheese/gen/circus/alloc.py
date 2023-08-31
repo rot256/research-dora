@@ -88,14 +88,21 @@ class Namespace:
         # find smallest bucket that fits
         b = self.buck_vals
         while len(b) > 1:
-            m = len(b) // 2 + (len(b) % 2)
-            if n > b[m]:
-                b = b[m + 1 :]
-            elif n == b[m]:
-                b = [b[m]]
-            else:
-                b = b[:m]
+            r = len(b) // 2
+            l = max(r - 1, 0)
 
+            if b[l] == n:
+                b = [b[l]]
+
+            elif b[l] < n:
+                if n <= b[r]:
+                    b = [b[r]]
+                else:
+                    b = b[l+1:]
+
+            elif b[l] > n:
+                b = b[:l+1]
+            
         assert len(b) == 1
 
         # perfect fit, yay!

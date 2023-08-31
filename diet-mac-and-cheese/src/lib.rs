@@ -23,6 +23,9 @@ pub mod circuit_ir;
 #[allow(dead_code)] // because, well, it's not used yet.
 mod dora;
 
+#[allow(dead_code)]
+mod ram;
+
 pub mod edabits;
 pub mod fields;
 pub mod homcom;

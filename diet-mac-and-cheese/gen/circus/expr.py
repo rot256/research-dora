@@ -466,6 +466,9 @@ class Backend:
     def assert_zero(self, wire):
         self.roots.append(AssertZero(self.field, wire))
 
+    def live(self, wire):
+        self.roots.append(wire)
+
     def compile(self, ctx):
         for wire in self.roots:
             wire.compile(ctx)
