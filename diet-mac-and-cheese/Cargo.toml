@@ -32,6 +32,7 @@ subtle.workspace = true
 ocelot.workspace = true
 flatbuffers.workspace = true
 nix.workspace = true
+rustc-hash.workspace = true
 
 [build-dependencies]
 swanky-flatbuffer-build.workspace = true

@@ -19,7 +19,7 @@ use crate::{
 
 use generic_array::typenum::Unsigned;
 
-use super::{tx::TxChannel, MemorySpace};
+use super::{tx::TxChannel, MemorySpace, PRE_ALLOC_MEM, PRE_ALLOC_STEPS};
 
 // Low-level commit to vector
 // (allows control of the channel for Fiat-Shamir)
@@ -49,39 +49,49 @@ where
         .map(|(t, v)| MacProver::new(v, t)))
 }
 
-pub struct Verifier<V: IsSubFieldOf<F>, F: FiniteField, C: AbstractChannel, M: MemorySpace<V>>
-where
+pub struct Verifier<
+    V: IsSubFieldOf<F>,
+    F: FiniteField,
+    C: AbstractChannel,
+    M: MemorySpace<V>,
+    const SIZE_ADDR: usize,
+    const SIZE_VALUE: usize,
+    const SIZE_STORE: usize,
+    const SIZE_CHAL: usize,
+    const SIZE_DIM: usize,
+> where
     F::PrimeField: IsSubFieldOf<V>,
 {
     space: M,
+    ch: TxChannel<C>,
     _ph: PhantomData<(V, F, C, M)>,
     tx: blake3::Hasher,
-    dim_chal: usize,
-    memory: HashMap<Box<[V]>, Vec<V>>,
     // reads
-    rds: Vec<Box<[MacVerifier<F>]>>,
+    rds: Vec<[MacVerifier<F>; SIZE_DIM]>,
     // writes
-    wrs: Vec<Box<[MacVerifier<F>]>>,
+    wrs: Vec<[MacVerifier<F>; SIZE_DIM]>,
 }
 
-impl<V: IsSubFieldOf<F>, F: FiniteField, C: AbstractChannel, M: MemorySpace<V>> Verifier<V, F, C, M>
+impl<
+        V: IsSubFieldOf<F>,
+        F: FiniteField,
+        C: AbstractChannel,
+        M: MemorySpace<V>,
+        const SIZE_ADDR: usize,
+        const SIZE_VALUE: usize,
+        const SIZE_STORE: usize,
+        const SIZE_CHAL: usize,
+        const SIZE_DIM: usize,
+    > Verifier<V, F, C, M, SIZE_ADDR, SIZE_VALUE, SIZE_STORE, SIZE_CHAL, SIZE_DIM>
 where
     F::PrimeField: IsSubFieldOf<V>,
 {
-    fn dim(&self) -> usize {
-        self.space.dim_addr() + self.space.dim_value() + self.dim_chal
-    }
-
-    pub fn new(space: M) -> Self {
-        let bits = <V as FiniteField>::NumberOfBitsInBitDecomposition::to_usize();
-        let dim_chal = (100 + bits - 1) / bits;
-        println!("dim_chal: {}", dim_chal);
+    pub fn new(verifier: &mut DietMacAndCheeseVerifier<V, F, C>, space: M) -> Self {
         Self {
             space,
-            dim_chal,
-            rds: Vec::with_capacity(60_000_000),
-            wrs: Vec::with_capacity(60_000_000),
-            memory: Default::default(),
+            ch: TxChannel::new(verifier.channel.clone(), Default::default()),
+            rds: Vec::with_capacity(PRE_ALLOC_MEM + PRE_ALLOC_STEPS),
+            wrs: Vec::with_capacity(PRE_ALLOC_MEM + PRE_ALLOC_STEPS),
             tx: Default::default(),
             _ph: Default::default(),
         }
@@ -92,64 +102,62 @@ where
         &mut self,
         verifier: &mut DietMacAndCheeseVerifier<V, F, C>,
         addr: &[MacVerifier<F>],
-    ) -> Box<[MacVerifier<F>]> {
+    ) -> [MacVerifier<F>; SIZE_VALUE] {
         debug_assert_eq!(addr.len(), self.space.dim_addr());
-        let mut ch = TxChannel::new(verifier.channel.clone(), &mut self.tx);
 
         // concatenate addr || value || challenge
         // commit to the old value
-        let flat: Box<[MacVerifier<F>]> = iter::empty()
+        let mut flat = [Default::default(); SIZE_DIM];
+
+        for (i, elem) in iter::empty()
             .chain(addr.iter().copied())
             .chain(
                 verifier
                     .verifier
-                    .input(
-                        &mut ch,
-                        &mut verifier.rng,
-                        self.space.dim_value() + self.dim_chal,
-                    )
+                    .input(&mut self.ch, &mut verifier.rng, SIZE_VALUE + SIZE_CHAL)
                     .unwrap(),
             )
-            .collect();
-        debug_assert_eq!(flat.len(), self.dim());
-
-        // extract value
-        let value: Box<[_]> =
-            flat[self.space.dim_addr()..self.space.dim_addr() + self.space.dim_value()].into();
-        debug_assert_eq!(value.len(), self.space.dim_value());
+            .enumerate()
+        {
+            flat[i] = elem;
+        }
 
         // add to reads
         self.rds.push(flat);
-        value
+        flat[SIZE_ADDR..SIZE_ADDR + SIZE_VALUE].try_into().unwrap()
     }
 
     pub fn insert(
         &mut self,
         verifier: &mut DietMacAndCheeseVerifier<V, F, C>,
-        addr: &[MacVerifier<F>],
-        value: &[MacVerifier<F>],
+        addr: &[MacVerifier<F>; SIZE_ADDR],
+        value: &[MacVerifier<F>; SIZE_VALUE],
     ) {
         debug_assert_eq!(addr.len(), self.space.dim_addr());
         debug_assert_eq!(value.len(), self.space.dim_value());
 
-        let mut ch = TxChannel::new(verifier.channel.clone(), &mut self.tx);
-
         // sample challenge
-        let flat: Box<_> = iter::empty()
-            .chain(addr.iter().copied())
-            .chain(value.iter().copied())
-            .chain((0..self.dim_chal).map(|_| verifier.input_public(ch.challenge()).unwrap()))
-            .collect();
+        let mut flat = [Default::default(); SIZE_DIM];
+        for (i, elem) in iter::empty()
+            .chain(*addr)
+            .chain(*value)
+            .chain(
+                self.ch
+                    .challenge::<_, SIZE_CHAL>()
+                    .map(|x| verifier.input_public(x).unwrap()),
+            )
+            .enumerate()
+        {
+            flat[i] = elem;
+        }
 
         // add to list of writes
         self.wrs.push(flat);
     }
 
     pub fn finalize(mut self, verifier: &mut DietMacAndCheeseVerifier<V, F, C>) {
-        let mut pre: Box<[_]> = iter::repeat(V::default())
-            .take(self.dim())
-            .map(|x| verifier.input_public(x).unwrap())
-            .collect();
+        // insert initial values into the bag
+        let mut pre = [V::default(); SIZE_DIM].map(|x| verifier.input_public(x).unwrap());
 
         // remove every address from the bag
         for addr in self.space.enumerate() {
@@ -166,10 +174,8 @@ where
 
         let chal_cmbn = V::random(&mut verifier.rng);
         let chal_perm1 = V::random(&mut verifier.rng);
-        let chal_perm2 = V::random(&mut verifier.rng);
         verifier.channel.write_serializable(&chal_cmbn).unwrap();
         verifier.channel.write_serializable(&chal_perm1).unwrap();
-        verifier.channel.write_serializable(&chal_perm2).unwrap();
         verifier.channel.flush().unwrap();
 
         let wrs = collapse_vecs(verifier, &self.wrs, chal_cmbn).unwrap();
@@ -185,6 +191,5 @@ where
         assert_eq!(self.rds.len(), self.wrs.len());
 
         permutation(verifier, chal_perm1, &wrs, &rds).unwrap();
-        permutation(verifier, chal_perm2, &wrs, &rds).unwrap();
     }
 }

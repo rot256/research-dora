@@ -13,6 +13,9 @@ mod verifier;
 
 const SEP: &[u8] = b"FS_RAM";
 
+const PRE_ALLOC_MEM: usize = 1 << 20;
+const PRE_ALLOC_STEPS: usize = 1 << 23;
+
 pub fn combine<'a, B: BackendT>(
     backend: &'a mut B,
     mut elems: impl Iterator<Item = &'a B::Wire>,
@@ -26,9 +29,9 @@ pub fn combine<'a, B: BackendT>(
     Ok(y)
 }
 
-pub(super) fn collapse_vecs<'a, B: BackendT>(
+pub(super) fn collapse_vecs<'a, B: BackendT, const N: usize>(
     backend: &'a mut B,
-    elems: &[Box<[B::Wire]>],
+    elems: &[[B::Wire; N]],
     x: B::FieldElement,
 ) -> Result<Vec<B::Wire>> {
     let mut out = Vec::with_capacity(elems.len());
