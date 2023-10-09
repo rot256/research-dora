@@ -127,8 +127,8 @@ where
         addr: &[MacProver<V, F>; SIZE_ADDR],
         value: &[MacProver<V, F>; SIZE_VALUE],
     ) {
-        debug_assert_eq!(addr.len(), self.space.dim_addr());
-        debug_assert_eq!(value.len(), self.space.dim_value());
+        debug_assert_eq!(addr.len(), M::DIM_ADDR);
+        debug_assert_eq!(value.len(), M::DIM_VALUE);
 
         // store value || challenge in local map
         match self.memory.entry(addr.map(|m| m.value())) {
@@ -148,7 +148,7 @@ where
                 }
 
                 // add to local map
-                let store: &[_; SIZE_STORE] = flat[self.space.dim_addr()..].try_into().unwrap();
+                let store: &[_; SIZE_STORE] = flat[M::DIM_ADDR..].try_into().unwrap();
                 entry.insert(store.map(|m| m.value()));
 
                 // add to list of writes
@@ -163,9 +163,9 @@ where
 
         // remove every address from the bag
         for addr in self.space.enumerate() {
-            let addr = commit_pub(&addr.try_into().unwrap());
+            let addr = commit_pub(&addr.as_ref().try_into().unwrap());
 
-            pre[..self.space.dim_addr()].copy_from_slice(&addr);
+            pre[..M::DIM_ADDR].copy_from_slice(&addr);
             self.wrs.push(pre.clone());
 
             self.remove(prover, &addr);

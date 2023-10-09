@@ -47,7 +47,7 @@ fn test_ram() {
                 if i & 0xffff == 0 {
                     println!("{:x} {:x} {:x}", i, RAM_STEPS, RAM_SIZE);
                 }
-                let addr: usize = prover.rng.gen::<usize>() % RAM_SIZE;
+                let addr = rand::random::<u32>() % (RAM_SIZE as u32);
                 let addr = F61p::try_from(addr as u128).unwrap();
                 let addr = prover.input_private(Some(addr.into())).unwrap();
 

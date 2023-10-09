@@ -103,7 +103,7 @@ where
         verifier: &mut DietMacAndCheeseVerifier<V, F, C>,
         addr: &[MacVerifier<F>],
     ) -> [MacVerifier<F>; SIZE_VALUE] {
-        debug_assert_eq!(addr.len(), self.space.dim_addr());
+        debug_assert_eq!(addr.len(), M::DIM_ADDR);
 
         // concatenate addr || value || challenge
         // commit to the old value
@@ -133,8 +133,8 @@ where
         addr: &[MacVerifier<F>; SIZE_ADDR],
         value: &[MacVerifier<F>; SIZE_VALUE],
     ) {
-        debug_assert_eq!(addr.len(), self.space.dim_addr());
-        debug_assert_eq!(value.len(), self.space.dim_value());
+        debug_assert_eq!(addr.len(), M::DIM_ADDR);
+        debug_assert_eq!(value.len(), M::DIM_VALUE);
 
         // sample challenge
         let mut flat = [Default::default(); SIZE_DIM];
@@ -162,11 +162,12 @@ where
         // remove every address from the bag
         for addr in self.space.enumerate() {
             let addr: Vec<_> = addr
-                .into_iter()
-                .map(|x| verifier.input_public(x).unwrap())
+                .as_ref()
+                .iter()
+                .map(|x| verifier.input_public(*x).unwrap())
                 .collect();
 
-            pre[..self.space.dim_addr()].copy_from_slice(&addr);
+            pre[..M::DIM_ADDR].copy_from_slice(&addr);
             self.wrs.push(pre.clone());
 
             self.remove(verifier, &addr);

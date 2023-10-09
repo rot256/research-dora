@@ -17,7 +17,7 @@ use crate::read_sieveir_phase2::BufRelation;
 use crate::text_reader::TextRelation;
 use crate::{backend_trait::BackendT, circuit_ir::FunctionBody};
 use crate::{backend_trait::PrimeBackendT, circuit_ir::ConvGate};
-use crate::{DietMacAndCheeseProver, DietMacAndCheeseVerifier};
+use crate::{ram, DietMacAndCheeseProver, DietMacAndCheeseVerifier};
 use eyre::{bail, ensure, Result};
 use generic_array::typenum::Unsigned;
 use log::{debug, info};
@@ -108,6 +108,31 @@ where
     }
 }
 
+pub trait BackendRamT: BackendT {
+    fn finalize(&mut self) -> Result<()>;
+
+    fn ram_read(&mut self, addr: &Self::Wire) -> Result<Self::Wire>;
+
+    fn ram_write(&mut self, addr: &Self::Wire, new: &Self::Wire) -> Result<()>;
+}
+
+impl<V: IsSubFieldOf<F40b>, C: AbstractChannel> BackendRamT for DietMacAndCheeseProver<V, F40b, C>
+where
+    <F40b as FiniteField>::PrimeField: IsSubFieldOf<V>,
+{
+    fn finalize(&mut self) -> Result<()> {
+        Ok(())
+    }
+
+    fn ram_read(&mut self, addr: &Self::Wire) -> Result<Self::Wire> {
+        unimplemented!()
+    }
+
+    fn ram_write(&mut self, addr: &Self::Wire, val: &Self::Wire) -> Result<()> {
+        unimplemented!()
+    }
+}
+
 impl<C: AbstractChannel> BackendConvT for DietMacAndCheeseProver<F2, F40b, C> {
     fn assert_conv_to_bits(&mut self, w: &Self::Wire) -> Result<Vec<MacBitGeneric>> {
         debug!("CONV_TO_BITS {:?}", w);
@@ -192,6 +217,7 @@ impl<E> EdabitsMap<E> {
 
 struct DietMacAndCheeseConvProver<FE: FiniteField, C: AbstractChannel> {
     dmc: DietMacAndCheeseProver<FE, FE, C>,
+    ram: ram::MemoryProver<FE, FE, C>,
     conv: ProverConv<FE>,
     dora: HashMap<usize, DoraState<FE, FE, C>>,
     edabits_map: EdabitsMap<EdabitsProver<FE>>,
@@ -220,6 +246,7 @@ impl<FE: PrimeFiniteField, C: AbstractChannel> DietMacAndCheeseConvProver<FE, C>
         Ok(DietMacAndCheeseConvProver {
             dmc,
             conv,
+            ram: Default::default(),
             dora: Default::default(),
             edabits_map: EdabitsMap::new(),
             dmc_f2: DietMacAndCheeseProver::<F2, F40b, C>::init_with_fcom(
@@ -287,7 +314,7 @@ impl<FE: PrimeFiniteField, C: AbstractChannel> BackendT for DietMacAndCheeseConv
     }
     fn finalize(&mut self) -> Result<()> {
         self.dmc.finalize()?;
-        self.dmc_f2.finalize()?;
+        BackendT::finalize(&mut self.dmc_f2)?;
         Ok(())
     }
     fn reset(&mut self) {
@@ -374,6 +401,20 @@ where
     clause_resolver: HashMap<F, usize>,
     // dora prover for this particular switch/mux
     dora: DoraProver<V, F, C>,
+}
+
+impl<FP: PrimeFiniteField, C: AbstractChannel> BackendRamT for DietMacAndCheeseConvProver<FP, C> {
+    fn finalize(&mut self) -> Result<()> {
+        self.ram.finalize(&mut self.dmc)
+    }
+
+    fn ram_read(&mut self, addr: &Self::Wire) -> Result<Self::Wire> {
+        self.ram.read(&mut self.dmc, addr)
+    }
+
+    fn ram_write(&mut self, addr: &Self::Wire, value: &Self::Wire) -> Result<()> {
+        self.ram.write(&mut self.dmc, addr, value)
+    }
 }
 
 // Note: The restriction to a primefield is not caused by Dora
@@ -545,10 +586,25 @@ impl<FE: PrimeFiniteField, C: AbstractChannel> BackendConvT for DietMacAndCheese
 struct DietMacAndCheeseConvVerifier<FE: FiniteField, C: AbstractChannel> {
     dmc: DietMacAndCheeseVerifier<FE, FE, C>,
     conv: VerifierConv<FE>,
+    ram: ram::MemoryVerifier<FE, FE, C>,
     dora: HashMap<usize, DoraVerifier<FE, FE, C>>,
     edabits_map: EdabitsMap<EdabitsVerifier<FE>>,
     dmc_f2: DietMacAndCheeseVerifier<F2, F40b, C>,
     no_batching: bool,
+}
+
+impl<FE: PrimeFiniteField, C: AbstractChannel> BackendRamT for DietMacAndCheeseConvVerifier<FE, C> {
+    fn finalize(&mut self) -> Result<()> {
+        self.ram.finalize(&mut self.dmc)
+    }
+
+    fn ram_read(&mut self, addr: &Self::Wire) -> Result<Self::Wire> {
+        self.ram.read(&mut self.dmc, addr)
+    }
+
+    fn ram_write(&mut self, addr: &Self::Wire, value: &Self::Wire) -> Result<()> {
+        self.ram.write(&mut self.dmc, addr, value)
+    }
 }
 
 impl<FE: PrimeFiniteField, C: AbstractChannel> DietMacAndCheeseConvVerifier<FE, C> {
@@ -572,6 +628,7 @@ impl<FE: PrimeFiniteField, C: AbstractChannel> DietMacAndCheeseConvVerifier<FE, 
         Ok(DietMacAndCheeseConvVerifier {
             dmc,
             conv,
+            ram: Default::default(),
             dora: Default::default(),
             edabits_map: EdabitsMap::new(),
             dmc_f2: DietMacAndCheeseVerifier::<F2, F40b, C>::init_with_fcom(

@@ -1,15 +1,23 @@
 use std::marker::PhantomData;
 
 use eyre::Result;
-use swanky_field::FiniteField;
+use scuttlebutt::AbstractChannel;
+use swanky_field::{FiniteField, IsSubFieldOf};
 
-use crate::backend_trait::BackendT;
+use crate::{
+    backend_trait::BackendT,
+    homcom::{MacProver, MacVerifier},
+    DietMacAndCheeseProver, DietMacAndCheeseVerifier,
+};
 
 mod perm;
 mod prover;
 mod tests;
 mod tx;
 mod verifier;
+
+use prover::Prover;
+use verifier::Verifier;
 
 const SEP: &[u8] = b"FS_RAM";
 
@@ -42,14 +50,13 @@ pub(super) fn collapse_vecs<'a, B: BackendT, const N: usize>(
 }
 
 pub trait MemorySpace<V> {
-    type Enum: Iterator<Item = Vec<V>>;
+    type Addr: AsRef<[V]>;
+    type Enum: Iterator<Item = Self::Addr>;
+
+    const DIM_ADDR: usize;
+    const DIM_VALUE: usize;
 
     fn enumerate(&self) -> Self::Enum;
-
-    fn dim_addr(&self) -> usize;
-
-    //
-    fn dim_value(&self) -> usize;
 }
 
 struct Bounded<F: FiniteField> {
@@ -58,19 +65,19 @@ struct Bounded<F: FiniteField> {
 }
 
 struct BoundedIter<F: FiniteField> {
-    current: F,
+    current: [F; 1],
     rem: usize,
 }
 
 impl<F: FiniteField> Iterator for BoundedIter<F> {
-    type Item = Vec<F>;
+    type Item = [F; 1];
 
     fn next(&mut self) -> Option<Self::Item> {
         if self.rem > 0 {
             let old = self.current;
-            self.current += F::ONE;
+            self.current[0] += F::ONE;
             self.rem -= 1;
-            Some(vec![old])
+            Some(old)
         } else {
             None
         }
@@ -87,20 +94,159 @@ impl<F: FiniteField> Bounded<F> {
 }
 
 impl<F: FiniteField> MemorySpace<F> for Bounded<F> {
+    type Addr = [F; 1];
     type Enum = BoundedIter<F>;
+
+    const DIM_ADDR: usize = 1;
+    const DIM_VALUE: usize = 1;
 
     fn enumerate(&self) -> Self::Enum {
         BoundedIter {
-            current: F::ZERO,
+            current: [F::ZERO],
             rem: self.bound,
         }
     }
+}
 
-    fn dim_addr(&self) -> usize {
-        1
+const RAM_SIZE: usize = PRE_ALLOC_MEM;
+const RAM_STEPS: usize = PRE_ALLOC_STEPS;
+
+pub struct MemoryProver<V: IsSubFieldOf<F>, F: FiniteField, C: AbstractChannel>
+where
+    F::PrimeField: IsSubFieldOf<V>,
+{
+    prover: Option<Prover<V, F, C, Bounded<V>, 1, 1, 3, 2, 4>>,
+}
+
+impl<V: IsSubFieldOf<F>, F: FiniteField, C: AbstractChannel> Default for MemoryProver<V, F, C>
+where
+    F::PrimeField: IsSubFieldOf<V>,
+{
+    fn default() -> Self {
+        Self { prover: None }
+    }
+}
+
+impl<V: IsSubFieldOf<F>, F: FiniteField, C: AbstractChannel> MemoryProver<V, F, C>
+where
+    F::PrimeField: IsSubFieldOf<V>,
+{
+    pub fn read(
+        &mut self,
+        dmc: &mut DietMacAndCheeseProver<V, F, C>,
+        addr: &MacProver<V, F>,
+    ) -> Result<MacProver<V, F>> {
+        match self.prover.as_mut() {
+            Some(prover) => {
+                let value = prover.remove(dmc, &[*addr]);
+                prover.insert(dmc, &[*addr], &value);
+                Ok(value[0])
+            }
+            None => {
+                let ram = Prover::<V, F, _, _, 1, 1, 3, 2, 4>::new(dmc, Bounded::new(RAM_SIZE));
+                self.prover = Some(ram);
+                self.read(dmc, addr)
+            }
+        }
     }
 
-    fn dim_value(&self) -> usize {
-        1
+    pub fn write(
+        &mut self,
+        dmc: &mut DietMacAndCheeseProver<V, F, C>,
+        addr: &MacProver<V, F>,
+        value: &MacProver<V, F>,
+    ) -> Result<()> {
+        match self.prover.as_mut() {
+            Some(prover) => {
+                prover.remove(dmc, &[*addr]);
+                prover.insert(dmc, &[*addr], &[*value]);
+                Ok(())
+            }
+            None => {
+                let ram = Prover::<V, F, _, _, 1, 1, 3, 2, 4>::new(dmc, Bounded::new(RAM_SIZE));
+                self.prover = Some(ram);
+                self.write(dmc, addr, value)
+            }
+        }
+    }
+
+    pub fn finalize(&mut self, dmc: &mut DietMacAndCheeseProver<V, F, C>) -> Result<()> {
+        match self.prover.take() {
+            Some(prover) => {
+                prover.finalize(dmc);
+                Ok(())
+            }
+            None => Ok(()),
+        }
+    }
+}
+
+pub struct MemoryVerifier<V: IsSubFieldOf<F>, F: FiniteField, C: AbstractChannel>
+where
+    F::PrimeField: IsSubFieldOf<V>,
+{
+    verifier: Option<Verifier<V, F, C, Bounded<V>, 1, 1, 3, 2, 4>>,
+}
+
+impl<V: IsSubFieldOf<F>, F: FiniteField, C: AbstractChannel> Default for MemoryVerifier<V, F, C>
+where
+    F::PrimeField: IsSubFieldOf<V>,
+{
+    fn default() -> Self {
+        Self { verifier: None }
+    }
+}
+
+impl<V: IsSubFieldOf<F>, F: FiniteField, C: AbstractChannel> MemoryVerifier<V, F, C>
+where
+    F::PrimeField: IsSubFieldOf<V>,
+{
+    pub fn read(
+        &mut self,
+        dmc: &mut DietMacAndCheeseVerifier<V, F, C>,
+        addr: &MacVerifier<F>,
+    ) -> Result<MacVerifier<F>> {
+        match self.verifier.as_mut() {
+            Some(verifier) => {
+                let value = verifier.remove(dmc, &[*addr]);
+                verifier.insert(dmc, &[*addr], &value);
+                Ok(value[0])
+            }
+            None => {
+                let ram = Verifier::<V, F, _, _, 1, 1, 3, 2, 4>::new(dmc, Bounded::new(RAM_SIZE));
+                self.verifier = Some(ram);
+                self.read(dmc, addr)
+            }
+        }
+    }
+
+    pub fn write(
+        &mut self,
+        dmc: &mut DietMacAndCheeseVerifier<V, F, C>,
+        addr: &MacVerifier<F>,
+        value: &MacVerifier<F>,
+    ) -> Result<()> {
+        match self.verifier.as_mut() {
+            Some(verifier) => {
+                verifier.remove(dmc, &[*addr]);
+                verifier.insert(dmc, &[*addr], &[*value]);
+                Ok(())
+            }
+            None => {
+                let ram = Verifier::<V, F, _, _, 1, 1, 3, 2, 4>::new(dmc, Bounded::new(RAM_SIZE));
+                self.verifier = Some(ram);
+                self.write(dmc, addr, value)
+            }
+        }
+    }
+
+    pub fn finalize(&mut self, dmc: &mut DietMacAndCheeseVerifier<V, F, C>) -> Result<()> {
+        match self.verifier.take() {
+            Some(verifier) => {
+                verifier.finalize(dmc);
+                Ok(())
+            }
+            None => Ok(()),
+        }
     }
 }
