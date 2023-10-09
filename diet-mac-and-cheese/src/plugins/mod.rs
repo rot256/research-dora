@@ -43,6 +43,8 @@ pub(crate) enum PluginExecution {
     Disjunction(DisjunctionBody),
     /// The plugin implements a mux.
     Mux(MuxVersion),
+    ///
+    Ram(RamV0),
 }
 
 impl PluginExecution {
@@ -53,6 +55,7 @@ impl PluginExecution {
             PluginExecution::PermutationCheck(_)
             | PluginExecution::Disjunction(_)
             | PluginExecution::Mux(_) => None,
+            PluginExecution::Ram(_) => None,
         }
     }
 
@@ -74,6 +77,11 @@ impl PluginExecution {
             PluginExecution::Mux(plugin) => {
                 let mut mapping = TypeIdMapping::default();
                 mapping.set(plugin.type_id());
+                mapping
+            }
+            PluginExecution::Ram(plugin) => {
+                let mut mapping = TypeIdMapping::default();
+                mapping.set(plugin.field());
                 mapping
             }
         }
@@ -154,3 +162,7 @@ mod vectors_v1;
 pub(crate) use vectors_v1::VectorsV1;
 
 pub use self::dora::DisjunctionBody;
+use self::ram::RamV0;
+
+mod ram;
+pub use ram::RamOperation;

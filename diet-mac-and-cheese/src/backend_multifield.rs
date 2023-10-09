@@ -12,7 +12,7 @@ use crate::edabits::{EdabitsProver, EdabitsVerifier, ProverConv, VerifierConv};
 use crate::homcom::{FComProver, FComVerifier};
 use crate::homcom::{MacProver, MacVerifier};
 use crate::memory::Memory;
-use crate::plugins::{DisjunctionBody, PluginExecution};
+use crate::plugins::{DisjunctionBody, PluginExecution, RamOperation};
 use crate::read_sieveir_phase2::BufRelation;
 use crate::text_reader::TextRelation;
 use crate::{backend_trait::BackendT, circuit_ir::FunctionBody};
@@ -109,7 +109,7 @@ where
 }
 
 pub trait BackendRamT: BackendT {
-    fn finalize(&mut self) -> Result<()>;
+    fn finalize_ram(&mut self) -> Result<()>;
 
     fn ram_read(&mut self, addr: &Self::Wire) -> Result<Self::Wire>;
 
@@ -120,7 +120,24 @@ impl<V: IsSubFieldOf<F40b>, C: AbstractChannel> BackendRamT for DietMacAndCheese
 where
     <F40b as FiniteField>::PrimeField: IsSubFieldOf<V>,
 {
-    fn finalize(&mut self) -> Result<()> {
+    fn finalize_ram(&mut self) -> Result<()> {
+        Ok(())
+    }
+
+    fn ram_read(&mut self, addr: &Self::Wire) -> Result<Self::Wire> {
+        unimplemented!()
+    }
+
+    fn ram_write(&mut self, addr: &Self::Wire, val: &Self::Wire) -> Result<()> {
+        unimplemented!()
+    }
+}
+
+impl<V: IsSubFieldOf<F40b>, C: AbstractChannel> BackendRamT for DietMacAndCheeseVerifier<V, F40b, C>
+where
+    <F40b as FiniteField>::PrimeField: IsSubFieldOf<V>,
+{
+    fn finalize_ram(&mut self) -> Result<()> {
         Ok(())
     }
 
@@ -404,7 +421,7 @@ where
 }
 
 impl<FP: PrimeFiniteField, C: AbstractChannel> BackendRamT for DietMacAndCheeseConvProver<FP, C> {
-    fn finalize(&mut self) -> Result<()> {
+    fn finalize_ram(&mut self) -> Result<()> {
         self.ram.finalize(&mut self.dmc)
     }
 
@@ -594,7 +611,7 @@ struct DietMacAndCheeseConvVerifier<FE: FiniteField, C: AbstractChannel> {
 }
 
 impl<FE: PrimeFiniteField, C: AbstractChannel> BackendRamT for DietMacAndCheeseConvVerifier<FE, C> {
-    fn finalize(&mut self) -> Result<()> {
+    fn finalize_ram(&mut self) -> Result<()> {
         self.ram.finalize(&mut self.dmc)
     }
 
@@ -950,7 +967,7 @@ where
     }
 }
 
-impl<B: BackendConvT + BackendDisjunctionT> EvaluatorT for EvaluatorSingle<B>
+impl<B: BackendConvT + BackendDisjunctionT + BackendRamT> EvaluatorT for EvaluatorSingle<B>
 where
     B::Wire: Default + Clone + Copy + Debug,
 {
@@ -1109,6 +1126,39 @@ where
             PluginExecution::Mux(plugin) => {
                 plugin.execute::<B>(&mut self.backend, &mut self.memory)?
             }
+            PluginExecution::Ram(plugin) => match plugin.operation() {
+                RamOperation::Read => {
+                    assert_eq!(inputs.len(), 1);
+                    assert_eq!(outputs.len(), 1);
+
+                    // retrieve memory at address
+                    let value = {
+                        let mut addr = copy_mem(&self.memory, inputs[0]);
+                        let addr = addr.next().unwrap();
+                        self.backend.ram_read(addr)?
+                    };
+
+                    // write to output
+                    let (w0, w1) = outputs[0];
+                    assert_eq!(w0, w1);
+                    self.memory.set(w0, &value);
+                }
+                RamOperation::Write => {
+                    assert_eq!(inputs.len(), 2);
+                    assert_eq!(outputs.len(), 0);
+
+                    // retrieve address
+                    let mut addr = copy_mem(&self.memory, inputs[0]);
+                    let addr = addr.next().unwrap();
+
+                    // retrieve value
+                    let mut value = copy_mem(&self.memory, inputs[1]);
+                    let value = value.next().unwrap();
+
+                    // write back to memory
+                    self.backend.ram_write(addr, value)?;
+                }
+            },
             _ => bail!("Plugin {plugin:?} is unsupported"),
         };
         Ok(())
@@ -1206,6 +1256,7 @@ where
         debug!("Finalize in EvaluatorSingle");
         self.backend.finalize_conv()?;
         self.backend.finalize_disj()?;
+        self.backend.finalize_ram()?;
         self.backend.finalize()?;
         Ok(())
     }
@@ -1658,6 +1709,13 @@ impl<C: AbstractChannel + 'static> EvaluatorCirc<C> {
                         &body.execution(),
                     )?;
                     self.callframe_end(func);
+                }
+                PluginExecution::Ram(plugin) => {
+                    self.eval[plugin.field() as usize].plugin_call_gate(
+                        out_ranges,
+                        in_ranges,
+                        &body.execution(),
+                    )?;
                 }
             },
         };
