@@ -1,0 +1,32 @@
+version 2.0.0;
+circuit;
+@type field 2305843009213693951;
+@begin
+    @function(ram_read, @out: 0:1, @in: 0:1)
+        @plugin(
+            galois_ram_v0,
+            read
+        );
+
+    @function(ram_write, @in: 0:1, 0:1)
+        @plugin(
+            galois_ram_v0,
+            write
+        );
+
+
+    @new(0: $0 ... $3);
+   
+    // cond5: output should be 88
+
+    $0 <- @private(0);
+    $1 <- @private(0);
+    $2 <- @private(0);
+    $3 <- @private(0);
+    
+    $5 <- @call(ram_read, $0);
+    $6 <- @call(ram_read, $2);
+
+    $7 <- @add($5, $6);
+    @call(ram_write, $0, $7);
+@end

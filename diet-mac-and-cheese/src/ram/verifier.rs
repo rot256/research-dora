@@ -102,7 +102,7 @@ where
         &mut self,
         verifier: &mut DietMacAndCheeseVerifier<V, F, C>,
         addr: &[MacVerifier<F>],
-    ) -> [MacVerifier<F>; SIZE_VALUE] {
+    ) -> Result<[MacVerifier<F>; SIZE_VALUE]> {
         debug_assert_eq!(addr.len(), M::DIM_ADDR);
 
         // concatenate addr || value || challenge
@@ -124,7 +124,7 @@ where
 
         // add to reads
         self.rds.push(flat);
-        flat[SIZE_ADDR..SIZE_ADDR + SIZE_VALUE].try_into().unwrap()
+        Ok(flat[SIZE_ADDR..SIZE_ADDR + SIZE_VALUE].try_into().unwrap())
     }
 
     pub fn insert(
@@ -132,7 +132,7 @@ where
         verifier: &mut DietMacAndCheeseVerifier<V, F, C>,
         addr: &[MacVerifier<F>; SIZE_ADDR],
         value: &[MacVerifier<F>; SIZE_VALUE],
-    ) {
+    ) -> Result<()> {
         debug_assert_eq!(addr.len(), M::DIM_ADDR);
         debug_assert_eq!(value.len(), M::DIM_VALUE);
 
@@ -153,9 +153,10 @@ where
 
         // add to list of writes
         self.wrs.push(flat);
+        Ok(())
     }
 
-    pub fn finalize(mut self, verifier: &mut DietMacAndCheeseVerifier<V, F, C>) {
+    pub fn finalize(mut self, verifier: &mut DietMacAndCheeseVerifier<V, F, C>) -> Result<()> {
         // insert initial values into the bag
         let mut pre = [V::default(); SIZE_DIM].map(|x| verifier.input_public(x).unwrap());
 
@@ -169,18 +170,17 @@ where
 
             pre[..M::DIM_ADDR].copy_from_slice(&addr);
             self.wrs.push(pre.clone());
-
-            self.remove(verifier, &addr);
+            self.remove(verifier, &addr)?;
         }
 
         let chal_cmbn = V::random(&mut verifier.rng);
         let chal_perm1 = V::random(&mut verifier.rng);
-        verifier.channel.write_serializable(&chal_cmbn).unwrap();
-        verifier.channel.write_serializable(&chal_perm1).unwrap();
-        verifier.channel.flush().unwrap();
+        verifier.channel.write_serializable(&chal_cmbn)?;
+        verifier.channel.write_serializable(&chal_perm1)?;
+        verifier.channel.flush()?;
 
-        let wrs = collapse_vecs(verifier, &self.wrs, chal_cmbn).unwrap();
-        let rds = collapse_vecs(verifier, &self.rds, chal_cmbn).unwrap();
+        let wrs = collapse_vecs(verifier, &self.wrs, chal_cmbn)?;
+        let rds = collapse_vecs(verifier, &self.rds, chal_cmbn)?;
 
         self.wrs.clear();
         self.wrs.shrink_to_fit();
@@ -190,7 +190,6 @@ where
 
         // run permutation check
         assert_eq!(self.rds.len(), self.wrs.len());
-
-        permutation(verifier, chal_perm1, &wrs, &rds).unwrap();
+        permutation(verifier, chal_perm1, &wrs, &rds)
     }
 }

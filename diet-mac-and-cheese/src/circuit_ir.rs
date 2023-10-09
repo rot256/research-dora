@@ -3,7 +3,7 @@
 
 use crate::{
     fields::modulus_to_type_id,
-    plugins::{DisjunctionV0, Plugin, PluginBody, PluginType},
+    plugins::{DisjunctionV0, Plugin, PluginBody, PluginType, RamV0},
 };
 use eyre::{bail, eyre, Result};
 use log::debug;
@@ -482,6 +482,14 @@ impl FuncDecl {
                 fun_store,
             )?,
             DisjunctionV0::NAME => DisjunctionV0::instantiate(
+                &operation,
+                &params,
+                &output_counts,
+                &input_counts,
+                type_store,
+                fun_store,
+            )?,
+            RamV0::NAME => RamV0::instantiate(
                 &operation,
                 &params,
                 &output_counts,

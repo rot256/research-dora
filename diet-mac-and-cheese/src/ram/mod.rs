@@ -21,8 +21,14 @@ use verifier::Verifier;
 
 const SEP: &[u8] = b"FS_RAM";
 
-const PRE_ALLOC_MEM: usize = 1 << 20;
-const PRE_ALLOC_STEPS: usize = 1 << 23;
+// Expected memory size/number of steps.
+// Used to compute capacities of large vectors
+// (affects efficiency not correctness)
+const RAM_SIZE: usize = 1 << 20;
+const RAM_STEPS: usize = 1 << 23;
+
+const PRE_ALLOC_MEM: usize = RAM_SIZE;
+const PRE_ALLOC_STEPS: usize = RAM_STEPS + RAM_SIZE;
 
 pub fn combine<'a, B: BackendT>(
     backend: &'a mut B,
@@ -55,6 +61,8 @@ pub trait MemorySpace<V> {
 
     const DIM_ADDR: usize;
     const DIM_VALUE: usize;
+
+    fn size(&self) -> usize;
 
     fn enumerate(&self) -> Self::Enum;
 }
@@ -100,6 +108,10 @@ impl<F: FiniteField> MemorySpace<F> for Bounded<F> {
     const DIM_ADDR: usize = 1;
     const DIM_VALUE: usize = 1;
 
+    fn size(&self) -> usize {
+        self.bound
+    }
+
     fn enumerate(&self) -> Self::Enum {
         BoundedIter {
             current: [F::ZERO],
@@ -107,9 +119,6 @@ impl<F: FiniteField> MemorySpace<F> for Bounded<F> {
         }
     }
 }
-
-const RAM_SIZE: usize = PRE_ALLOC_MEM;
-const RAM_STEPS: usize = PRE_ALLOC_STEPS;
 
 pub struct MemoryProver<V: IsSubFieldOf<F>, F: FiniteField, C: AbstractChannel>
 where
@@ -138,8 +147,8 @@ where
     ) -> Result<MacProver<V, F>> {
         match self.prover.as_mut() {
             Some(prover) => {
-                let value = prover.remove(dmc, &[*addr]);
-                prover.insert(dmc, &[*addr], &value);
+                let value = prover.remove(dmc, &[*addr])?;
+                prover.insert(dmc, &[*addr], &value)?;
                 Ok(value[0])
             }
             None => {
@@ -158,8 +167,8 @@ where
     ) -> Result<()> {
         match self.prover.as_mut() {
             Some(prover) => {
-                prover.remove(dmc, &[*addr]);
-                prover.insert(dmc, &[*addr], &[*value]);
+                prover.remove(dmc, &[*addr])?;
+                prover.insert(dmc, &[*addr], &[*value])?;
                 Ok(())
             }
             None => {
@@ -172,10 +181,7 @@ where
 
     pub fn finalize(&mut self, dmc: &mut DietMacAndCheeseProver<V, F, C>) -> Result<()> {
         match self.prover.take() {
-            Some(prover) => {
-                prover.finalize(dmc);
-                Ok(())
-            }
+            Some(prover) => prover.finalize(dmc),
             None => Ok(()),
         }
     }
@@ -208,8 +214,8 @@ where
     ) -> Result<MacVerifier<F>> {
         match self.verifier.as_mut() {
             Some(verifier) => {
-                let value = verifier.remove(dmc, &[*addr]);
-                verifier.insert(dmc, &[*addr], &value);
+                let value = verifier.remove(dmc, &[*addr])?;
+                verifier.insert(dmc, &[*addr], &value)?;
                 Ok(value[0])
             }
             None => {
@@ -228,8 +234,8 @@ where
     ) -> Result<()> {
         match self.verifier.as_mut() {
             Some(verifier) => {
-                verifier.remove(dmc, &[*addr]);
-                verifier.insert(dmc, &[*addr], &[*value]);
+                verifier.remove(dmc, &[*addr])?;
+                verifier.insert(dmc, &[*addr], &[*value])?;
                 Ok(())
             }
             None => {
@@ -242,10 +248,7 @@ where
 
     pub fn finalize(&mut self, dmc: &mut DietMacAndCheeseVerifier<V, F, C>) -> Result<()> {
         match self.verifier.take() {
-            Some(verifier) => {
-                verifier.finalize(dmc);
-                Ok(())
-            }
+            Some(verifier) => verifier.finalize(dmc),
             None => Ok(()),
         }
     }

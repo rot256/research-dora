@@ -90,7 +90,7 @@ where
         &mut self,
         prover: &mut DietMacAndCheeseProver<V, F, C>,
         addr: &[MacProver<V, F>; SIZE_ADDR],
-    ) -> [MacProver<V, F>; SIZE_VALUE] {
+    ) -> Result<[MacProver<V, F>; SIZE_VALUE]> {
         // retrieve old value in memory (destructive)
         let val_addr = addr.map(|e| e.value());
         let old = self
@@ -118,7 +118,7 @@ where
 
         // add to reads
         self.rds.push(flat);
-        flat[SIZE_ADDR..SIZE_ADDR + SIZE_VALUE].try_into().unwrap()
+        Ok(flat[SIZE_ADDR..SIZE_ADDR + SIZE_VALUE].try_into().unwrap())
     }
 
     pub fn insert(
@@ -126,14 +126,14 @@ where
         prover: &mut DietMacAndCheeseProver<V, F, C>,
         addr: &[MacProver<V, F>; SIZE_ADDR],
         value: &[MacProver<V, F>; SIZE_VALUE],
-    ) {
+    ) -> Result<()> {
         debug_assert_eq!(addr.len(), M::DIM_ADDR);
         debug_assert_eq!(value.len(), M::DIM_VALUE);
 
         // store value || challenge in local map
         match self.memory.entry(addr.map(|m| m.value())) {
             Entry::Occupied(_) => {
-                panic!("double entry, must remove entry first")
+                unreachable!("double entry, must remove entry first: this is a logic error")
             }
             Entry::Vacant(entry) => {
                 // sample challenge
@@ -152,46 +152,49 @@ where
                 entry.insert(store.map(|m| m.value()));
 
                 // add to list of writes
-                self.wrs.push(flat);
+                Ok(self.wrs.push(flat))
             }
         }
     }
 
-    pub fn finalize(mut self, prover: &mut DietMacAndCheeseProver<V, F, C>) {
+    pub fn finalize(mut self, prover: &mut DietMacAndCheeseProver<V, F, C>) -> Result<()> {
+        log::info!(
+            "finalizing ram: {} operation, memory-size: {}",
+            self.wrs.len(),
+            self.space.size()
+        );
+
         // insert initial values into the bag
         let mut pre: [MacProver<V, F>; SIZE_DIM] = commit_pub(&[V::default(); SIZE_DIM]);
 
         // remove every address from the bag
         for addr in self.space.enumerate() {
             let addr = commit_pub(&addr.as_ref().try_into().unwrap());
-
             pre[..M::DIM_ADDR].copy_from_slice(&addr);
             self.wrs.push(pre.clone());
-
-            self.remove(prover, &addr);
+            self.remove(prover, &addr)?;
         }
 
         // run permutation check
         assert_eq!(self.rds.len(), self.wrs.len());
 
-        prover.channel.flush().unwrap();
-        let chal_cmbn = prover.channel.read_serializable::<V>().unwrap();
-        let chal_perm1 = prover.channel.read_serializable::<V>().unwrap();
+        prover.channel.flush()?;
+        let chal_cmbn = prover.channel.read_serializable::<V>()?;
+        let chal_perm1 = prover.channel.read_serializable::<V>()?;
 
-        println!("collapse 1");
-        let wrs = collapse_vecs(prover, &self.wrs, chal_cmbn).unwrap();
+        log::debug!("collapse wrs");
+        let wrs = collapse_vecs(prover, &self.wrs, chal_cmbn)?;
 
-        println!("collapse 2");
-        let rds = collapse_vecs(prover, &self.rds, chal_cmbn).unwrap();
+        log::debug!("collapse rds");
+        let rds = collapse_vecs(prover, &self.rds, chal_cmbn)?;
 
-        println!("clear");
         self.wrs.clear();
         self.wrs.shrink_to_fit();
 
         self.rds.clear();
         self.rds.shrink_to_fit();
 
-        println!("permutation");
-        permutation(prover, chal_perm1, &wrs, &rds).unwrap();
+        log::debug!("permutation check");
+        permutation(prover, chal_perm1, &wrs, &rds)
     }
 }

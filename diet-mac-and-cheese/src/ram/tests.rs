@@ -14,10 +14,8 @@ use crate::{
     DietMacAndCheeseProver, DietMacAndCheeseVerifier,
 };
 
-use super::{verifier::Verifier, PRE_ALLOC_MEM, PRE_ALLOC_STEPS};
+use super::{verifier::Verifier, RAM_SIZE, RAM_STEPS};
 
-const RAM_SIZE: usize = PRE_ALLOC_MEM;
-const RAM_STEPS: usize = PRE_ALLOC_STEPS;
 const REPEATS: usize = 5;
 
 #[test]
@@ -51,11 +49,11 @@ fn test_ram() {
                 let addr = F61p::try_from(addr as u128).unwrap();
                 let addr = prover.input_private(Some(addr.into())).unwrap();
 
-                let value = ram.remove(&mut prover, &[addr]);
+                let value = ram.remove(&mut prover, &[addr]).unwrap();
 
-                ram.insert(&mut prover, &[addr], &value);
+                ram.insert(&mut prover, &[addr], &value).unwrap();
             }
-            ram.finalize(&mut prover);
+            ram.finalize(&mut prover).unwrap();
         }
 
         prover.finalize().unwrap();
@@ -85,8 +83,8 @@ fn test_ram() {
             );
             for _i in 0..RAM_STEPS {
                 let addr = verifier.input_private(None).unwrap();
-                let value = ram.remove(&mut verifier, &[addr]);
-                ram.insert(&mut verifier, &[addr], &value)
+                let value = ram.remove(&mut verifier, &[addr]).unwrap();
+                ram.insert(&mut verifier, &[addr], &value).unwrap();
             }
             ram.finalize(&mut verifier);
         }

@@ -162,7 +162,6 @@ mod vectors_v1;
 pub(crate) use vectors_v1::VectorsV1;
 
 pub use self::dora::DisjunctionBody;
-use self::ram::RamV0;
 
 mod ram;
-pub use ram::RamOperation;
+pub(crate) use ram::{RamOperation, RamV0};
