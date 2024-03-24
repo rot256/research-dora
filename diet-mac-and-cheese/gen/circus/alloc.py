@@ -27,7 +27,7 @@ class Namespace:
         self.gates = []
 
         self.start = start
-        self.top = None
+        self.top = start
 
     def _del(self, r):
         n = r.stop - r.start
@@ -125,10 +125,7 @@ class Namespace:
 
         # keep maxium index alloced
 
-        if self.top is None:
-            self.top = i2
-        else:
-            self.top = max(self.top, i2)
+        self.top = max(self.top, i2)
 
         return range(i1, i2)
 
