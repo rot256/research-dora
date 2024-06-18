@@ -1,0 +1,235 @@
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+warning: unused import: `HashMap`
+ --> diet-mac-and-cheese/src/ram/prover.rs:4:36
+  |
+4 |     collections::{hash_map::Entry, HashMap},
+  |                                    ^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused import: `AesRng`
+  --> diet-mac-and-cheese/src/ram/prover.rs:10:71
+   |
+10 | use scuttlebutt::{serialization::SequenceSerializer, AbstractChannel, AesRng};
+   |                                                                       ^^^^^^
+
+warning: unused import: `FComProver`
+  --> diet-mac-and-cheese/src/ram/prover.rs:16:14
+   |
+16 |     homcom::{FComProver, MacProver},
+   |              ^^^^^^^^^^
+
+warning: unused import: `generic_array::typenum::Unsigned`
+  --> diet-mac-and-cheese/src/ram/prover.rs:21:5
+   |
+21 | use generic_array::typenum::Unsigned;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `BufReader`, `BufWriter`, `TcpListener`, `TcpStream`, `os::unix::net::UnixStream`
+ --> diet-mac-and-cheese/src/ram/tests.rs:2:10
+  |
+2 |     io::{BufReader, BufWriter},
+  |          ^^^^^^^^^  ^^^^^^^^^
+3 |     net::{TcpListener, TcpStream},
+  |           ^^^^^^^^^^^  ^^^^^^^^^
+4 |     os::unix::net::UnixStream,
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `LPN_EXTEND_LARGE`, `LPN_EXTEND_MEDIUM`, `LPN_EXTEND_SMALL`, `LPN_SETUP_LARGE`, `LPN_SETUP_MEDIUM`, `LPN_SETUP_SMALL`
+ --> diet-mac-and-cheese/src/ram/tests.rs:8:5
+  |
+8 |     LPN_EXTEND_LARGE, LPN_EXTEND_MEDIUM, LPN_EXTEND_SMALL, LPN_SETUP_LARGE, LPN_SETUP_MEDIUM,
+  |     ^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^
+9 |     LPN_SETUP_SMALL,
+  |     ^^^^^^^^^^^^^^^
+
+warning: unused imports: `Rng`, `SeedableRng`
+  --> diet-mac-and-cheese/src/ram/tests.rs:11:12
+   |
+11 | use rand::{Rng, SeedableRng};
+   |            ^^^  ^^^^^^^^^^^
+
+warning: unused imports: `AesRng`, `Channel`, `SyncChannel`, `TrackChannel`
+  --> diet-mac-and-cheese/src/ram/tests.rs:12:19
+   |
+12 | use scuttlebutt::{AesRng, Channel, SyncChannel, TrackChannel};
+   |                   ^^^^^^  ^^^^^^^  ^^^^^^^^^^^  ^^^^^^^^^^^^
+
+warning: unused import: `swanky_field_f61p::F61p`
+  --> diet-mac-and-cheese/src/ram/tests.rs:13:5
+   |
+13 | use swanky_field_f61p::F61p;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `Bounded`, `DietMacAndCheeseProver`, `DietMacAndCheeseVerifier`, `backend_trait::BackendT`, `prover::Prover`
+  --> diet-mac-and-cheese/src/ram/tests.rs:16:5
+   |
+16 |     backend_trait::BackendT,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^
+17 |     ram::{prover::Prover, Bounded},
+   |           ^^^^^^^^^^^^^^  ^^^^^^^
+18 |     DietMacAndCheeseProver, DietMacAndCheeseVerifier,
+   |     ^^^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `RAM_SIZE`, `RAM_STEPS`, `verifier::Verifier`
+  --> diet-mac-and-cheese/src/ram/tests.rs:21:13
+   |
+21 | use super::{verifier::Verifier, RAM_SIZE, RAM_STEPS};
+   |             ^^^^^^^^^^^^^^^^^^  ^^^^^^^^  ^^^^^^^^^
+
+warning: unused imports: `HashMap`, `hash_map::Entry`
+ --> diet-mac-and-cheese/src/ram/verifier.rs:4:19
+  |
+4 |     collections::{hash_map::Entry, HashMap},
+  |                   ^^^^^^^^^^^^^^^  ^^^^^^^
+
+warning: unused import: `DietMacAndCheeseProver`
+  --> diet-mac-and-cheese/src/ram/verifier.rs:17:5
+   |
+17 |     DietMacAndCheeseProver, DietMacAndCheeseVerifier,
+   |     ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `generic_array::typenum::Unsigned`
+  --> diet-mac-and-cheese/src/ram/verifier.rs:20:5
+   |
+20 | use generic_array::typenum::Unsigned;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `serialization::SequenceSerializer`
+  --> diet-mac-and-cheese/src/ram/prover.rs:10:19
+   |
+10 | use scuttlebutt::{serialization::SequenceSerializer, AbstractChannel, AesRng};
+   |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused variable: `addr`
+   --> diet-mac-and-cheese/src/backend_multifield.rs:127:28
+    |
+127 |     fn ram_read(&mut self, addr: &Self::Wire) -> Result<Self::Wire> {
+    |                            ^^^^ help: if this is intentional, prefix it with an underscore: `_addr`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `addr`
+   --> diet-mac-and-cheese/src/backend_multifield.rs:131:29
+    |
+131 |     fn ram_write(&mut self, addr: &Self::Wire, val: &Self::Wire) -> Result<()> {
+    |                             ^^^^ help: if this is intentional, prefix it with an underscore: `_addr`
+
+warning: unused variable: `val`
+   --> diet-mac-and-cheese/src/backend_multifield.rs:131:48
+    |
+131 |     fn ram_write(&mut self, addr: &Self::Wire, val: &Self::Wire) -> Result<()> {
+    |                                                ^^^ help: if this is intentional, prefix it with an underscore: `_val`
+
+warning: unused variable: `addr`
+   --> diet-mac-and-cheese/src/backend_multifield.rs:144:28
+    |
+144 |     fn ram_read(&mut self, addr: &Self::Wire) -> Result<Self::Wire> {
+    |                            ^^^^ help: if this is intentional, prefix it with an underscore: `_addr`
+
+warning: unused variable: `addr`
+   --> diet-mac-and-cheese/src/backend_multifield.rs:148:29
+    |
+148 |     fn ram_write(&mut self, addr: &Self::Wire, val: &Self::Wire) -> Result<()> {
+    |                             ^^^^ help: if this is intentional, prefix it with an underscore: `_addr`
+
+warning: unused variable: `val`
+   --> diet-mac-and-cheese/src/backend_multifield.rs:148:48
+    |
+148 |     fn ram_write(&mut self, addr: &Self::Wire, val: &Self::Wire) -> Result<()> {
+    |                                                ^^^ help: if this is intentional, prefix it with an underscore: `_val`
+
+warning: unused variable: `cnt`
+  --> diet-mac-and-cheese/src/plugins/ram.rs:48:19
+   |
+48 |         for (typ, cnt) in input_counts.into_iter().copied() {
+   |                   ^^^ help: if this is intentional, prefix it with an underscore: `_cnt`
+
+warning: `diet-mac-and-cheese` (lib) generated 22 warnings (run `cargo fix --lib -p diet-mac-and-cheese` to apply 21 suggestions)
+    Finished release [optimized + debuginfo] target(s) in 0.10s
+     Running `/home/rot256/src/swanky-dora/target/release/dietmc_0p --text --lpn medium --relation benchmarks/branches_9999999795200000_50000_clauses_8_gates_512/relation.txt --instance benchmarks/branches_9999999795200000_50000_clauses_8_gates_512/public.txt --connection-addr '127.0.0.1:7876' prover --witness benchmarks/branches_9999999795200000_50000_clauses_8_gates_512/private.txt`
+ 2023-10-15T19:49:29.687Z INFO  dietmc_0p > prover mode
+ 2023-10-15T19:49:29.687Z INFO  dietmc_0p > addr: "127.0.0.1:7876"
+ 2023-10-15T19:49:29.687Z INFO  dietmc_0p > lpn: Medium
+ 2023-10-15T19:49:29.687Z INFO  dietmc_0p > instance: "benchmarks/branches_9999999795200000_50000_clauses_8_gates_512/public.txt"
+ 2023-10-15T19:49:29.687Z INFO  dietmc_0p > text format: true
+ 2023-10-15T19:49:29.687Z INFO  dietmc_0p > relation: "benchmarks/branches_9999999795200000_50000_clauses_8_gates_512/relation.txt"
+ 2023-10-15T19:49:29.687Z INFO  dietmc_0p > Loaded idx:0 field:[255, 255, 255, 255, 255, 255, 255, 31] file:"benchmarks/branches_9999999795200000_50000_clauses_8_gates_512/public.txt" num public instances:1
+ 2023-10-15T19:49:29.687Z INFO  dietmc_0p > witness: "benchmarks/branches_9999999795200000_50000_clauses_8_gates_512/private.txt"
+ 2023-10-15T19:49:29.691Z INFO  dietmc_0p > Loaded idx:0 field:[97, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255] file:"benchmarks/branches_9999999795200000_50000_clauses_8_gates_512/private.txt" num public instances:50100
+ 2023-10-15T19:49:29.692Z INFO  dietmc_0p > time reading ins/wit/rel: 4.660783ms
+ 2023-10-15T19:49:37.448Z INFO  diet_mac_and_cheese::backend_multifield > loading field F128p
+ 2023-10-15T19:51:18.655Z INFO  dietmc_0p                               > init time: 108.762569557s
+ 2023-10-15T19:51:18.658Z INFO  diet_mac_and_cheese::text_reader        > function "f0" args_size:Some(200) body_max:Some(550) type_ids:[0]
+ 2023-10-15T19:51:18.658Z INFO  diet_mac_and_cheese::text_reader        > plugin "f1" args_size:Some(201) body_max:None type_ids:[0]
+ 2023-10-15T19:51:38.654Z INFO  diet_mac_and_cheese::backend            > inp:3072        witn:3172        mul:0           czero:0          
+ 2023-10-15T19:51:43.856Z INFO  diet_mac_and_cheese::backend            > inp:6143        witn:6243        mul:0           czero:0          
+ 2023-10-15T19:52:02.406Z INFO  diet_mac_and_cheese::backend            > inp:9214        witn:9314        mul:0           czero:0          
+ 2023-10-15T19:52:07.638Z INFO  diet_mac_and_cheese::backend            > inp:12285       witn:12385       mul:0           czero:0          
+ 2023-10-15T19:52:25.989Z INFO  diet_mac_and_cheese::backend            > inp:15357       witn:15457       mul:0           czero:0          
+ 2023-10-15T19:52:31.193Z INFO  diet_mac_and_cheese::backend            > inp:18428       witn:18528       mul:0           czero:0          
+ 2023-10-15T19:52:49.724Z INFO  diet_mac_and_cheese::backend            > inp:21499       witn:21599       mul:0           czero:0          
+ 2023-10-15T19:52:54.924Z INFO  diet_mac_and_cheese::backend            > inp:24570       witn:24670       mul:0           czero:0          
+ 2023-10-15T19:53:13.540Z INFO  diet_mac_and_cheese::backend            > inp:27642       witn:27742       mul:0           czero:0          
+ 2023-10-15T19:53:18.582Z INFO  diet_mac_and_cheese::backend            > inp:30713       witn:30813       mul:0           czero:0          
+ 2023-10-15T19:53:37.228Z INFO  diet_mac_and_cheese::backend            > inp:33784       witn:33884       mul:0           czero:0          
+ 2023-10-15T19:53:42.425Z INFO  diet_mac_and_cheese::backend            > inp:36855       witn:36955       mul:0           czero:0          
+ 2023-10-15T19:54:01.069Z INFO  diet_mac_and_cheese::backend            > inp:39927       witn:40027       mul:0           czero:0          
+ 2023-10-15T19:54:06.302Z INFO  diet_mac_and_cheese::backend            > inp:42998       witn:43098       mul:0           czero:0          
+ 2023-10-15T19:54:24.512Z INFO  diet_mac_and_cheese::backend            > inp:46069       witn:46169       mul:0           czero:0          
+ 2023-10-15T19:54:30.109Z INFO  diet_mac_and_cheese::backend            > inp:49140       witn:49240       mul:0           czero:0          
+ 2023-10-15T19:54:31.533Z INFO  diet_mac_and_cheese::dora::prover       > finalizing Dora proof: 50000 calls (of dimension 457) to disjunction of 8 clauses
+ 2023-10-15T19:54:31.582Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:31.651Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:31.721Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:31.790Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:31.859Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:31.928Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:31.997Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:32.067Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:32.136Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:32.205Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:32.274Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:32.343Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:32.412Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:32.482Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:32.552Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:32.621Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:32.690Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:32.759Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:32.829Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:32.899Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:32.969Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:33.040Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:33.111Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:33.182Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:33.252Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:33.323Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:33.394Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:33.464Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:33.533Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:33.603Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:33.673Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:33.743Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T19:54:35.427Z INFO  diet_mac_and_cheese::backend            > field largest value: [96, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]
+ 2023-10-15T19:54:35.427Z INFO  diet_mac_and_cheese::backend            > nb inst:         50008
+ 2023-10-15T19:54:35.427Z INFO  diet_mac_and_cheese::backend            > nb witn:         50100
+ 2023-10-15T19:54:35.427Z INFO  diet_mac_and_cheese::backend            > nb addc:        100016
+ 2023-10-15T19:54:35.427Z INFO  diet_mac_and_cheese::backend            > nb add:      121860688
+ 2023-10-15T19:54:35.427Z INFO  diet_mac_and_cheese::backend            > nb sub:           5697
+ 2023-10-15T19:54:35.427Z INFO  diet_mac_and_cheese::backend            > nb multc:    121869232
+ 2023-10-15T19:54:35.427Z INFO  diet_mac_and_cheese::backend            > nb mult:        105710
+ 2023-10-15T19:54:35.427Z INFO  diet_mac_and_cheese::backend            > nb czero:         2849
+ 2023-10-15T19:54:37.867Z INFO  diet_mac_and_cheese::backend            > field largest value: [1, 0, 0, 0, 0]
+ 2023-10-15T19:54:37.867Z INFO  diet_mac_and_cheese::backend            > nb inst:             0
+ 2023-10-15T19:54:37.867Z INFO  diet_mac_and_cheese::backend            > nb witn:             0
+ 2023-10-15T19:54:37.867Z INFO  diet_mac_and_cheese::backend            > nb addc:             0
+ 2023-10-15T19:54:37.867Z INFO  diet_mac_and_cheese::backend            > nb add:              0
+ 2023-10-15T19:54:37.867Z INFO  diet_mac_and_cheese::backend            > nb sub:              0
+ 2023-10-15T19:54:37.867Z INFO  diet_mac_and_cheese::backend            > nb multc:            0
+ 2023-10-15T19:54:37.867Z INFO  diet_mac_and_cheese::backend            > nb mult:             0
+ 2023-10-15T19:54:37.867Z INFO  diet_mac_and_cheese::backend            > nb czero:            0
+ 2023-10-15T19:54:37.871Z INFO  dietmc_0p                               > time circ exec: 199.215998584s
+ 2023-10-15T19:54:37.871Z INFO  dietmc_0p                               > PROVER DONE!

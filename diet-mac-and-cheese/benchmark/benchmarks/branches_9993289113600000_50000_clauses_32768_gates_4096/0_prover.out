@@ -1,0 +1,449 @@
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on build directory
+warning: unused import: `HashMap`
+ --> diet-mac-and-cheese/src/ram/prover.rs:4:36
+  |
+4 |     collections::{hash_map::Entry, HashMap},
+  |                                    ^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused import: `AesRng`
+  --> diet-mac-and-cheese/src/ram/prover.rs:10:71
+   |
+10 | use scuttlebutt::{serialization::SequenceSerializer, AbstractChannel, AesRng};
+   |                                                                       ^^^^^^
+
+warning: unused import: `FComProver`
+  --> diet-mac-and-cheese/src/ram/prover.rs:16:14
+   |
+16 |     homcom::{FComProver, MacProver},
+   |              ^^^^^^^^^^
+
+warning: unused import: `generic_array::typenum::Unsigned`
+  --> diet-mac-and-cheese/src/ram/prover.rs:21:5
+   |
+21 | use generic_array::typenum::Unsigned;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `BufReader`, `BufWriter`, `TcpListener`, `TcpStream`, `os::unix::net::UnixStream`
+ --> diet-mac-and-cheese/src/ram/tests.rs:2:10
+  |
+2 |     io::{BufReader, BufWriter},
+  |          ^^^^^^^^^  ^^^^^^^^^
+3 |     net::{TcpListener, TcpStream},
+  |           ^^^^^^^^^^^  ^^^^^^^^^
+4 |     os::unix::net::UnixStream,
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `LPN_EXTEND_LARGE`, `LPN_EXTEND_MEDIUM`, `LPN_EXTEND_SMALL`, `LPN_SETUP_LARGE`, `LPN_SETUP_MEDIUM`, `LPN_SETUP_SMALL`
+ --> diet-mac-and-cheese/src/ram/tests.rs:8:5
+  |
+8 |     LPN_EXTEND_LARGE, LPN_EXTEND_MEDIUM, LPN_EXTEND_SMALL, LPN_SETUP_LARGE, LPN_SETUP_MEDIUM,
+  |     ^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^
+9 |     LPN_SETUP_SMALL,
+  |     ^^^^^^^^^^^^^^^
+
+warning: unused imports: `Rng`, `SeedableRng`
+  --> diet-mac-and-cheese/src/ram/tests.rs:11:12
+   |
+11 | use rand::{Rng, SeedableRng};
+   |            ^^^  ^^^^^^^^^^^
+
+warning: unused imports: `AesRng`, `Channel`, `SyncChannel`, `TrackChannel`
+  --> diet-mac-and-cheese/src/ram/tests.rs:12:19
+   |
+12 | use scuttlebutt::{AesRng, Channel, SyncChannel, TrackChannel};
+   |                   ^^^^^^  ^^^^^^^  ^^^^^^^^^^^  ^^^^^^^^^^^^
+
+warning: unused import: `swanky_field_f61p::F61p`
+  --> diet-mac-and-cheese/src/ram/tests.rs:13:5
+   |
+13 | use swanky_field_f61p::F61p;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `Bounded`, `DietMacAndCheeseProver`, `DietMacAndCheeseVerifier`, `backend_trait::BackendT`, `prover::Prover`
+  --> diet-mac-and-cheese/src/ram/tests.rs:16:5
+   |
+16 |     backend_trait::BackendT,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^
+17 |     ram::{prover::Prover, Bounded},
+   |           ^^^^^^^^^^^^^^  ^^^^^^^
+18 |     DietMacAndCheeseProver, DietMacAndCheeseVerifier,
+   |     ^^^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `RAM_SIZE`, `RAM_STEPS`, `verifier::Verifier`
+  --> diet-mac-and-cheese/src/ram/tests.rs:21:13
+   |
+21 | use super::{verifier::Verifier, RAM_SIZE, RAM_STEPS};
+   |             ^^^^^^^^^^^^^^^^^^  ^^^^^^^^  ^^^^^^^^^
+
+warning: unused imports: `HashMap`, `hash_map::Entry`
+ --> diet-mac-and-cheese/src/ram/verifier.rs:4:19
+  |
+4 |     collections::{hash_map::Entry, HashMap},
+  |                   ^^^^^^^^^^^^^^^  ^^^^^^^
+
+warning: unused import: `DietMacAndCheeseProver`
+  --> diet-mac-and-cheese/src/ram/verifier.rs:17:5
+   |
+17 |     DietMacAndCheeseProver, DietMacAndCheeseVerifier,
+   |     ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `generic_array::typenum::Unsigned`
+  --> diet-mac-and-cheese/src/ram/verifier.rs:20:5
+   |
+20 | use generic_array::typenum::Unsigned;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `serialization::SequenceSerializer`
+  --> diet-mac-and-cheese/src/ram/prover.rs:10:19
+   |
+10 | use scuttlebutt::{serialization::SequenceSerializer, AbstractChannel, AesRng};
+   |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused variable: `addr`
+   --> diet-mac-and-cheese/src/backend_multifield.rs:127:28
+    |
+127 |     fn ram_read(&mut self, addr: &Self::Wire) -> Result<Self::Wire> {
+    |                            ^^^^ help: if this is intentional, prefix it with an underscore: `_addr`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `addr`
+   --> diet-mac-and-cheese/src/backend_multifield.rs:131:29
+    |
+131 |     fn ram_write(&mut self, addr: &Self::Wire, val: &Self::Wire) -> Result<()> {
+    |                             ^^^^ help: if this is intentional, prefix it with an underscore: `_addr`
+
+warning: unused variable: `val`
+   --> diet-mac-and-cheese/src/backend_multifield.rs:131:48
+    |
+131 |     fn ram_write(&mut self, addr: &Self::Wire, val: &Self::Wire) -> Result<()> {
+    |                                                ^^^ help: if this is intentional, prefix it with an underscore: `_val`
+
+warning: unused variable: `addr`
+   --> diet-mac-and-cheese/src/backend_multifield.rs:144:28
+    |
+144 |     fn ram_read(&mut self, addr: &Self::Wire) -> Result<Self::Wire> {
+    |                            ^^^^ help: if this is intentional, prefix it with an underscore: `_addr`
+
+warning: unused variable: `addr`
+   --> diet-mac-and-cheese/src/backend_multifield.rs:148:29
+    |
+148 |     fn ram_write(&mut self, addr: &Self::Wire, val: &Self::Wire) -> Result<()> {
+    |                             ^^^^ help: if this is intentional, prefix it with an underscore: `_addr`
+
+warning: unused variable: `val`
+   --> diet-mac-and-cheese/src/backend_multifield.rs:148:48
+    |
+148 |     fn ram_write(&mut self, addr: &Self::Wire, val: &Self::Wire) -> Result<()> {
+    |                                                ^^^ help: if this is intentional, prefix it with an underscore: `_val`
+
+warning: unused variable: `cnt`
+  --> diet-mac-and-cheese/src/plugins/ram.rs:48:19
+   |
+48 |         for (typ, cnt) in input_counts.into_iter().copied() {
+   |                   ^^^ help: if this is intentional, prefix it with an underscore: `_cnt`
+
+warning: `diet-mac-and-cheese` (lib) generated 22 warnings (run `cargo fix --lib -p diet-mac-and-cheese` to apply 21 suggestions)
+    Finished release [optimized + debuginfo] target(s) in 0.43s
+     Running `/home/rot256/src/swanky-dora/target/release/dietmc_0p --text --lpn medium --relation benchmarks/branches_9993289113600000_50000_clauses_32768_gates_4096/relation.txt --instance benchmarks/branches_9993289113600000_50000_clauses_32768_gates_4096/public.txt --connection-addr '127.0.0.1:7876' prover --witness benchmarks/branches_9993289113600000_50000_clauses_32768_gates_4096/private.txt`
+ 2023-10-15T12:46:16.769Z INFO  dietmc_0p > prover mode
+ 2023-10-15T12:46:16.769Z INFO  dietmc_0p > addr: "127.0.0.1:7876"
+ 2023-10-15T12:46:16.769Z INFO  dietmc_0p > lpn: Medium
+ 2023-10-15T12:46:16.769Z INFO  dietmc_0p > instance: "benchmarks/branches_9993289113600000_50000_clauses_32768_gates_4096/public.txt"
+ 2023-10-15T12:46:16.769Z INFO  dietmc_0p > text format: true
+ 2023-10-15T12:46:16.769Z INFO  dietmc_0p > relation: "benchmarks/branches_9993289113600000_50000_clauses_32768_gates_4096/relation.txt"
+ 2023-10-15T12:46:16.769Z INFO  dietmc_0p > Loaded idx:0 field:[255, 255, 255, 255, 255, 255, 255, 31] file:"benchmarks/branches_9993289113600000_50000_clauses_32768_gates_4096/public.txt" num public instances:1
+ 2023-10-15T12:46:16.769Z INFO  dietmc_0p > witness: "benchmarks/branches_9993289113600000_50000_clauses_32768_gates_4096/private.txt"
+ 2023-10-15T12:46:16.779Z INFO  dietmc_0p > Loaded idx:0 field:[97, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255] file:"benchmarks/branches_9993289113600000_50000_clauses_32768_gates_4096/private.txt" num public instances:50100
+ 2023-10-15T12:46:16.780Z INFO  dietmc_0p > time reading ins/wit/rel: 10.542806ms
+ 2023-10-15T12:46:17.042Z INFO  diet_mac_and_cheese::backend_multifield > loading field F128p
+ 2023-10-15T12:46:17.741Z INFO  dietmc_0p                               > init time: 960.957195ms
+ 2023-10-15T12:46:17.742Z INFO  diet_mac_and_cheese::text_reader        > function "f0" args_size:Some(200) body_max:Some(1944) type_ids:[0]
+ 2023-10-15T12:46:18.604Z INFO  diet_mac_and_cheese::text_reader        > plugin "f1" args_size:Some(201) body_max:None type_ids:[0]
+ 2023-10-15T12:46:56.933Z INFO  diet_mac_and_cheese::backend            > inp:1094        witn:1194        mul:0           czero:0          
+ 2023-10-15T12:46:57.627Z INFO  diet_mac_and_cheese::backend            > inp:2188        witn:2288        mul:0           czero:0          
+ 2023-10-15T12:47:11.032Z INFO  diet_mac_and_cheese::backend            > inp:3281        witn:3381        mul:0           czero:0          
+ 2023-10-15T12:47:11.735Z INFO  diet_mac_and_cheese::backend            > inp:4375        witn:4475        mul:0           czero:0          
+ 2023-10-15T12:47:25.235Z INFO  diet_mac_and_cheese::backend            > inp:5469        witn:5569        mul:0           czero:0          
+ 2023-10-15T12:47:25.948Z INFO  diet_mac_and_cheese::backend            > inp:6562        witn:6662        mul:0           czero:0          
+ 2023-10-15T12:47:39.616Z INFO  diet_mac_and_cheese::backend            > inp:7656        witn:7756        mul:0           czero:0          
+ 2023-10-15T12:47:40.392Z INFO  diet_mac_and_cheese::backend            > inp:8749        witn:8849        mul:0           czero:0          
+ 2023-10-15T12:47:53.386Z INFO  diet_mac_and_cheese::backend            > inp:9843        witn:9943        mul:0           czero:0          
+ 2023-10-15T12:47:54.090Z INFO  diet_mac_and_cheese::backend            > inp:10937       witn:11037       mul:0           czero:0          
+ 2023-10-15T12:48:07.119Z INFO  diet_mac_and_cheese::backend            > inp:12030       witn:12130       mul:0           czero:0          
+ 2023-10-15T12:48:07.828Z INFO  diet_mac_and_cheese::backend            > inp:13124       witn:13224       mul:0           czero:0          
+ 2023-10-15T12:48:20.929Z INFO  diet_mac_and_cheese::backend            > inp:14217       witn:14317       mul:0           czero:0          
+ 2023-10-15T12:48:21.643Z INFO  diet_mac_and_cheese::backend            > inp:15311       witn:15411       mul:0           czero:0          
+ 2023-10-15T12:48:34.788Z INFO  diet_mac_and_cheese::backend            > inp:16405       witn:16505       mul:0           czero:0          
+ 2023-10-15T12:48:35.502Z INFO  diet_mac_and_cheese::backend            > inp:17498       witn:17598       mul:0           czero:0          
+ 2023-10-15T12:48:48.737Z INFO  diet_mac_and_cheese::backend            > inp:18592       witn:18692       mul:0           czero:0          
+ 2023-10-15T12:48:49.457Z INFO  diet_mac_and_cheese::backend            > inp:19686       witn:19786       mul:0           czero:0          
+ 2023-10-15T12:49:02.719Z INFO  diet_mac_and_cheese::backend            > inp:20779       witn:20879       mul:0           czero:0          
+ 2023-10-15T12:49:03.441Z INFO  diet_mac_and_cheese::backend            > inp:21873       witn:21973       mul:0           czero:0          
+ 2023-10-15T12:49:16.692Z INFO  diet_mac_and_cheese::backend            > inp:22966       witn:23066       mul:0           czero:0          
+ 2023-10-15T12:49:17.418Z INFO  diet_mac_and_cheese::backend            > inp:24060       witn:24160       mul:0           czero:0          
+ 2023-10-15T12:49:30.741Z INFO  diet_mac_and_cheese::backend            > inp:25154       witn:25254       mul:0           czero:0          
+ 2023-10-15T12:49:31.468Z INFO  diet_mac_and_cheese::backend            > inp:26247       witn:26347       mul:0           czero:0          
+ 2023-10-15T12:49:44.846Z INFO  diet_mac_and_cheese::backend            > inp:27341       witn:27441       mul:0           czero:0          
+ 2023-10-15T12:49:45.578Z INFO  diet_mac_and_cheese::backend            > inp:28434       witn:28534       mul:0           czero:0          
+ 2023-10-15T12:49:58.958Z INFO  diet_mac_and_cheese::backend            > inp:29528       witn:29628       mul:0           czero:0          
+ 2023-10-15T12:49:59.691Z INFO  diet_mac_and_cheese::backend            > inp:30622       witn:30722       mul:0           czero:0          
+ 2023-10-15T12:50:13.063Z INFO  diet_mac_and_cheese::backend            > inp:31715       witn:31815       mul:0           czero:0          
+ 2023-10-15T12:50:13.796Z INFO  diet_mac_and_cheese::backend            > inp:32809       witn:32909       mul:0           czero:0          
+ 2023-10-15T12:50:27.180Z INFO  diet_mac_and_cheese::backend            > inp:33902       witn:34002       mul:0           czero:0          
+ 2023-10-15T12:50:27.916Z INFO  diet_mac_and_cheese::backend            > inp:34996       witn:35096       mul:0           czero:0          
+ 2023-10-15T12:50:41.417Z INFO  diet_mac_and_cheese::backend            > inp:36090       witn:36190       mul:0           czero:0          
+ 2023-10-15T12:50:42.173Z INFO  diet_mac_and_cheese::backend            > inp:37183       witn:37283       mul:0           czero:0          
+ 2023-10-15T12:50:55.612Z INFO  diet_mac_and_cheese::backend            > inp:38277       witn:38377       mul:0           czero:0          
+ 2023-10-15T12:50:56.352Z INFO  diet_mac_and_cheese::backend            > inp:39371       witn:39471       mul:0           czero:0          
+ 2023-10-15T12:51:09.791Z INFO  diet_mac_and_cheese::backend            > inp:40464       witn:40564       mul:0           czero:0          
+ 2023-10-15T12:51:10.534Z INFO  diet_mac_and_cheese::backend            > inp:41558       witn:41658       mul:0           czero:0          
+ 2023-10-15T12:51:24.015Z INFO  diet_mac_and_cheese::backend            > inp:42651       witn:42751       mul:0           czero:0          
+ 2023-10-15T12:51:24.757Z INFO  diet_mac_and_cheese::backend            > inp:43745       witn:43845       mul:0           czero:0          
+ 2023-10-15T12:51:38.218Z INFO  diet_mac_and_cheese::backend            > inp:44839       witn:44939       mul:0           czero:0          
+ 2023-10-15T12:51:38.960Z INFO  diet_mac_and_cheese::backend            > inp:45932       witn:46032       mul:0           czero:0          
+ 2023-10-15T12:51:52.444Z INFO  diet_mac_and_cheese::backend            > inp:47026       witn:47126       mul:0           czero:0          
+ 2023-10-15T12:51:53.186Z INFO  diet_mac_and_cheese::backend            > inp:48119       witn:48219       mul:0           czero:0          
+ 2023-10-15T12:51:53.932Z INFO  diet_mac_and_cheese::backend            > inp:49213       witn:49313       mul:0           czero:0          
+ 2023-10-15T12:52:07.784Z INFO  diet_mac_and_cheese::dora::prover       > finalizing Dora proof: 50000 calls (of dimension 1193) to disjunction of 32768 clauses
+ 2023-10-15T12:53:44.694Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:44.765Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:44.835Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:44.906Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:44.976Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:45.049Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:45.120Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:45.191Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:45.261Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:45.332Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:45.402Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:45.473Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:45.545Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:45.616Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:45.687Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:45.758Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:45.828Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:45.899Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:45.970Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:46.042Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:46.113Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:46.184Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:46.256Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:46.327Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:46.399Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:46.471Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:46.543Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:46.615Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:46.687Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:46.758Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:46.831Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:46.902Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:46.974Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:47.046Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:47.119Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:47.191Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:47.263Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:47.334Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:47.405Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:47.477Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:47.549Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:47.622Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:47.695Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:47.767Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:47.838Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:47.909Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:47.981Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:48.053Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:48.125Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:48.197Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:48.269Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:48.342Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:48.415Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:48.487Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:48.558Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:48.630Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:48.702Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:48.773Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:48.845Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:48.916Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:48.988Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:49.060Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:49.132Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:49.204Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:49.276Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:49.350Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:49.422Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:49.494Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:49.566Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:49.638Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:49.712Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:49.784Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:49.856Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:49.929Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:50.001Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:50.075Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:50.146Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:50.218Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:50.290Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:50.362Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:50.434Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:50.506Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:50.578Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:50.650Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:50.723Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:50.794Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:50.866Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:50.938Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:51.009Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:51.081Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:51.153Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:51.226Z INFO  diet_mac_and_cheese::backend            > inp:50000       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:51.328Z INFO  diet_mac_and_cheese::backend            > inp:51006       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:51.429Z INFO  diet_mac_and_cheese::backend            > inp:52101       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:51.529Z INFO  diet_mac_and_cheese::backend            > inp:53195       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:51.629Z INFO  diet_mac_and_cheese::backend            > inp:54289       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:51.730Z INFO  diet_mac_and_cheese::backend            > inp:55384       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:51.834Z INFO  diet_mac_and_cheese::backend            > inp:56478       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:51.938Z INFO  diet_mac_and_cheese::backend            > inp:57572       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:52.044Z INFO  diet_mac_and_cheese::backend            > inp:58667       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:52.153Z INFO  diet_mac_and_cheese::backend            > inp:59761       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:52.255Z INFO  diet_mac_and_cheese::backend            > inp:60855       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:52.354Z INFO  diet_mac_and_cheese::backend            > inp:61950       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:52.455Z INFO  diet_mac_and_cheese::backend            > inp:63044       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:52.556Z INFO  diet_mac_and_cheese::backend            > inp:64138       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:52.656Z INFO  diet_mac_and_cheese::backend            > inp:65233       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:52.757Z INFO  diet_mac_and_cheese::backend            > inp:66327       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:52.858Z INFO  diet_mac_and_cheese::backend            > inp:67421       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:52.958Z INFO  diet_mac_and_cheese::backend            > inp:68516       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:53.060Z INFO  diet_mac_and_cheese::backend            > inp:69610       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:53.161Z INFO  diet_mac_and_cheese::backend            > inp:70704       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:53.262Z INFO  diet_mac_and_cheese::backend            > inp:71799       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:53.363Z INFO  diet_mac_and_cheese::backend            > inp:72893       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:53.467Z INFO  diet_mac_and_cheese::backend            > inp:73987       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:53.577Z INFO  diet_mac_and_cheese::backend            > inp:75082       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:53.687Z INFO  diet_mac_and_cheese::backend            > inp:76176       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:53.791Z INFO  diet_mac_and_cheese::backend            > inp:77270       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:53.892Z INFO  diet_mac_and_cheese::backend            > inp:78365       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:53.992Z INFO  diet_mac_and_cheese::backend            > inp:79459       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:54.092Z INFO  diet_mac_and_cheese::backend            > inp:80553       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:54.193Z INFO  diet_mac_and_cheese::backend            > inp:81648       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:53:54.294Z INFO  diet_mac_and_cheese::backend            > inp:82742       witn:50100       mul:0           czero:0          
+ 2023-10-15T12:54:01.046Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:852236      czero:343352     
+ 2023-10-15T12:54:01.236Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:1606468     czero:720468     
+ 2023-10-15T12:54:14.510Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:2360724     czero:1097596    
+ 2023-10-15T12:54:14.696Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:3114978     czero:1474723    
+ 2023-10-15T12:54:14.881Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:3869200     czero:1851834    
+ 2023-10-15T12:54:15.067Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:4623474     czero:2228971    
+ 2023-10-15T12:54:15.252Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:5377714     czero:2606091    
+ 2023-10-15T12:54:15.438Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:6131940     czero:2983203    
+ 2023-10-15T12:54:15.883Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:6886220     czero:3360343    
+ 2023-10-15T12:54:16.079Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:7640470     czero:3737468    
+ 2023-10-15T12:54:16.261Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:8394676     czero:4114572    
+ 2023-10-15T12:54:16.447Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:9148956     czero:4491712    
+ 2023-10-15T12:54:16.638Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:9903202     czero:4868835    
+ 2023-10-15T12:54:16.820Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:10657402    czero:5245935    
+ 2023-10-15T12:54:17.005Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:11411712    czero:5623089    
+ 2023-10-15T12:54:30.676Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:12165954    czero:6000211    
+ 2023-10-15T12:54:30.860Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:12920164    czero:6377316    
+ 2023-10-15T12:54:31.047Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:13674444    czero:6754456    
+ 2023-10-15T12:54:31.233Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:14428688    czero:7131577    
+ 2023-10-15T12:54:31.420Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:15182928    czero:7508697    
+ 2023-10-15T12:54:31.606Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:15937186    czero:7885827    
+ 2023-10-15T12:54:31.790Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:16691412    czero:8262940    
+ 2023-10-15T12:54:31.973Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:17445682    czero:8640075    
+ 2023-10-15T12:54:32.414Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:18199926    czero:9017197    
+ 2023-10-15T12:54:32.600Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:18954160    czero:9394313    
+ 2023-10-15T12:54:32.787Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:19708428    czero:9771448    
+ 2023-10-15T12:54:32.972Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:20462678    czero:10148573   
+ 2023-10-15T12:54:33.158Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:21216896    czero:10525682   
+ 2023-10-15T12:54:46.480Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:21971174    czero:10902820   
+ 2023-10-15T12:54:46.666Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:22725420    czero:11279944   
+ 2023-10-15T12:54:46.849Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:23479628    czero:11657048   
+ 2023-10-15T12:54:47.287Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:24233924    czero:12034196   
+ 2023-10-15T12:54:47.472Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:24988164    czero:12411316   
+ 2023-10-15T12:54:47.658Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:25742354    czero:12788411   
+ 2023-10-15T12:54:47.845Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:26496660    czero:13165563   
+ 2023-10-15T12:54:48.029Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:27250912    czero:13542690   
+ 2023-10-15T12:54:48.212Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:28005134    czero:13919801   
+ 2023-10-15T12:54:48.396Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:28759404    czero:14296936   
+ 2023-10-15T12:54:48.581Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:29513638    czero:14674053   
+ 2023-10-15T12:54:49.023Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:30267892    czero:15051179   
+ 2023-10-15T12:54:49.210Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:31022150    czero:15428309   
+ 2023-10-15T12:54:49.396Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:31776372    czero:15805419   
+ 2023-10-15T12:55:02.712Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:32530650    czero:16182558   
+ 2023-10-15T12:55:02.897Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:33284888    czero:16559677   
+ 2023-10-15T12:55:03.081Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:34039110    czero:16936789   
+ 2023-10-15T12:55:03.264Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:34793394    czero:17313931   
+ 2023-10-15T12:55:03.449Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:35547638    czero:17691053   
+ 2023-10-15T12:55:03.889Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:36301846    czero:18068157   
+ 2023-10-15T12:55:04.072Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:37056128    czero:18445298   
+ 2023-10-15T12:55:04.254Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:37810376    czero:18822421   
+ 2023-10-15T12:55:04.437Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:38564576    czero:19199522   
+ 2023-10-15T12:55:04.620Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:39318876    czero:19576671   
+ 2023-10-15T12:55:04.805Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:40073126    czero:19953797   
+ 2023-10-15T12:55:04.991Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:40827338    czero:20330903   
+ 2023-10-15T12:55:05.178Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:41581612    czero:20708039   
+ 2023-10-15T12:55:18.369Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:42335858    czero:21085163   
+ 2023-10-15T12:55:18.553Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:43090102    czero:21462285   
+ 2023-10-15T12:55:18.738Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:43844362    czero:21839414   
+ 2023-10-15T12:55:18.925Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:44598586    czero:22216527   
+ 2023-10-15T12:55:19.111Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:45352856    czero:22593662   
+ 2023-10-15T12:55:19.297Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:46107092    czero:22970779   
+ 2023-10-15T12:55:19.483Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:46861328    czero:23347898   
+ 2023-10-15T12:55:19.670Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:47615598    czero:23725033   
+ 2023-10-15T12:55:20.112Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:48369852    czero:24102160   
+ 2023-10-15T12:55:20.299Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:49124060    czero:24479263   
+ 2023-10-15T12:55:20.483Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:49878340    czero:24856404   
+ 2023-10-15T12:55:20.666Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:50632590    czero:25233529   
+ 2023-10-15T12:55:20.854Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:51386794    czero:25610630   
+ 2023-10-15T12:55:33.837Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:52141096    czero:25987782   
+ 2023-10-15T12:55:34.022Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:52895338    czero:26364903   
+ 2023-10-15T12:55:34.209Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:53649528    czero:26741998   
+ 2023-10-15T12:55:34.656Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:54403828    czero:27119148   
+ 2023-10-15T12:55:34.842Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:55158076    czero:27496272   
+ 2023-10-15T12:55:35.030Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:55912308    czero:27873388   
+ 2023-10-15T12:55:35.217Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:56666572    czero:28250519   
+ 2023-10-15T12:55:35.403Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:57420802    czero:28627635   
+ 2023-10-15T12:55:35.586Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:58175058    czero:29004762   
+ 2023-10-15T12:55:35.772Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:58929312    czero:29381890   
+ 2023-10-15T12:55:35.960Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:59683538    czero:29759002   
+ 2023-10-15T12:55:36.410Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:60437818    czero:30136143   
+ 2023-10-15T12:55:36.595Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:61192058    czero:30513263   
+ 2023-10-15T12:55:50.007Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:61946284    czero:30890376   
+ 2023-10-15T12:55:50.193Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:62700558    czero:31267513   
+ 2023-10-15T12:55:50.379Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:63454808    czero:31644638   
+ 2023-10-15T12:55:50.565Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:64209018    czero:32021743   
+ 2023-10-15T12:55:50.750Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:64963302    czero:32398885   
+ 2023-10-15T12:55:50.937Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:65717540    czero:32776004   
+ 2023-10-15T12:55:51.384Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:66471744    czero:33153106   
+ 2023-10-15T12:55:51.571Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:67226046    czero:33530257   
+ 2023-10-15T12:55:51.758Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:67980296    czero:33907382   
+ 2023-10-15T12:55:51.945Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:68734510    czero:34284489   
+ 2023-10-15T12:55:52.131Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:69488788    czero:34661627   
+ 2023-10-15T12:55:52.316Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:70243022    czero:35038745   
+ 2023-10-15T12:55:52.501Z INFO  diet_mac_and_cheese::backend            > inp:82768       witn:50100       mul:70997274    czero:35415870   
+ 2023-10-15T12:55:58.244Z INFO  diet_mac_and_cheese::backend            > field largest value: [96, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]
+ 2023-10-15T12:55:58.244Z INFO  diet_mac_and_cheese::backend            > nb inst:         82768
+ 2023-10-15T12:55:58.244Z INFO  diet_mac_and_cheese::backend            > nb witn:         50100
+ 2023-10-15T12:55:58.244Z INFO  diet_mac_and_cheese::backend            > nb addc:        165536
+ 2023-10-15T12:55:58.244Z INFO  diet_mac_and_cheese::backend            > nb add:      511569040
+ 2023-10-15T12:55:58.244Z INFO  diet_mac_and_cheese::backend            > nb sub:       71565313
+ 2023-10-15T12:55:58.244Z INFO  diet_mac_and_cheese::backend            > nb multc:    618917008
+ 2023-10-15T12:55:58.244Z INFO  diet_mac_and_cheese::backend            > nb mult:      71730846
+ 2023-10-15T12:55:58.244Z INFO  diet_mac_and_cheese::backend            > nb czero:     35782657
+ 2023-10-15T12:55:59.005Z INFO  diet_mac_and_cheese::backend            > field largest value: [1, 0, 0, 0, 0]
+ 2023-10-15T12:55:59.005Z INFO  diet_mac_and_cheese::backend            > nb inst:             0
+ 2023-10-15T12:55:59.005Z INFO  diet_mac_and_cheese::backend            > nb witn:             0
+ 2023-10-15T12:55:59.005Z INFO  diet_mac_and_cheese::backend            > nb addc:             0
+ 2023-10-15T12:55:59.005Z INFO  diet_mac_and_cheese::backend            > nb add:              0
+ 2023-10-15T12:55:59.005Z INFO  diet_mac_and_cheese::backend            > nb sub:              0
+ 2023-10-15T12:55:59.005Z INFO  diet_mac_and_cheese::backend            > nb multc:            0
+ 2023-10-15T12:55:59.005Z INFO  diet_mac_and_cheese::backend            > nb mult:             0
+ 2023-10-15T12:55:59.005Z INFO  diet_mac_and_cheese::backend            > nb czero:            0
+ 2023-10-15T12:55:59.136Z INFO  dietmc_0p                               > time circ exec: 581.394923782s
+ 2023-10-15T12:55:59.136Z INFO  dietmc_0p                               > PROVER DONE!
