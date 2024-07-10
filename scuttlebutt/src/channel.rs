@@ -18,6 +18,7 @@ use std::{
     cell::RefCell,
     io::{Read, Result, Write},
     rc::Rc,
+    sync::{Arc, Mutex},
 };
 
 /// A trait for managing I/O. `AbstractChannel`s are clonable, and provide basic
@@ -212,6 +213,62 @@ pub trait AbstractChannel {
     fn write_serializable<E: CanonicalSerialize>(&mut self, x: &E) -> Result<()> {
         self.write_bytes(&x.to_bytes())?;
         Ok(())
+    }
+}
+
+/// A `Read` object that counts the number of bytes read.
+pub struct CntReader<R: Read> {
+    cnt: usize,
+    rdr: R,
+}
+
+impl<R: Read> CntReader<R> {
+    /// Make a new `CntReader` from a `reader`.
+    pub fn new(rdr: R) -> Self {
+        Self { cnt: 0, rdr }
+    }
+
+    /// Make a new `CntReader` from a `reader`.
+    pub fn count(&self) -> usize {
+        self.cnt
+    }
+}
+
+impl<R: Read> Read for CntReader<R> {
+    fn read(&mut self, buf: &mut [u8]) -> std::io::Result<usize> {
+        let n = self.rdr.read(buf)?;
+        self.cnt += n;
+        Ok(n)
+    }
+}
+
+/// A `Write` object that counts the number of bytes written.
+pub struct CntWriter<W: Write> {
+    cnt: usize,
+    wrt: W,
+}
+
+impl<W: Write> CntWriter<W> {
+    /// Make a new `CntWriter` from a `writer`.
+    pub fn new(wrt: W) -> Self {
+        Self { cnt: 0, wrt }
+    }
+
+    /// Make a new `CntWriter` from a `writer`.
+    pub fn count(&self) -> usize {
+        self.cnt
+    }
+}
+
+impl<W: Write> Write for CntWriter<W> {
+    fn write(&mut self, buf: &[u8]) -> std::io::Result<usize> {
+        let n = self.wrt.write(buf)?;
+        self.cnt += n;
+        Ok(n)
+    }
+
+    fn flush(&mut self) -> std::io::Result<()> {
+        self.wrt.flush()
     }
 }
 
