@@ -16,6 +16,7 @@ use mac_n_cheese_sieve_parser::RelationReader as RR;
 use mac_n_cheese_sieve_parser::ValueStreamKind;
 use mac_n_cheese_sieve_parser::ValueStreamReader as VSR;
 use pretty_env_logger;
+use scuttlebutt::channel::{CntReader, CntWriter};
 use scuttlebutt::{AesRng, Channel};
 use std::collections::VecDeque;
 use std::env;
@@ -24,6 +25,8 @@ use std::io::{BufReader, BufWriter};
 use std::net::{TcpListener, TcpStream};
 use std::path::PathBuf;
 use std::time::Instant;
+
+use scuttlebutt::AbstractChannel;
 
 // Transform a path that could be either a file or a directory containing files into a vector of filenames.
 // Passing `/dev/null` returns an empty vector.
@@ -119,6 +122,10 @@ fn run_text(args: &Cli) -> Result<()> {
                     info!("connection received");
                     let reader = BufReader::new(stream.try_clone()?);
                     let writer = BufWriter::new(stream);
+
+                    let reader = CntReader::new(reader);
+                    let writer = CntWriter::new(writer);
+
                     let mut channel = Channel::new(reader, writer);
 
                     let start = Instant::now();
@@ -141,6 +148,11 @@ fn run_text(args: &Cli) -> Result<()> {
                     let relation_reader = BufReader::new(relation_file);
                     evaluator.evaluate_relation_text(relation_reader)?;
                     info!("time circ exec: {:?}", start.elapsed());
+                    let sent = channel.clone().writer().borrow().count();
+                    let recv = channel.clone().reader().borrow().count();
+                    info!("bytes sent: {}", sent);
+                    info!("bytes recv: {}", recv);
+                    info!("bytes total: {}", sent + recv);
                     info!("VERIFIER DONE!");
                 }
                 Err(e) => info!("couldn't get client: {:?}", e),
@@ -161,6 +173,10 @@ fn run_text(args: &Cli) -> Result<()> {
             }
             let reader = BufReader::new(stream.try_clone()?);
             let writer = BufWriter::new(stream);
+
+            let reader = CntReader::new(reader);
+            let writer = CntWriter::new(writer);
+
             let mut channel = Channel::new(reader, writer);
 
             let start = Instant::now();
@@ -182,6 +198,11 @@ fn run_text(args: &Cli) -> Result<()> {
             let relation_reader = BufReader::new(relation_file);
             evaluator.evaluate_relation_text(relation_reader)?;
             info!("time circ exec: {:?}", start.elapsed());
+            let sent = channel.clone().writer().borrow().count();
+            let recv = channel.clone().reader().borrow().count();
+            info!("bytes sent: {}", sent);
+            info!("bytes recv: {}", recv);
+            info!("bytes total: {}", sent + recv);
             info!("PROVER DONE!");
         }
     }
