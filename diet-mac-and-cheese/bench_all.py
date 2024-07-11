@@ -7,6 +7,8 @@ import platform
 import subprocess
 import datetime
 import itertools
+import fractions
+import tempfile
 
 BINARY_NAME = 'dietmc_0p'
 
@@ -54,9 +56,9 @@ def network_test():
 
     # start the iperf server into the background
     iperf_server = subprocess.Popen(
-        f"iperf3 -s -p {PORT}", 
-        shell=True, 
-        stdout=subprocess.PIPE, 
+        f"iperf3 -s -p {PORT}",
+        shell=True,
+        stdout=subprocess.PIPE,
         stderr=subprocess.PIPE
     )
 
@@ -103,6 +105,12 @@ class Network:
         # run bandwidth and delay tests
         before = network_test()
 
+        print()
+        print(f'{PURPLE}### Network Before ###', END)
+        print()
+        print(before['ping'])
+        print(before['iperf'])
+
         # apply network settings
         if platform.system() == 'Darwin':
             self.cmd(f'(cat /etc/pf.conf && echo "dummynet-anchor \"customRule\"" && echo "anchor \"customRule\"") | sudo pfctl -f -')
@@ -110,31 +118,35 @@ class Network:
             self.cmd(f'sudo dnctl pipe 1 config delay {delay} bw {mbits}Mbit/s')
         else:
             # tc qdisc add dev eth0 handle 1: root htb default 11
-            self.cmd(f'sudo tc qdisc add dev eth0 handle 1: root htb default 11')
-            self.cmd(f'sudo tc class add dev eth0 parent 1: classid 1:1 htb rate 1000Mbps')
-            self.cmd(f'sudo tc class add dev eth0 parent 1:1 classid 1:11 htb rate {mbits}Mbit')
-            self.cmd(f'sudo tc qdisc add dev eth0 parent 1:11 handle 10: netem delay {delay}ms')
+            # sudo tc qdisc add dev lo root handle 1:0 netem delay ${DELAY}msec
+
+            self.cmd(f'sudo tc qdisc add dev lo handle 1: root htb default 11')
+            self.cmd(f'sudo tc class add dev lo parent 1: classid 1:1 htb rate 1000Mbps')
+            self.cmd(f'sudo tc class add dev lo parent 1:1 classid 1:11 htb rate {mbits}Mbit')
+            self.cmd(f'sudo tc qdisc add dev lo parent 1:11 handle 10: netem delay {delay}ms')
+            '''
+            self.cmd(f'sudo tc qdisc add dev lo root netem delay {delay}ms')
+            self.cmd(f'sudo tc qdisc add dev lo root tbf rate {mbits}Mbit latency 50ms burst 1540')
+            '''
 
         # run bandwidth and delay tests
         after = network_test()
 
-        print(f'{PURPLE}### Network Before ###', END)
         print()
-        print(before['ping'])
-        print(before['iperf'])
-
         print(f'{BLUE}### Network After ({config}) ###', END)
         print()
         print(after['ping'])
         print(after['iperf'])
 
-        return {
+        self.applied = config
+        self.result = {
             "before": before,
             "after": after,
             "delay": delay,
             "mbits": mbits
         }
-    
+        return self.result
+
     def reset(self):
         # enable pfctl
         if platform.system() == 'Darwin':
@@ -148,6 +160,8 @@ class Network:
             self.cmd(f'sudo pfctl -f /etc/pf.conf', check=False)
         elif platform.system() == 'Linux':
             self.cmd(f'sudo tc qdisc del dev lo root', check=False)
+            self.cmd(f'sudo tc qdisc del dev eth0 root', check=False)
+            self.cmd(f'sudo tc qdisc del dev eth1 root', check=False)
         else:
             raise Exception('Unsupported platform')
 
@@ -158,21 +172,21 @@ class NetworkConfig:
 
     def __str__(self) -> str:
         return f'{self.mbits}Mbit {self.delay}ms'
-    
+
     def __eq__(self, value: object) -> bool:
         if not isinstance(value, NetworkConfig):
             return False
         return self.mbits == value.mbits and self.delay == value.delay
-    
+
     def __hash__(self) -> int:
         return hash((self.mbits, self.delay))
-    
+
     def __lt__(self, value):
         return (self.mbits, self.delay) < (value.mbits, value.delay)
-    
+
     def __gt__(self, value):
         return (self.mbits, self.delay) > (value.mbits, value.delay)
-    
+
 class Prover:
     def __init__(self, path):
         self.port = random.randint(8000, 50_000)
@@ -185,26 +199,33 @@ class Prover:
         assert os.path.exists(self.instance)
         assert os.path.exists(self.witness)
 
-        cmd = f"cargo run --release --bin {BINARY_NAME} --"
-        cmd += " --text"
-        cmd += " --lpn medium"
-        cmd += f" --relation {self.relation}"
-        cmd += f" --instance {self.instance}"
-        cmd += f" --connection-addr 127.0.0.1:{self.port}"
-        cmd += " prover"
-        cmd += f" --witness {self.witness}"
+        self.output = tempfile.TemporaryFile()
+
+        cmd = [
+            "cargo",
+            "run",
+            "--release",
+            "--bin", BINARY_NAME,
+            "--",
+            "--text",
+            "--lpn", "medium",
+            "--relation", self.relation,
+            "--instance", self.instance,
+            "--connection-addr", f"127.0.0.1:{self.port}",
+            "prover",
+            "--witness", self.witness
+        ]
 
         env = os.environ.copy()
         env['RUSTFLAGS'] = '-C target-cpu=native'
 
-        print(f'{GREEN}$ {cmd} {END}')
+        print(f'{GREEN}$ {' '.join(cmd)}{END}')
 
         self.process = subprocess.Popen(
             cmd,
             env=env,
-            shell=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE
+            stdout=self.output,
+            stderr=self.output
         )
 
 class Verifier:
@@ -216,62 +237,82 @@ class Verifier:
         assert os.path.exists(self.relation)
         assert os.path.exists(self.instance)
 
-        cmd = f"cargo run --release --bin {BINARY_NAME} --"
-        cmd += " --text"
-        cmd += " --lpn medium"
-        cmd += f" --relation {self.relation}"
-        cmd += f" --instance {self.instance}"
-        cmd += f" --connection-addr 127.0.0.1:{prover.port}"
+        self.output = tempfile.TemporaryFile()
 
-        print(f'{GREEN}$ {cmd} {END}')
+        cmd = [
+            "cargo",
+            "run",
+            "--release",
+            "--bin", BINARY_NAME,
+            "--",
+            "--text",
+            "--lpn", "medium",
+            "--relation", self.relation,
+            "--instance", self.instance,
+            "--connection-addr", f"127.0.0.1:{prover.port}"
+        ]
 
+        print(f'{GREEN}$ {' '.join(cmd)}{END}')
         env = os.environ.copy()
         env['RUSTFLAGS'] = '-C target-cpu=native'
 
+        # check that the prover is still running
         self.prover = prover
+        assert self.prover.process.poll() is None, 'Prover is not running'
+
+        # start the verifier
         self.process = subprocess.Popen(
             cmd,
             env=env,
-            shell=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE
+            stdout=self.output,
+            stderr=self.output
         )
 
     def complete(self):
-        # wait for both processes to complete
-        self.process.wait()
-        self.prover.process.wait()
+        # wait for either the prover or verifier to finish
+        while 1:
+            try:
+                self.prover.process.wait(5)
+                break
+            except subprocess.TimeoutExpired:
+                pass
 
-        prover_stdout = self.prover.process.stdout.read().decode()
-        prover_stderr = self.prover.process.stderr.read().decode()
+            try:
+                self.process.wait(5)
+                break
+            except subprocess.TimeoutExpired:
+                pass
 
-        verifier_stdout = self.process.stdout.read().decode()
-        verifier_stderr = self.process.stderr.read().decode
+        # wait for other processes to finish
+        # give them 10 seconds to do so
+        self.process.wait(10)
+        self.prover.process.wait(10)
 
-        assert self.process.returncode == 0, verifier_stderr
-        assert self.prover.process.returncode == 0, prover_stderr
+        # read the outputs
+        self.prover.output.seek(0)
+        self.output.seek(0)
+        verifier_stdout = self.output.read().decode()
+        prover_stdout = self.prover.output.read().decode()
+
+        # check the return codes
+        assert self.process.returncode == 0, verifier_stdout
+        assert self.prover.process.returncode == 0, prover_stdout
 
         # content checks
-        assert 'bytes sent:' in verifier_stdout
-        assert 'bytes recv:' in verifier_stdout
-        assert 'bytes total:' in verifier_stdout
-        assert 'time circ exec:' in verifier_stdout
+        assert "bytes sent:" in prover_stdout
+        assert "bytes recv:" in prover_stdout
+        assert "bytes total:" in prover_stdout
+        assert "time circ exec:" in prover_stdout
 
-        assert 'bytes sent:' in prover_stdout
-        assert 'bytes recv:' in prover_stdout
-        assert 'bytes total:' in prover_stdout
-        assert 'time circ exec:' in prover_stdout
+        assert "bytes sent:" in verifier_stdout
+        assert "bytes recv:" in verifier_stdout
+        assert "bytes total:" in verifier_stdout
+        assert "time circ exec:" in verifier_stdout
 
         # return the prover/verifier outputs
         return {
-            "verifier": {
-                "stdout": verifier_stdout,
-                "stderr": verifier_stderr,
-            },
-            "prover": {
-                "stdout": prover_stdout,
-                "stderr": prover_stderr,
-            },
+            "verifier": verifier_stdout,
+            "prover": prover_stdout,
         }
 
 def identifier(network):
@@ -292,7 +333,7 @@ else:
     cmds = [
         "lscpu",
         "lshw -short",
-        "uname -a"
+        "uname -a",
         "cat /proc/meminfo",
         "cat /proc/cpuinfo",
     ]
@@ -302,33 +343,49 @@ hostname = subprocess.run('hostname', shell=True, check=True, stdout=subprocess.
 
 sys_info = {}
 for cmd in cmds:
+    print(f'{GREEN}$ {cmd} {END}')
     proc = subprocess.run(cmd, shell=True, check=True, stdout=subprocess.PIPE)
     assert proc.returncode == 0
-    print(f'{GREEN}$ {cmd} {END}')
     sys_info[cmd] = proc.stdout.decode()
 
-def execute(runs):
+def work_of_meta(meta):
+    return meta['branches'] * meta['gates'] + meta['clauses'] * meta['gates']
+
+def execute(root, runs):
     # sort the runs by network settings
     runs = sorted(runs)
     total = len(runs)
     network = Network()
-    finished = 0
     start_time = time.time()
+
+    # calculate the total work
+    total_work = 0
+    finished_work = 0
+    for (net, bench) in runs:
+        path = os.path.join(root, bench)
+        meta = os.path.join(path, 'meta.json')
+        meta = json.load(open(meta))
+        result = os.path.join(path, result_file(net))
+        if os.path.exists(result):
+            continue
+        total_work += work_of_meta(meta)
+
     for (num, (net, bench)) in enumerate(runs):
         # read the meta data
-        path = os.path.join(BENCH_DIR, bench)
+        path = os.path.join(root, bench)
         meta = os.path.join(path, 'meta.json')
         meta = json.load(open(meta))
 
-        estimated_time = math.inf 
-        if finished > 0:
+        remaining_time = math.inf
+        if finished_work > 0:
+            assert total_work >= finished_work
             delta = time.time() - start_time
-            per_bench = delta / finished
-            remaining = total - num
-            estimated_time = per_bench * remaining
-        
-        print(f'{BLUE}Estimated Time Remaining: {estimated_time} seconds{END}')
-            
+            time_per_unit = fractions.Fraction(delta) / finished_work
+            remaining = total_work - finished_work
+            remaining_time = float(time_per_unit * remaining)
+
+        print(f'{BLUE}Estimated Time Remaining: {remaining_time} seconds{END}')
+
         # check if we already ran this benchmark
         result = os.path.join(path, result_file(net))
         if os.path.exists(result):
@@ -337,8 +394,6 @@ def execute(runs):
 
         print(f'{YELLOW}### [{num+1}/{total}] : Running {bench} {net} ###{END}')
 
-       
-        
         # apply network settings
         net_check = network.apply(net)
 
@@ -346,23 +401,21 @@ def execute(runs):
         s += f"- Index: {num+1}/{total}\n"
         s += f"- Network: {net}\n"
         s += f"- Meta: {meta}\n"
-        s += f"- Est. Time Remaining: {estimated_time:.2f}s\n"
+        s += f"- Est. Time Remaining: {remaining_time:.2f}s\n"
         s += f"- Start Time: {datetime.datetime.now()}\n"
         s += f"- Uname: {uname}\n"
         s += f"- Hostname: {hostname}\n"
         s += f"\n"
         s += f"{net_check["after"]["iperf"]}\n"
+        s += f"\n"
+        s += f"{net_check["after"]["ping"]}\n"
         ntfy(s)
 
-        # sanity check: no other BINARY_NAME process is running
+        # sanity check: ensure no BINARY_NAME process is running
         # ps -axc -o comm
-        proc = subprocess.run(f'ps -axc -o comm', shell=True, check=True, stdout=subprocess.PIPE)
-        assert proc.returncode == 0
-        for line in proc.stdout.decode().split('\n'):
-            if BINARY_NAME in line:
-                raise Exception(f'Process {BINARY_NAME} is already running')
-        
-        for _ in range(5):
+        subprocess.run(f'killall {BINARY_NAME}', shell=True)
+
+        for _ in range(3):
             try:
                 # run the prover and verifier
                 print('Start prover')
@@ -385,16 +438,19 @@ def execute(runs):
                 break
 
             except Exception as e:
+                import traceback
+                backtrace = traceback.format_exc()
                 print(f'{RED}### ERROR {bench} {net} ###{END}')
-                ntfy(f'''Error: {bench} {net}''')
-                print(e)
+                ntfy(f'Error: {bench} {net}\n\n{e}\n\n{backtrace}')
+                time.sleep(5)
+                raise e
 
         else:
             exit(1)
 
-        finished += 1
-        
-    ntfy(f'''Completed {total} benchmarks :)''')
+        finished_work += work_of_meta(meta)
+
+    ntfy(f'''Completed {total} benchmarks.''')
 
 if __name__ == '__main__':
     import sys
@@ -410,4 +466,4 @@ if __name__ == '__main__':
             NetworkConfig(mbits=100, delay_ms_one_way=10),
             NetworkConfig(mbits=1000, delay_ms_one_way=10),
         ]
-        execute(list(itertools.product(networks, benchmarks)))
+        execute(directory, list(itertools.product(networks, benchmarks)))
