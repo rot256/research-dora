@@ -273,20 +273,22 @@ class Verifier:
         while 1:
             try:
                 self.prover.process.wait(5)
+                assert self.prover.process.returncode == 0
                 break
             except subprocess.TimeoutExpired:
                 pass
 
             try:
                 self.process.wait(5)
+                assert self.process.returncode == 0
                 break
             except subprocess.TimeoutExpired:
                 pass
 
         # wait for other processes to finish
-        # give them 10 seconds to do so
-        self.process.wait(10)
-        self.prover.process.wait(10)
+        # give them 60 seconds to do so
+        self.process.wait(60)
+        self.prover.process.wait(60)
 
         # read the outputs
         self.prover.output.seek(0)
