@@ -24,7 +24,7 @@ pub mod circuit_ir;
 mod dora;
 
 #[allow(dead_code)]
-mod ram;
+pub mod ram;
 
 pub mod edabits;
 pub mod fields;

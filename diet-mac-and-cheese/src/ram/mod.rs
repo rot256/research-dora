@@ -16,8 +16,8 @@ mod tests;
 mod tx;
 mod verifier;
 
-use prover::Prover;
-use verifier::Verifier;
+pub use prover::Prover;
+pub use verifier::Verifier;
 
 const SEP: &[u8] = b"FS_RAM";
 
@@ -67,12 +67,12 @@ pub trait MemorySpace<V> {
     fn enumerate(&self) -> Self::Enum;
 }
 
-struct Bounded<F: FiniteField> {
+pub struct Bounded<F: FiniteField> {
     _ph: PhantomData<F>,
     bound: usize,
 }
 
-struct BoundedIter<F: FiniteField> {
+pub struct BoundedIter<F: FiniteField> {
     current: [F; 1],
     rem: usize,
 }
@@ -93,7 +93,7 @@ impl<F: FiniteField> Iterator for BoundedIter<F> {
 }
 
 impl<F: FiniteField> Bounded<F> {
-    fn new(bound: usize) -> Self {
+    pub fn new(bound: usize) -> Self {
         Self {
             bound,
             _ph: Default::default(),

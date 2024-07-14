@@ -398,6 +398,7 @@ def execute(root, runs):
 
         # apply network settings
         net_check = network.apply(net)
+        assert net_check is not None
 
         s = "Benchmark:\n"
         s += f"- Index: {num+1}/{total}\n"

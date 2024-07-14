@@ -48,3 +48,7 @@ path = "examples/edabits.rs"
 [[bin]]
 name = "dietmc_0p"
 path = "bin/dietmc_0p.rs"
+
+[[bin]]
+name = "dietmc_ram"
+path = "bin/dietmc_ram.rs"

@@ -14,10 +14,8 @@ use crate::{
     backend_trait::BackendT,
     homcom::{FComProver, MacProver, MacVerifier},
     ram::{collapse_vecs, perm::permutation},
-    DietMacAndCheeseProver, DietMacAndCheeseVerifier,
+    DietMacAndCheeseVerifier,
 };
-
-use generic_array::typenum::Unsigned;
 
 use super::{tx::TxChannel, MemorySpace, PRE_ALLOC_MEM, PRE_ALLOC_STEPS};
 
