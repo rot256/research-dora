@@ -25,7 +25,7 @@ const SEP: &[u8] = b"FS_RAM";
 // Used to compute capacities of large vectors
 // (affects efficiency not correctness)
 const RAM_SIZE: usize = 1 << 20;
-const RAM_STEPS: usize = 1 << 23;
+const RAM_STEPS: usize = 1 << 24;
 
 const PRE_ALLOC_MEM: usize = RAM_SIZE;
 const PRE_ALLOC_STEPS: usize = RAM_STEPS + RAM_SIZE;
