@@ -37,7 +37,7 @@ NEGATIVE = "\033[7m"
 CROSSED = "\033[9m"
 END = "\033[0m"
 
-NOTIFY_ID = 'dora-benchmarking-run'
+NOTIFY_ID = os.environ.get('NOTIFY_ID', None)
 
 def get_sys_info():
     # get some system information
@@ -86,14 +86,41 @@ class WorkEstimator:
         remaining = self.total - self.finished
         return float(time_per_unit * remaining)
 
+BAD_RATE = 60 * 10
+GOOD_RATE = 6
+LAST_BAD_HTTP = 0
+LAST_NOTIFY = 0
+
 def ntfy(msg):
-    from urllib import request
+    global LAST_NOTIFY
+    global LAST_BAD_HTTP
+
+    from urllib import request, error
     print(f"## Notify : {NOTIFY_ID}")
     print(f"{CYAN}{msg}{END}")
+
     if NOTIFY_ID:
-        req =  request.Request(f"https://ntfy.sh/{NOTIFY_ID}", data=msg.encode('utf-8'))
-        resp = request.urlopen(req)
-        assert resp.status == 200
+        # if we failed, wait for a bit
+        if time.time() - LAST_BAD_HTTP < BAD_RATE:
+            print(f"{RED}Error: HTTP error rate limit{END}")
+            return
+
+        # if we notified recently, wait for a bit
+        if time.time() - LAST_NOTIFY < GOOD_RATE:
+            print(f"{RED}Error: HTTP error rate limit{END}")
+            return
+
+        LAST_NOTIFY = time.time()
+
+        try:
+            # try to send a notification
+            req =  request.Request(f"https://ntfy.sh/{NOTIFY_ID}", data=msg.encode('utf-8'))
+            resp = request.urlopen(req)
+            assert resp.status == 200
+        except error.HTTPError as e:
+            # don't fail if the notification fails
+            LAST_BAD_HTTP = time.time()
+            print(f"{RED}Error: {e}{END}")
 
 def network_test():
     PORT = 5001
@@ -233,3 +260,32 @@ class NetworkConfig:
 
     def __gt__(self, value):
         return (self.mbits, self.delay) > (value.mbits, value.delay)
+
+BW_HIGH = 1000
+BW_MEDIUM = 100
+BW_LOW = 50
+
+DELAY_LOW = 0
+DELAY_MEDIUM = 10
+DELAY_HIGH = 100
+
+NETWORKS = list(set([
+    # high bandwidth, variable delay
+    NetworkConfig(mbits=BW_HIGH, delay_ms_one_way=DELAY_LOW),
+    NetworkConfig(mbits=BW_HIGH, delay_ms_one_way=DELAY_MEDIUM),
+    NetworkConfig(mbits=BW_HIGH, delay_ms_one_way=DELAY_HIGH),
+    # medium bandwidth, variable delay
+    NetworkConfig(mbits=BW_MEDIUM, delay_ms_one_way=DELAY_LOW),
+    NetworkConfig(mbits=BW_MEDIUM, delay_ms_one_way=DELAY_MEDIUM),
+    NetworkConfig(mbits=BW_MEDIUM, delay_ms_one_way=DELAY_HIGH),
+    # low bandwidth, variable delay
+    NetworkConfig(mbits=BW_LOW, delay_ms_one_way=DELAY_LOW),
+    NetworkConfig(mbits=BW_LOW, delay_ms_one_way=DELAY_MEDIUM),
+    NetworkConfig(mbits=BW_LOW, delay_ms_one_way=DELAY_HIGH),
+    # fixed delay, variable bandwidth
+    # this should be redundant with the above,
+    # but we include it for completeness
+    NetworkConfig(mbits=BW_LOW, delay_ms_one_way=DELAY_MEDIUM),
+    NetworkConfig(mbits=BW_MEDIUM, delay_ms_one_way=DELAY_MEDIUM),
+    NetworkConfig(mbits=BW_HIGH, delay_ms_one_way=DELAY_MEDIUM),
+]))

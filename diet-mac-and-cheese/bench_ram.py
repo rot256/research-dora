@@ -125,18 +125,6 @@ class Verifier:
             "prover": prover_stdout,
         }
 
-
-networks = [
-    # fixed bandwidth, variable delay
-    NetworkConfig(mbits=1000, delay_ms_one_way=0),
-    NetworkConfig(mbits=1000, delay_ms_one_way=10),
-    NetworkConfig(mbits=1000, delay_ms_one_way=100),
-    # fixed delay, variable bandwidth
-    NetworkConfig(mbits=50, delay_ms_one_way=10),
-    NetworkConfig(mbits=100, delay_ms_one_way=10),
-    NetworkConfig(mbits=1000, delay_ms_one_way=10),
-]
-
 ram_sizes = [
     2**10,
     2**11,
@@ -162,7 +150,7 @@ def result_file(item):
     return f'result-{net.mbits}mbits-{net.delay}ms-{ram_size}size-{ram_steps}steps.json'
 
 if __name__ == '__main__':
-    benchmarks = list(itertools.product(networks, ram_sizes, ram_steps))
+    benchmarks = list(itertools.product(NETWORKS, ram_sizes, ram_steps))
     benchmarks = sorted(benchmarks)
     output_dir = sys.argv[1]
 
@@ -179,7 +167,7 @@ if __name__ == '__main__':
     estimator = WorkEstimator(est=ests)
 
     print(f'{YELLOW}Running Benchmarks:{END}')
-    print(f'{YELLOW}  - networks   : {len(networks)}{END}')
+    print(f'{YELLOW}  - networks   : {len(NETWORKS)}{END}')
     print(f'{YELLOW}  - ram_sizes  : {len(ram_sizes)}{END}')
     print(f'{YELLOW}  - ram_steps  : {len(ram_steps)}{END}')
     print(f'{YELLOW}  - output_dir : {output_dir}{END}')
@@ -231,14 +219,21 @@ if __name__ == '__main__':
         # run the benchmark
         print(f'{YELLOW}Running {path}{END}')
         for _ in range(5):
+            # sanity check: ensure no BINARY_NAME process is running
+            # ps -axc -o comm
+            subprocess.run(f'killall {BINARY_NAME}', shell=True)
+
             try:
                 prover = Prover(ram_size=ram_size, ram_steps=ram_steps)
                 verifier = Verifier(prover)
                 outputs = verifier.complete()
                 break
             except Exception as e:
+                import traceback
+                backtrace = traceback.format_exc()
                 print(f'{RED}Error: {e}{END}')
-                ntfy(f'Error: {e}')
+                print(f'{RED}{backtrace}{END}')
+                ntfy(f'Error: {e}\n{backtrace}')
                 time.sleep(5)
         else:
             print(f'{RED}Failed to run benchmark{END}')

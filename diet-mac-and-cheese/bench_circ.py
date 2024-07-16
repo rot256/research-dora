@@ -86,14 +86,14 @@ class Verifier:
         while 1:
             try:
                 self.prover.process.wait(5)
-                assert self.prover.process.returncode == 0
+                assert self.prover.process.returncode == 0, self.prover.output.read().decode()
                 break
             except subprocess.TimeoutExpired:
                 pass
 
             try:
                 self.process.wait(5)
-                assert self.process.returncode == 0
+                assert self.process.returncode == 0, self.output.read().decode()
                 break
             except subprocess.TimeoutExpired:
                 pass
@@ -151,9 +151,9 @@ def execute(root, runs):
     network = Network()
     start_time = time.time()
 
+    est = WorkEstimator(est=work_of_meta)
+
     # calculate the total work
-    total_work = 0
-    finished_work = 0
     for (net, bench) in runs:
         path = os.path.join(root, bench)
         meta = os.path.join(path, 'meta.json')
@@ -161,7 +161,7 @@ def execute(root, runs):
         result = os.path.join(path, result_file(net))
         if os.path.exists(result):
             continue
-        total_work += work_of_meta(meta)
+        est.add(meta)
 
     for (num, (net, bench)) in enumerate(runs):
         # read the meta data
@@ -169,21 +169,15 @@ def execute(root, runs):
         meta = os.path.join(path, 'meta.json')
         meta = json.load(open(meta))
 
-        remaining_time = math.inf
-        if finished_work > 0:
-            assert total_work >= finished_work
-            delta = time.time() - start_time
-            time_per_unit = fractions.Fraction(delta) / finished_work
-            remaining = total_work - finished_work
-            remaining_time = float(time_per_unit * remaining)
-
-        print(f'{BLUE}Estimated Time Remaining: {remaining_time} seconds{END}')
+        remain = est.remaining()
 
         # check if we already ran this benchmark
         result = os.path.join(path, result_file(net))
         if os.path.exists(result):
             print(f'{YELLOW}### [{num+1}/{total}] : Skipping {bench} {net} ###{END}')
             continue
+
+        print(f'{BLUE}Estimated Time Remaining: {remain} seconds{END}')
 
         print(f'{YELLOW}### [{num+1}/{total}] : Running {bench} {net} ###{END}')
 
@@ -195,7 +189,7 @@ def execute(root, runs):
         s += f"- Index: {num+1}/{total}\n"
         s += f"- Network: {net}\n"
         s += f"- Meta: {meta}\n"
-        s += f"- Est. Time Remaining: {remaining_time:.2f}s\n"
+        s += f"- Est. Time Remaining: {remain:.2f}s\n"
         s += f"- Start Time: {datetime.datetime.now()}\n"
         s += f"- Uname: {uname}\n"
         s += f"- Hostname: {hostname}\n"
@@ -242,7 +236,7 @@ def execute(root, runs):
         else:
             exit(1)
 
-        finished_work += work_of_meta(meta)
+        est.done(meta)
 
     ntfy(f'''Completed {total} benchmarks.''')
 
@@ -250,14 +244,4 @@ if __name__ == '__main__':
     import sys
     for directory in sys.argv[1:]:
         benchmarks = os.listdir(directory)
-        networks = [
-            # fixed bandwidth, variable delay
-            NetworkConfig(mbits=1000, delay_ms_one_way=0),
-            NetworkConfig(mbits=1000, delay_ms_one_way=10),
-            NetworkConfig(mbits=1000, delay_ms_one_way=100),
-            # fixed delay, variable bandwidth
-            NetworkConfig(mbits=50, delay_ms_one_way=10),
-            NetworkConfig(mbits=100, delay_ms_one_way=10),
-            NetworkConfig(mbits=1000, delay_ms_one_way=10),
-        ]
-        execute(directory, list(itertools.product(networks, benchmarks)))
+        execute(directory, list(itertools.product(NETWORKS, benchmarks)))

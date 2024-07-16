@@ -3,11 +3,33 @@
         "steps": 12500,
         "clauses": 4096,
         "gates_per_clause": 512,
+        "time_ms": 36851,
+        "comm_bytes": 204814240,
+        "verifier_sent_bytes": 8191360,
+        "verifier_recv_bytes": 196622880,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 12500,
+        "clauses": 4096,
+        "gates_per_clause": 512,
         "time_ms": 24757,
         "comm_bytes": 204814240,
         "verifier_sent_bytes": 8191360,
         "verifier_recv_bytes": 196622880,
         "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 12500,
+        "clauses": 4096,
+        "gates_per_clause": 512,
+        "time_ms": 24875,
+        "comm_bytes": 204814240,
+        "verifier_sent_bytes": 8191360,
+        "verifier_recv_bytes": 196622880,
+        "latency_ms": 0,
         "bandwith_mbits": 100
     },
     {
@@ -20,6 +42,17 @@
         "verifier_recv_bytes": 196622880,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 12500,
+        "clauses": 4096,
+        "gates_per_clause": 512,
+        "time_ms": 40585,
+        "comm_bytes": 204814240,
+        "verifier_sent_bytes": 8191360,
+        "verifier_recv_bytes": 196622880,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 12500,
@@ -47,12 +80,34 @@
         "steps": 12500,
         "clauses": 4096,
         "gates_per_clause": 512,
+        "time_ms": 51898,
+        "comm_bytes": 204814240,
+        "verifier_sent_bytes": 8191360,
+        "verifier_recv_bytes": 196622880,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 4096,
+        "gates_per_clause": 512,
         "time_ms": 40548,
         "comm_bytes": 204814240,
         "verifier_sent_bytes": 8191360,
         "verifier_recv_bytes": 196622880,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 8,
+        "gates_per_clause": 512,
+        "time_ms": 51481,
+        "comm_bytes": 303108536,
+        "verifier_sent_bytes": 9978896,
+        "verifier_recv_bytes": 293129640,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 25000,
@@ -69,12 +124,34 @@
         "steps": 25000,
         "clauses": 8,
         "gates_per_clause": 512,
+        "time_ms": 34662,
+        "comm_bytes": 303108536,
+        "verifier_sent_bytes": 9978896,
+        "verifier_recv_bytes": 293129640,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 25000,
+        "clauses": 8,
+        "gates_per_clause": 512,
         "time_ms": 11485,
         "comm_bytes": 303108536,
         "verifier_sent_bytes": 9978896,
         "verifier_recv_bytes": 293129640,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 25000,
+        "clauses": 8,
+        "gates_per_clause": 512,
+        "time_ms": 58279,
+        "comm_bytes": 303108536,
+        "verifier_sent_bytes": 9978896,
+        "verifier_recv_bytes": 293129640,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 25000,
@@ -102,12 +179,34 @@
         "steps": 25000,
         "clauses": 8,
         "gates_per_clause": 512,
+        "time_ms": 73835,
+        "comm_bytes": 303108536,
+        "verifier_sent_bytes": 9978896,
+        "verifier_recv_bytes": 293129640,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 8,
+        "gates_per_clause": 512,
         "time_ms": 58220,
         "comm_bytes": 303108536,
         "verifier_sent_bytes": 9978896,
         "verifier_recv_bytes": 293129640,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 64,
+        "gates_per_clause": 64,
+        "time_ms": 14589,
+        "comm_bytes": 65339536,
+        "verifier_sent_bytes": 4616368,
+        "verifier_recv_bytes": 60723168,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 12500,
@@ -124,12 +223,34 @@
         "steps": 12500,
         "clauses": 64,
         "gates_per_clause": 64,
+        "time_ms": 8517,
+        "comm_bytes": 65339536,
+        "verifier_sent_bytes": 4616368,
+        "verifier_recv_bytes": 60723168,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 12500,
+        "clauses": 64,
+        "gates_per_clause": 64,
         "time_ms": 3588,
         "comm_bytes": 65339536,
         "verifier_sent_bytes": 4616368,
         "verifier_recv_bytes": 60723168,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 12500,
+        "clauses": 64,
+        "gates_per_clause": 64,
+        "time_ms": 13262,
+        "comm_bytes": 65339536,
+        "verifier_sent_bytes": 4616368,
+        "verifier_recv_bytes": 60723168,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 12500,
@@ -157,12 +278,34 @@
         "steps": 12500,
         "clauses": 64,
         "gates_per_clause": 64,
+        "time_ms": 18996,
+        "comm_bytes": 65339536,
+        "verifier_sent_bytes": 4616368,
+        "verifier_recv_bytes": 60723168,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 64,
+        "gates_per_clause": 64,
         "time_ms": 13207,
         "comm_bytes": 65339536,
         "verifier_sent_bytes": 4616368,
         "verifier_recv_bytes": 60723168,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 64,
+        "gates_per_clause": 32768,
+        "time_ms": 377217,
+        "comm_bytes": 2438841000,
+        "verifier_sent_bytes": 56454000,
+        "verifier_recv_bytes": 2382387000,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 25000,
@@ -179,12 +322,34 @@
         "steps": 25000,
         "clauses": 64,
         "gates_per_clause": 32768,
+        "time_ms": 264745,
+        "comm_bytes": 2438841000,
+        "verifier_sent_bytes": 56454000,
+        "verifier_recv_bytes": 2382387000,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 25000,
+        "clauses": 64,
+        "gates_per_clause": 32768,
         "time_ms": 80666,
         "comm_bytes": 2438841000,
         "verifier_sent_bytes": 56454000,
         "verifier_recv_bytes": 2382387000,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 25000,
+        "clauses": 64,
+        "gates_per_clause": 32768,
+        "time_ms": 459094,
+        "comm_bytes": 2438841000,
+        "verifier_sent_bytes": 56454000,
+        "verifier_recv_bytes": 2382387000,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 25000,
@@ -212,12 +377,34 @@
         "steps": 25000,
         "clauses": 64,
         "gates_per_clause": 32768,
+        "time_ms": 560035,
+        "comm_bytes": 2438841000,
+        "verifier_sent_bytes": 56454000,
+        "verifier_recv_bytes": 2382387000,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 64,
+        "gates_per_clause": 32768,
         "time_ms": 458969,
         "comm_bytes": 2438841000,
         "verifier_sent_bytes": 56454000,
         "verifier_recv_bytes": 2382387000,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 32768,
+        "gates_per_clause": 4096,
+        "time_ms": 475358,
+        "comm_bytes": 2864742984,
+        "verifier_sent_bytes": 65391664,
+        "verifier_recv_bytes": 2799351320,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 50000,
@@ -234,12 +421,34 @@
         "steps": 50000,
         "clauses": 32768,
         "gates_per_clause": 4096,
+        "time_ms": 344156,
+        "comm_bytes": 2864742984,
+        "verifier_sent_bytes": 65391664,
+        "verifier_recv_bytes": 2799351320,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 50000,
+        "clauses": 32768,
+        "gates_per_clause": 4096,
         "time_ms": 124707,
         "comm_bytes": 2864742984,
         "verifier_sent_bytes": 65391664,
         "verifier_recv_bytes": 2799351320,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 50000,
+        "clauses": 32768,
+        "gates_per_clause": 4096,
+        "time_ms": 571694,
+        "comm_bytes": 2864742984,
+        "verifier_sent_bytes": 65391664,
+        "verifier_recv_bytes": 2799351320,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 50000,
@@ -267,12 +476,34 @@
         "steps": 50000,
         "clauses": 32768,
         "gates_per_clause": 4096,
+        "time_ms": 691107,
+        "comm_bytes": 2864742984,
+        "verifier_sent_bytes": 65391664,
+        "verifier_recv_bytes": 2799351320,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 32768,
+        "gates_per_clause": 4096,
         "time_ms": 564407,
         "comm_bytes": 2864742984,
         "verifier_sent_bytes": 65391664,
         "verifier_recv_bytes": 2799351320,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 8,
+        "gates_per_clause": 64,
+        "time_ms": 14558,
+        "comm_bytes": 64962320,
+        "verifier_sent_bytes": 4616368,
+        "verifier_recv_bytes": 60345952,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 12500,
@@ -289,12 +520,34 @@
         "steps": 12500,
         "clauses": 8,
         "gates_per_clause": 64,
+        "time_ms": 8520,
+        "comm_bytes": 64962320,
+        "verifier_sent_bytes": 4616368,
+        "verifier_recv_bytes": 60345952,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 12500,
+        "clauses": 8,
+        "gates_per_clause": 64,
         "time_ms": 3601,
         "comm_bytes": 64962320,
         "verifier_sent_bytes": 4616368,
         "verifier_recv_bytes": 60345952,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 12500,
+        "clauses": 8,
+        "gates_per_clause": 64,
+        "time_ms": 13278,
+        "comm_bytes": 64962320,
+        "verifier_sent_bytes": 4616368,
+        "verifier_recv_bytes": 60345952,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 12500,
@@ -322,12 +575,34 @@
         "steps": 12500,
         "clauses": 8,
         "gates_per_clause": 64,
+        "time_ms": 18955,
+        "comm_bytes": 64962320,
+        "verifier_sent_bytes": 4616368,
+        "verifier_recv_bytes": 60345952,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 8,
+        "gates_per_clause": 64,
         "time_ms": 13198,
         "comm_bytes": 64962320,
         "verifier_sent_bytes": 4616368,
         "verifier_recv_bytes": 60345952,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 8,
+        "gates_per_clause": 4096,
+        "time_ms": 272863,
+        "comm_bytes": 1734300016,
+        "verifier_sent_bytes": 40366496,
+        "verifier_recv_bytes": 1693933520,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 50000,
@@ -344,12 +619,34 @@
         "steps": 50000,
         "clauses": 8,
         "gates_per_clause": 4096,
+        "time_ms": 188230,
+        "comm_bytes": 1734300016,
+        "verifier_sent_bytes": 40366496,
+        "verifier_recv_bytes": 1693933520,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 50000,
+        "clauses": 8,
+        "gates_per_clause": 4096,
         "time_ms": 56183,
         "comm_bytes": 1734300016,
         "verifier_sent_bytes": 40366496,
         "verifier_recv_bytes": 1693933520,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 50000,
+        "clauses": 8,
+        "gates_per_clause": 4096,
+        "time_ms": 326315,
+        "comm_bytes": 1734300016,
+        "verifier_sent_bytes": 40366496,
+        "verifier_recv_bytes": 1693933520,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 50000,
@@ -377,12 +674,34 @@
         "steps": 50000,
         "clauses": 8,
         "gates_per_clause": 4096,
+        "time_ms": 399712,
+        "comm_bytes": 1734300016,
+        "verifier_sent_bytes": 40366496,
+        "verifier_recv_bytes": 1693933520,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 8,
+        "gates_per_clause": 4096,
         "time_ms": 326237,
         "comm_bytes": 1734300016,
         "verifier_sent_bytes": 40366496,
         "verifier_recv_bytes": 1693933520,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 4096,
+        "gates_per_clause": 32768,
+        "time_ms": 446282,
+        "comm_bytes": 2820595920,
+        "verifier_sent_bytes": 63604032,
+        "verifier_recv_bytes": 2756991888,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 25000,
@@ -399,12 +718,34 @@
         "steps": 25000,
         "clauses": 4096,
         "gates_per_clause": 32768,
+        "time_ms": 318495,
+        "comm_bytes": 2820595920,
+        "verifier_sent_bytes": 63604032,
+        "verifier_recv_bytes": 2756991888,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 25000,
+        "clauses": 4096,
+        "gates_per_clause": 32768,
         "time_ms": 112340,
         "comm_bytes": 2820595920,
         "verifier_sent_bytes": 63604032,
         "verifier_recv_bytes": 2756991888,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 25000,
+        "clauses": 4096,
+        "gates_per_clause": 32768,
+        "time_ms": 542210,
+        "comm_bytes": 2820595920,
+        "verifier_sent_bytes": 63604032,
+        "verifier_recv_bytes": 2756991888,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 25000,
@@ -432,12 +773,34 @@
         "steps": 25000,
         "clauses": 4096,
         "gates_per_clause": 32768,
+        "time_ms": 657159,
+        "comm_bytes": 2820595920,
+        "verifier_sent_bytes": 63604032,
+        "verifier_recv_bytes": 2756991888,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 4096,
+        "gates_per_clause": 32768,
         "time_ms": 539640,
         "comm_bytes": 2820595920,
         "verifier_sent_bytes": 63604032,
         "verifier_recv_bytes": 2756991888,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 64,
+        "gates_per_clause": 4096,
+        "time_ms": 269277,
+        "comm_bytes": 1739998128,
+        "verifier_sent_bytes": 40366496,
+        "verifier_recv_bytes": 1699631632,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 50000,
@@ -454,12 +817,34 @@
         "steps": 50000,
         "clauses": 64,
         "gates_per_clause": 4096,
+        "time_ms": 188685,
+        "comm_bytes": 1739998128,
+        "verifier_sent_bytes": 40366496,
+        "verifier_recv_bytes": 1699631632,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 50000,
+        "clauses": 64,
+        "gates_per_clause": 4096,
         "time_ms": 56337,
         "comm_bytes": 1739998128,
         "verifier_sent_bytes": 40366496,
         "verifier_recv_bytes": 1699631632,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 50000,
+        "clauses": 64,
+        "gates_per_clause": 4096,
+        "time_ms": 327272,
+        "comm_bytes": 1739998128,
+        "verifier_sent_bytes": 40366496,
+        "verifier_recv_bytes": 1699631632,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 50000,
@@ -487,12 +872,34 @@
         "steps": 50000,
         "clauses": 64,
         "gates_per_clause": 4096,
+        "time_ms": 399758,
+        "comm_bytes": 1739998128,
+        "verifier_sent_bytes": 40366496,
+        "verifier_recv_bytes": 1699631632,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 64,
+        "gates_per_clause": 4096,
         "time_ms": 326927,
         "comm_bytes": 1739998128,
         "verifier_sent_bytes": 40366496,
         "verifier_recv_bytes": 1699631632,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 4096,
+        "gates_per_clause": 64,
+        "time_ms": 47085,
+        "comm_bytes": 262310680,
+        "verifier_sent_bytes": 9978880,
+        "verifier_recv_bytes": 252331800,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 50000,
@@ -509,12 +916,34 @@
         "steps": 50000,
         "clauses": 4096,
         "gates_per_clause": 64,
+        "time_ms": 31554,
+        "comm_bytes": 262310680,
+        "verifier_sent_bytes": 9978880,
+        "verifier_recv_bytes": 252331800,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 50000,
+        "clauses": 4096,
+        "gates_per_clause": 64,
         "time_ms": 11538,
         "comm_bytes": 262310680,
         "verifier_sent_bytes": 9978880,
         "verifier_recv_bytes": 252331800,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 50000,
+        "clauses": 4096,
+        "gates_per_clause": 64,
+        "time_ms": 52025,
+        "comm_bytes": 262310680,
+        "verifier_sent_bytes": 9978880,
+        "verifier_recv_bytes": 252331800,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 50000,
@@ -542,12 +971,34 @@
         "steps": 50000,
         "clauses": 4096,
         "gates_per_clause": 64,
+        "time_ms": 65516,
+        "comm_bytes": 262310680,
+        "verifier_sent_bytes": 9978880,
+        "verifier_recv_bytes": 252331800,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 4096,
+        "gates_per_clause": 64,
         "time_ms": 51766,
         "comm_bytes": 262310680,
         "verifier_sent_bytes": 9978880,
         "verifier_recv_bytes": 252331800,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 4096,
+        "gates_per_clause": 4096,
+        "time_ms": 163180,
+        "comm_bytes": 1014330440,
+        "verifier_sent_bytes": 26066416,
+        "verifier_recv_bytes": 988264024,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 25000,
@@ -564,12 +1015,34 @@
         "steps": 25000,
         "clauses": 4096,
         "gates_per_clause": 4096,
+        "time_ms": 115055,
+        "comm_bytes": 1014330440,
+        "verifier_sent_bytes": 26066416,
+        "verifier_recv_bytes": 988264024,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 25000,
+        "clauses": 4096,
+        "gates_per_clause": 4096,
         "time_ms": 40007,
         "comm_bytes": 1014330440,
         "verifier_sent_bytes": 26066416,
         "verifier_recv_bytes": 988264024,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 25000,
+        "clauses": 4096,
+        "gates_per_clause": 4096,
+        "time_ms": 194981,
+        "comm_bytes": 1014330440,
+        "verifier_sent_bytes": 26066416,
+        "verifier_recv_bytes": 988264024,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 25000,
@@ -597,12 +1070,34 @@
         "steps": 25000,
         "clauses": 4096,
         "gates_per_clause": 4096,
+        "time_ms": 240330,
+        "comm_bytes": 1014330440,
+        "verifier_sent_bytes": 26066416,
+        "verifier_recv_bytes": 988264024,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 4096,
+        "gates_per_clause": 4096,
         "time_ms": 194616,
         "comm_bytes": 1014330440,
         "verifier_sent_bytes": 26066416,
         "verifier_recv_bytes": 988264024,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 512,
+        "gates_per_clause": 4096,
+        "time_ms": 278339,
+        "comm_bytes": 1788286888,
+        "verifier_sent_bytes": 42154000,
+        "verifier_recv_bytes": 1746132888,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 50000,
@@ -619,12 +1114,34 @@
         "steps": 50000,
         "clauses": 512,
         "gates_per_clause": 4096,
+        "time_ms": 194770,
+        "comm_bytes": 1788286888,
+        "verifier_sent_bytes": 42154000,
+        "verifier_recv_bytes": 1746132888,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 50000,
+        "clauses": 512,
+        "gates_per_clause": 4096,
         "time_ms": 59332,
         "comm_bytes": 1788286888,
         "verifier_sent_bytes": 42154000,
         "verifier_recv_bytes": 1746132888,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 50000,
+        "clauses": 512,
+        "gates_per_clause": 4096,
+        "time_ms": 337148,
+        "comm_bytes": 1788286888,
+        "verifier_sent_bytes": 42154000,
+        "verifier_recv_bytes": 1746132888,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 50000,
@@ -652,12 +1169,34 @@
         "steps": 50000,
         "clauses": 512,
         "gates_per_clause": 4096,
+        "time_ms": 412921,
+        "comm_bytes": 1788286888,
+        "verifier_sent_bytes": 42154000,
+        "verifier_recv_bytes": 1746132888,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 512,
+        "gates_per_clause": 4096,
         "time_ms": 337261,
         "comm_bytes": 1788286888,
         "verifier_sent_bytes": 42154000,
         "verifier_recv_bytes": 1746132888,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 512,
+        "gates_per_clause": 32768,
+        "time_ms": 389686,
+        "comm_bytes": 2525686432,
+        "verifier_sent_bytes": 58241504,
+        "verifier_recv_bytes": 2467444928,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 25000,
@@ -674,12 +1213,34 @@
         "steps": 25000,
         "clauses": 512,
         "gates_per_clause": 32768,
+        "time_ms": 275583,
+        "comm_bytes": 2525686432,
+        "verifier_sent_bytes": 58241504,
+        "verifier_recv_bytes": 2467444928,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 25000,
+        "clauses": 512,
+        "gates_per_clause": 32768,
         "time_ms": 87352,
         "comm_bytes": 2525686432,
         "verifier_sent_bytes": 58241504,
         "verifier_recv_bytes": 2467444928,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 25000,
+        "clauses": 512,
+        "gates_per_clause": 32768,
+        "time_ms": 475980,
+        "comm_bytes": 2525686432,
+        "verifier_sent_bytes": 58241504,
+        "verifier_recv_bytes": 2467444928,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 25000,
@@ -707,12 +1268,34 @@
         "steps": 25000,
         "clauses": 512,
         "gates_per_clause": 32768,
+        "time_ms": 581478,
+        "comm_bytes": 2525686432,
+        "verifier_sent_bytes": 58241504,
+        "verifier_recv_bytes": 2467444928,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 512,
+        "gates_per_clause": 32768,
         "time_ms": 475621,
         "comm_bytes": 2525686432,
         "verifier_sent_bytes": 58241504,
         "verifier_recv_bytes": 2467444928,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 32768,
+        "gates_per_clause": 64,
+        "time_ms": 39315,
+        "comm_bytes": 211611800,
+        "verifier_sent_bytes": 8191376,
+        "verifier_recv_bytes": 203420424,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 12500,
@@ -729,12 +1312,34 @@
         "steps": 12500,
         "clauses": 32768,
         "gates_per_clause": 64,
+        "time_ms": 26854,
+        "comm_bytes": 211611800,
+        "verifier_sent_bytes": 8191376,
+        "verifier_recv_bytes": 203420424,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 12500,
+        "clauses": 32768,
+        "gates_per_clause": 64,
         "time_ms": 11149,
         "comm_bytes": 211611800,
         "verifier_sent_bytes": 8191376,
         "verifier_recv_bytes": 203420424,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 12500,
+        "clauses": 32768,
+        "gates_per_clause": 64,
+        "time_ms": 42664,
+        "comm_bytes": 211611800,
+        "verifier_sent_bytes": 8191376,
+        "verifier_recv_bytes": 203420424,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 12500,
@@ -762,12 +1367,34 @@
         "steps": 12500,
         "clauses": 32768,
         "gates_per_clause": 64,
+        "time_ms": 54692,
+        "comm_bytes": 211611800,
+        "verifier_sent_bytes": 8191376,
+        "verifier_recv_bytes": 203420424,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 32768,
+        "gates_per_clause": 64,
         "time_ms": 42543,
         "comm_bytes": 211611800,
         "verifier_sent_bytes": 8191376,
         "verifier_recv_bytes": 203420424,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 8,
+        "gates_per_clause": 512,
+        "time_ms": 99063,
+        "comm_bytes": 597821400,
+        "verifier_sent_bytes": 17128944,
+        "verifier_recv_bytes": 580692456,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 50000,
@@ -784,12 +1411,34 @@
         "steps": 50000,
         "clauses": 8,
         "gates_per_clause": 512,
+        "time_ms": 67672,
+        "comm_bytes": 597821400,
+        "verifier_sent_bytes": 17128944,
+        "verifier_recv_bytes": 580692456,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 50000,
+        "clauses": 8,
+        "gates_per_clause": 512,
         "time_ms": 21887,
         "comm_bytes": 597821400,
         "verifier_sent_bytes": 17128944,
         "verifier_recv_bytes": 580692456,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 50000,
+        "clauses": 8,
+        "gates_per_clause": 512,
+        "time_ms": 114370,
+        "comm_bytes": 597821400,
+        "verifier_sent_bytes": 17128944,
+        "verifier_recv_bytes": 580692456,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 50000,
@@ -817,12 +1466,34 @@
         "steps": 50000,
         "clauses": 8,
         "gates_per_clause": 512,
+        "time_ms": 143203,
+        "comm_bytes": 597821400,
+        "verifier_sent_bytes": 17128944,
+        "verifier_recv_bytes": 580692456,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 8,
+        "gates_per_clause": 512,
         "time_ms": 114384,
         "comm_bytes": 597821400,
         "verifier_sent_bytes": 17128944,
         "verifier_recv_bytes": 580692456,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 512,
+        "gates_per_clause": 512,
+        "time_ms": 28675,
+        "comm_bytes": 164541864,
+        "verifier_sent_bytes": 6403872,
+        "verifier_recv_bytes": 158137992,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 12500,
@@ -839,12 +1510,34 @@
         "steps": 12500,
         "clauses": 512,
         "gates_per_clause": 512,
+        "time_ms": 18878,
+        "comm_bytes": 164541864,
+        "verifier_sent_bytes": 6403872,
+        "verifier_recv_bytes": 158137992,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 12500,
+        "clauses": 512,
+        "gates_per_clause": 512,
         "time_ms": 6611,
         "comm_bytes": 164541864,
         "verifier_sent_bytes": 6403872,
         "verifier_recv_bytes": 158137992,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 12500,
+        "clauses": 512,
+        "gates_per_clause": 512,
+        "time_ms": 31619,
+        "comm_bytes": 164541864,
+        "verifier_sent_bytes": 6403872,
+        "verifier_recv_bytes": 158137992,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 12500,
@@ -872,12 +1565,34 @@
         "steps": 12500,
         "clauses": 512,
         "gates_per_clause": 512,
+        "time_ms": 40668,
+        "comm_bytes": 164541864,
+        "verifier_sent_bytes": 6403872,
+        "verifier_recv_bytes": 158137992,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 512,
+        "gates_per_clause": 512,
         "time_ms": 31514,
         "comm_bytes": 164541864,
         "verifier_sent_bytes": 6403872,
         "verifier_recv_bytes": 158137992,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 4096,
+        "gates_per_clause": 4096,
+        "time_ms": 304516,
+        "comm_bytes": 1948298160,
+        "verifier_sent_bytes": 45728976,
+        "verifier_recv_bytes": 1902569184,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 50000,
@@ -894,12 +1609,34 @@
         "steps": 50000,
         "clauses": 4096,
         "gates_per_clause": 4096,
+        "time_ms": 216019,
+        "comm_bytes": 1948298160,
+        "verifier_sent_bytes": 45728976,
+        "verifier_recv_bytes": 1902569184,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 50000,
+        "clauses": 4096,
+        "gates_per_clause": 4096,
         "time_ms": 70385,
         "comm_bytes": 1948298160,
         "verifier_sent_bytes": 45728976,
         "verifier_recv_bytes": 1902569184,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 50000,
+        "clauses": 4096,
+        "gates_per_clause": 4096,
+        "time_ms": 370268,
+        "comm_bytes": 1948298160,
+        "verifier_sent_bytes": 45728976,
+        "verifier_recv_bytes": 1902569184,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 50000,
@@ -927,12 +1664,34 @@
         "steps": 50000,
         "clauses": 4096,
         "gates_per_clause": 4096,
+        "time_ms": 451718,
+        "comm_bytes": 1948298160,
+        "verifier_sent_bytes": 45728976,
+        "verifier_recv_bytes": 1902569184,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 4096,
+        "gates_per_clause": 4096,
         "time_ms": 369133,
         "comm_bytes": 1948298160,
         "verifier_sent_bytes": 45728976,
         "verifier_recv_bytes": 1902569184,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 8,
+        "gates_per_clause": 64,
+        "time_ms": 40828,
+        "comm_bytes": 232128224,
+        "verifier_sent_bytes": 8191424,
+        "verifier_recv_bytes": 223936800,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 50000,
@@ -949,12 +1708,34 @@
         "steps": 50000,
         "clauses": 8,
         "gates_per_clause": 64,
+        "time_ms": 26623,
+        "comm_bytes": 232128224,
+        "verifier_sent_bytes": 8191424,
+        "verifier_recv_bytes": 223936800,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 50000,
+        "clauses": 8,
+        "gates_per_clause": 64,
         "time_ms": 9044,
         "comm_bytes": 232128224,
         "verifier_sent_bytes": 8191424,
         "verifier_recv_bytes": 223936800,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 50000,
+        "clauses": 8,
+        "gates_per_clause": 64,
+        "time_ms": 44692,
+        "comm_bytes": 232128224,
+        "verifier_sent_bytes": 8191424,
+        "verifier_recv_bytes": 223936800,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 50000,
@@ -982,12 +1763,34 @@
         "steps": 50000,
         "clauses": 8,
         "gates_per_clause": 64,
+        "time_ms": 58351,
+        "comm_bytes": 232128224,
+        "verifier_sent_bytes": 8191424,
+        "verifier_recv_bytes": 223936800,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 8,
+        "gates_per_clause": 64,
         "time_ms": 44621,
         "comm_bytes": 232128224,
         "verifier_sent_bytes": 8191424,
         "verifier_recv_bytes": 223936800,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 4096,
+        "gates_per_clause": 64,
+        "time_ms": 26280,
+        "comm_bytes": 139174248,
+        "verifier_sent_bytes": 6403856,
+        "verifier_recv_bytes": 132770392,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 25000,
@@ -1004,12 +1807,34 @@
         "steps": 25000,
         "clauses": 4096,
         "gates_per_clause": 64,
+        "time_ms": 16967,
+        "comm_bytes": 139174248,
+        "verifier_sent_bytes": 6403856,
+        "verifier_recv_bytes": 132770392,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 25000,
+        "clauses": 4096,
+        "gates_per_clause": 64,
         "time_ms": 6408,
         "comm_bytes": 139174248,
         "verifier_sent_bytes": 6403856,
         "verifier_recv_bytes": 132770392,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 25000,
+        "clauses": 4096,
+        "gates_per_clause": 64,
+        "time_ms": 27478,
+        "comm_bytes": 139174248,
+        "verifier_sent_bytes": 6403856,
+        "verifier_recv_bytes": 132770392,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 25000,
@@ -1037,12 +1862,34 @@
         "steps": 25000,
         "clauses": 4096,
         "gates_per_clause": 64,
+        "time_ms": 36552,
+        "comm_bytes": 139174248,
+        "verifier_sent_bytes": 6403856,
+        "verifier_recv_bytes": 132770392,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 4096,
+        "gates_per_clause": 64,
         "time_ms": 27368,
         "comm_bytes": 139174248,
         "verifier_sent_bytes": 6403856,
         "verifier_recv_bytes": 132770392,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 512,
+        "gates_per_clause": 4096,
+        "time_ms": 76266,
+        "comm_bytes": 467465608,
+        "verifier_sent_bytes": 13553888,
+        "verifier_recv_bytes": 453911720,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 12500,
@@ -1059,12 +1906,34 @@
         "steps": 12500,
         "clauses": 512,
         "gates_per_clause": 4096,
+        "time_ms": 53040,
+        "comm_bytes": 467465608,
+        "verifier_sent_bytes": 13553888,
+        "verifier_recv_bytes": 453911720,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 12500,
+        "clauses": 512,
+        "gates_per_clause": 4096,
         "time_ms": 17651,
         "comm_bytes": 467465608,
         "verifier_sent_bytes": 13553888,
         "verifier_recv_bytes": 453911720,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 12500,
+        "clauses": 512,
+        "gates_per_clause": 4096,
+        "time_ms": 89173,
+        "comm_bytes": 467465608,
+        "verifier_sent_bytes": 13553888,
+        "verifier_recv_bytes": 453911720,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 12500,
@@ -1092,12 +1961,34 @@
         "steps": 12500,
         "clauses": 512,
         "gates_per_clause": 4096,
+        "time_ms": 110914,
+        "comm_bytes": 467465608,
+        "verifier_sent_bytes": 13553888,
+        "verifier_recv_bytes": 453911720,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 512,
+        "gates_per_clause": 4096,
         "time_ms": 89396,
         "comm_bytes": 467465608,
         "verifier_sent_bytes": 13553888,
         "verifier_recv_bytes": 453911720,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 512,
+        "gates_per_clause": 32768,
+        "time_ms": 770999,
+        "comm_bytes": 4992494192,
+        "verifier_sent_bytes": 111866656,
+        "verifier_recv_bytes": 4880627536,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 50000,
@@ -1114,12 +2005,34 @@
         "steps": 50000,
         "clauses": 512,
         "gates_per_clause": 32768,
+        "time_ms": 539994,
+        "comm_bytes": 4992494192,
+        "verifier_sent_bytes": 111866656,
+        "verifier_recv_bytes": 4880627536,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 50000,
+        "clauses": 512,
+        "gates_per_clause": 32768,
         "time_ms": 170083,
         "comm_bytes": 4992494192,
         "verifier_sent_bytes": 111866656,
         "verifier_recv_bytes": 4880627536,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 50000,
+        "clauses": 512,
+        "gates_per_clause": 32768,
+        "time_ms": 938166,
+        "comm_bytes": 4992494192,
+        "verifier_sent_bytes": 111866656,
+        "verifier_recv_bytes": 4880627536,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 50000,
@@ -1147,12 +2060,34 @@
         "steps": 50000,
         "clauses": 512,
         "gates_per_clause": 32768,
+        "time_ms": 1144651,
+        "comm_bytes": 4992494192,
+        "verifier_sent_bytes": 111866656,
+        "verifier_recv_bytes": 4880627536,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 512,
+        "gates_per_clause": 32768,
         "time_ms": 938364,
         "comm_bytes": 4992494192,
         "verifier_sent_bytes": 111866656,
         "verifier_recv_bytes": 4880627536,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 4096,
+        "gates_per_clause": 32768,
+        "time_ms": 844773,
+        "comm_bytes": 5437686928,
+        "verifier_sent_bytes": 120804176,
+        "verifier_recv_bytes": 5316882752,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 50000,
@@ -1169,12 +2104,34 @@
         "steps": 50000,
         "clauses": 4096,
         "gates_per_clause": 32768,
+        "time_ms": 602095,
+        "comm_bytes": 5437686928,
+        "verifier_sent_bytes": 120804176,
+        "verifier_recv_bytes": 5316882752,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 50000,
+        "clauses": 4096,
+        "gates_per_clause": 32768,
         "time_ms": 200170,
         "comm_bytes": 5437686928,
         "verifier_sent_bytes": 120804176,
         "verifier_recv_bytes": 5316882752,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 50000,
+        "clauses": 4096,
+        "gates_per_clause": 32768,
+        "time_ms": 1033557,
+        "comm_bytes": 5437686928,
+        "verifier_sent_bytes": 120804176,
+        "verifier_recv_bytes": 5316882752,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 50000,
@@ -1202,12 +2159,34 @@
         "steps": 50000,
         "clauses": 4096,
         "gates_per_clause": 32768,
+        "time_ms": 1254848,
+        "comm_bytes": 5437686928,
+        "verifier_sent_bytes": 120804176,
+        "verifier_recv_bytes": 5316882752,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 4096,
+        "gates_per_clause": 32768,
         "time_ms": 1031375,
         "comm_bytes": 5437686928,
         "verifier_sent_bytes": 120804176,
         "verifier_recv_bytes": 5316882752,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 32768,
+        "gates_per_clause": 512,
+        "time_ms": 122012,
+        "comm_bytes": 688422040,
+        "verifier_sent_bytes": 18916432,
+        "verifier_recv_bytes": 669505608,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 25000,
@@ -1224,12 +2203,34 @@
         "steps": 25000,
         "clauses": 32768,
         "gates_per_clause": 512,
+        "time_ms": 87458,
+        "comm_bytes": 688422040,
+        "verifier_sent_bytes": 18916432,
+        "verifier_recv_bytes": 669505608,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 25000,
+        "clauses": 32768,
+        "gates_per_clause": 512,
         "time_ms": 34295,
         "comm_bytes": 688422040,
         "verifier_sent_bytes": 18916432,
         "verifier_recv_bytes": 669505608,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 25000,
+        "clauses": 32768,
+        "gates_per_clause": 512,
+        "time_ms": 140850,
+        "comm_bytes": 688422040,
+        "verifier_sent_bytes": 18916432,
+        "verifier_recv_bytes": 669505608,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 25000,
@@ -1257,12 +2258,34 @@
         "steps": 25000,
         "clauses": 32768,
         "gates_per_clause": 512,
+        "time_ms": 172533,
+        "comm_bytes": 688422040,
+        "verifier_sent_bytes": 18916432,
+        "verifier_recv_bytes": 669505608,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 32768,
+        "gates_per_clause": 512,
         "time_ms": 139281,
         "comm_bytes": 688422040,
         "verifier_sent_bytes": 18916432,
         "verifier_recv_bytes": 669505608,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 32768,
+        "gates_per_clause": 512,
+        "time_ms": 98995,
+        "comm_bytes": 541114312,
+        "verifier_sent_bytes": 15341424,
+        "verifier_recv_bytes": 525772888,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 12500,
@@ -1279,12 +2302,34 @@
         "steps": 12500,
         "clauses": 32768,
         "gates_per_clause": 512,
+        "time_ms": 70884,
+        "comm_bytes": 541114312,
+        "verifier_sent_bytes": 15341424,
+        "verifier_recv_bytes": 525772888,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 12500,
+        "clauses": 32768,
+        "gates_per_clause": 512,
         "time_ms": 29048,
         "comm_bytes": 541114312,
         "verifier_sent_bytes": 15341424,
         "verifier_recv_bytes": 525772888,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 12500,
+        "clauses": 32768,
+        "gates_per_clause": 512,
+        "time_ms": 119089,
+        "comm_bytes": 541114312,
+        "verifier_sent_bytes": 15341424,
+        "verifier_recv_bytes": 525772888,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 12500,
@@ -1312,12 +2357,34 @@
         "steps": 12500,
         "clauses": 32768,
         "gates_per_clause": 512,
+        "time_ms": 138589,
+        "comm_bytes": 541114312,
+        "verifier_sent_bytes": 15341424,
+        "verifier_recv_bytes": 525772888,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 32768,
+        "gates_per_clause": 512,
         "time_ms": 111169,
         "comm_bytes": 541114312,
         "verifier_sent_bytes": 15341424,
         "verifier_recv_bytes": 525772888,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 8,
+        "gates_per_clause": 32768,
+        "time_ms": 375958,
+        "comm_bytes": 2428323304,
+        "verifier_sent_bytes": 56454000,
+        "verifier_recv_bytes": 2371869304,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 25000,
@@ -1334,12 +2401,34 @@
         "steps": 25000,
         "clauses": 8,
         "gates_per_clause": 32768,
+        "time_ms": 263408,
+        "comm_bytes": 2428323304,
+        "verifier_sent_bytes": 56454000,
+        "verifier_recv_bytes": 2371869304,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 25000,
+        "clauses": 8,
+        "gates_per_clause": 32768,
         "time_ms": 79256,
         "comm_bytes": 2428323304,
         "verifier_sent_bytes": 56454000,
         "verifier_recv_bytes": 2371869304,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 25000,
+        "clauses": 8,
+        "gates_per_clause": 32768,
+        "time_ms": 457246,
+        "comm_bytes": 2428323304,
+        "verifier_sent_bytes": 56454000,
+        "verifier_recv_bytes": 2371869304,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 25000,
@@ -1367,12 +2456,34 @@
         "steps": 25000,
         "clauses": 8,
         "gates_per_clause": 32768,
+        "time_ms": 559119,
+        "comm_bytes": 2428323304,
+        "verifier_sent_bytes": 56454000,
+        "verifier_recv_bytes": 2371869304,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 8,
+        "gates_per_clause": 32768,
         "time_ms": 457476,
         "comm_bytes": 2428323304,
         "verifier_sent_bytes": 56454000,
         "verifier_recv_bytes": 2371869304,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 4096,
+        "gates_per_clause": 64,
+        "time_ms": 16290,
+        "comm_bytes": 82570384,
+        "verifier_sent_bytes": 4616352,
+        "verifier_recv_bytes": 77954032,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 12500,
@@ -1389,12 +2500,34 @@
         "steps": 12500,
         "clauses": 4096,
         "gates_per_clause": 64,
+        "time_ms": 10074,
+        "comm_bytes": 82570384,
+        "verifier_sent_bytes": 4616352,
+        "verifier_recv_bytes": 77954032,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 12500,
+        "clauses": 4096,
+        "gates_per_clause": 64,
         "time_ms": 3987,
         "comm_bytes": 82570384,
         "verifier_sent_bytes": 4616352,
         "verifier_recv_bytes": 77954032,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 12500,
+        "clauses": 4096,
+        "gates_per_clause": 64,
+        "time_ms": 16329,
+        "comm_bytes": 82570384,
+        "verifier_sent_bytes": 4616352,
+        "verifier_recv_bytes": 77954032,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 12500,
@@ -1422,12 +2555,34 @@
         "steps": 12500,
         "clauses": 4096,
         "gates_per_clause": 64,
+        "time_ms": 21628,
+        "comm_bytes": 82570384,
+        "verifier_sent_bytes": 4616352,
+        "verifier_recv_bytes": 77954032,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 4096,
+        "gates_per_clause": 64,
         "time_ms": 16120,
         "comm_bytes": 82570384,
         "verifier_sent_bytes": 4616352,
         "verifier_recv_bytes": 77954032,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 512,
+        "gates_per_clause": 512,
+        "time_ms": 52744,
+        "comm_bytes": 314966648,
+        "verifier_sent_bytes": 9978896,
+        "verifier_recv_bytes": 304987752,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 25000,
@@ -1444,12 +2599,34 @@
         "steps": 25000,
         "clauses": 512,
         "gates_per_clause": 512,
+        "time_ms": 35630,
+        "comm_bytes": 314966648,
+        "verifier_sent_bytes": 9978896,
+        "verifier_recv_bytes": 304987752,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 25000,
+        "clauses": 512,
+        "gates_per_clause": 512,
         "time_ms": 11922,
         "comm_bytes": 314966648,
         "verifier_sent_bytes": 9978896,
         "verifier_recv_bytes": 304987752,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 25000,
+        "clauses": 512,
+        "gates_per_clause": 512,
+        "time_ms": 60149,
+        "comm_bytes": 314966648,
+        "verifier_sent_bytes": 9978896,
+        "verifier_recv_bytes": 304987752,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 25000,
@@ -1477,12 +2654,34 @@
         "steps": 25000,
         "clauses": 512,
         "gates_per_clause": 512,
+        "time_ms": 76125,
+        "comm_bytes": 314966648,
+        "verifier_sent_bytes": 9978896,
+        "verifier_recv_bytes": 304987752,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 512,
+        "gates_per_clause": 512,
         "time_ms": 60218,
         "comm_bytes": 314966648,
         "verifier_sent_bytes": 9978896,
         "verifier_recv_bytes": 304987752,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 4096,
+        "gates_per_clause": 4096,
+        "time_ms": 95014,
+        "comm_bytes": 581007256,
+        "verifier_sent_bytes": 15341392,
+        "verifier_recv_bytes": 565665864,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 12500,
@@ -1499,12 +2698,34 @@
         "steps": 12500,
         "clauses": 4096,
         "gates_per_clause": 4096,
+        "time_ms": 66926,
+        "comm_bytes": 581007256,
+        "verifier_sent_bytes": 15341392,
+        "verifier_recv_bytes": 565665864,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 12500,
+        "clauses": 4096,
+        "gates_per_clause": 4096,
         "time_ms": 23716,
         "comm_bytes": 581007256,
         "verifier_sent_bytes": 15341392,
         "verifier_recv_bytes": 565665864,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 12500,
+        "clauses": 4096,
+        "gates_per_clause": 4096,
+        "time_ms": 112114,
+        "comm_bytes": 581007256,
+        "verifier_sent_bytes": 15341392,
+        "verifier_recv_bytes": 565665864,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 12500,
@@ -1532,12 +2753,34 @@
         "steps": 12500,
         "clauses": 4096,
         "gates_per_clause": 4096,
+        "time_ms": 138211,
+        "comm_bytes": 581007256,
+        "verifier_sent_bytes": 15341392,
+        "verifier_recv_bytes": 565665864,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 4096,
+        "gates_per_clause": 4096,
         "time_ms": 111464,
         "comm_bytes": 581007256,
         "verifier_sent_bytes": 15341392,
         "verifier_recv_bytes": 565665864,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 8,
+        "gates_per_clause": 32768,
+        "time_ms": 746037,
+        "comm_bytes": 4844889920,
+        "verifier_sent_bytes": 108291648,
+        "verifier_recv_bytes": 4736598272,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 50000,
@@ -1554,12 +2797,34 @@
         "steps": 50000,
         "clauses": 8,
         "gates_per_clause": 32768,
+        "time_ms": 523233,
+        "comm_bytes": 4844889920,
+        "verifier_sent_bytes": 108291648,
+        "verifier_recv_bytes": 4736598272,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 50000,
+        "clauses": 8,
+        "gates_per_clause": 32768,
         "time_ms": 153796,
         "comm_bytes": 4844889920,
         "verifier_sent_bytes": 108291648,
         "verifier_recv_bytes": 4736598272,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 50000,
+        "clauses": 8,
+        "gates_per_clause": 32768,
+        "time_ms": 909864,
+        "comm_bytes": 4844889920,
+        "verifier_sent_bytes": 108291648,
+        "verifier_recv_bytes": 4736598272,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 50000,
@@ -1587,12 +2852,34 @@
         "steps": 50000,
         "clauses": 8,
         "gates_per_clause": 32768,
+        "time_ms": 1110047,
+        "comm_bytes": 4844889920,
+        "verifier_sent_bytes": 108291648,
+        "verifier_recv_bytes": 4736598272,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 8,
+        "gates_per_clause": 32768,
         "time_ms": 910114,
         "comm_bytes": 4844889920,
         "verifier_sent_bytes": 108291648,
         "verifier_recv_bytes": 4736598272,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 8,
+        "gates_per_clause": 4096,
+        "time_ms": 73655,
+        "comm_bytes": 442031752,
+        "verifier_sent_bytes": 13553888,
+        "verifier_recv_bytes": 428477864,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 12500,
@@ -1609,12 +2896,34 @@
         "steps": 12500,
         "clauses": 8,
         "gates_per_clause": 4096,
+        "time_ms": 50658,
+        "comm_bytes": 442031752,
+        "verifier_sent_bytes": 13553888,
+        "verifier_recv_bytes": 428477864,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 12500,
+        "clauses": 8,
+        "gates_per_clause": 4096,
         "time_ms": 16443,
         "comm_bytes": 442031752,
         "verifier_sent_bytes": 13553888,
         "verifier_recv_bytes": 428477864,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 12500,
+        "clauses": 8,
+        "gates_per_clause": 4096,
+        "time_ms": 84703,
+        "comm_bytes": 442031752,
+        "verifier_sent_bytes": 13553888,
+        "verifier_recv_bytes": 428477864,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 12500,
@@ -1642,12 +2951,34 @@
         "steps": 12500,
         "clauses": 8,
         "gates_per_clause": 4096,
+        "time_ms": 106445,
+        "comm_bytes": 442031752,
+        "verifier_sent_bytes": 13553888,
+        "verifier_recv_bytes": 428477864,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 8,
+        "gates_per_clause": 4096,
         "time_ms": 84787,
         "comm_bytes": 442031752,
         "verifier_sent_bytes": 13553888,
         "verifier_recv_bytes": 428477864,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 32768,
+        "gates_per_clause": 4096,
+        "time_ms": 346358,
+        "comm_bytes": 2003504344,
+        "verifier_sent_bytes": 47516624,
+        "verifier_recv_bytes": 1955987720,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 25000,
@@ -1664,12 +2995,34 @@
         "steps": 25000,
         "clauses": 32768,
         "gates_per_clause": 4096,
+        "time_ms": 252494,
+        "comm_bytes": 2003504344,
+        "verifier_sent_bytes": 47516624,
+        "verifier_recv_bytes": 1955987720,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 25000,
+        "clauses": 32768,
+        "gates_per_clause": 4096,
         "time_ms": 94087,
         "comm_bytes": 2003504344,
         "verifier_sent_bytes": 47516624,
         "verifier_recv_bytes": 1955987720,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 25000,
+        "clauses": 32768,
+        "gates_per_clause": 4096,
+        "time_ms": 409854,
+        "comm_bytes": 2003504344,
+        "verifier_sent_bytes": 47516624,
+        "verifier_recv_bytes": 1955987720,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 25000,
@@ -1697,12 +3050,34 @@
         "steps": 25000,
         "clauses": 32768,
         "gates_per_clause": 4096,
+        "time_ms": 495378,
+        "comm_bytes": 2003504344,
+        "verifier_sent_bytes": 47516624,
+        "verifier_recv_bytes": 1955987720,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 32768,
+        "gates_per_clause": 4096,
         "time_ms": 403316,
         "comm_bytes": 2003504344,
         "verifier_sent_bytes": 47516624,
         "verifier_recv_bytes": 1955987720,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 64,
+        "gates_per_clause": 512,
+        "time_ms": 51581,
+        "comm_bytes": 304426104,
+        "verifier_sent_bytes": 9978896,
+        "verifier_recv_bytes": 294447208,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 25000,
@@ -1719,12 +3094,34 @@
         "steps": 25000,
         "clauses": 64,
         "gates_per_clause": 512,
+        "time_ms": 34588,
+        "comm_bytes": 304426104,
+        "verifier_sent_bytes": 9978896,
+        "verifier_recv_bytes": 294447208,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 25000,
+        "clauses": 64,
+        "gates_per_clause": 512,
         "time_ms": 11493,
         "comm_bytes": 304426104,
         "verifier_sent_bytes": 9978896,
         "verifier_recv_bytes": 294447208,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 25000,
+        "clauses": 64,
+        "gates_per_clause": 512,
+        "time_ms": 58386,
+        "comm_bytes": 304426104,
+        "verifier_sent_bytes": 9978896,
+        "verifier_recv_bytes": 294447208,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 25000,
@@ -1752,12 +3149,34 @@
         "steps": 25000,
         "clauses": 64,
         "gates_per_clause": 512,
+        "time_ms": 74491,
+        "comm_bytes": 304426104,
+        "verifier_sent_bytes": 9978896,
+        "verifier_recv_bytes": 294447208,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 64,
+        "gates_per_clause": 512,
         "time_ms": 58514,
         "comm_bytes": 304426104,
         "verifier_sent_bytes": 9978896,
         "verifier_recv_bytes": 294447208,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 512,
+        "gates_per_clause": 32768,
+        "time_ms": 202152,
+        "comm_bytes": 1292282552,
+        "verifier_sent_bytes": 31428928,
+        "verifier_recv_bytes": 1260853624,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 12500,
@@ -1774,12 +3193,34 @@
         "steps": 12500,
         "clauses": 512,
         "gates_per_clause": 32768,
+        "time_ms": 142001,
+        "comm_bytes": 1292282552,
+        "verifier_sent_bytes": 31428928,
+        "verifier_recv_bytes": 1260853624,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 12500,
+        "clauses": 512,
+        "gates_per_clause": 32768,
         "time_ms": 47044,
         "comm_bytes": 1292282552,
         "verifier_sent_bytes": 31428928,
         "verifier_recv_bytes": 1260853624,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 12500,
+        "clauses": 512,
+        "gates_per_clause": 32768,
+        "time_ms": 244837,
+        "comm_bytes": 1292282552,
+        "verifier_sent_bytes": 31428928,
+        "verifier_recv_bytes": 1260853624,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 12500,
@@ -1807,12 +3248,34 @@
         "steps": 12500,
         "clauses": 512,
         "gates_per_clause": 32768,
+        "time_ms": 298554,
+        "comm_bytes": 1292282552,
+        "verifier_sent_bytes": 31428928,
+        "verifier_recv_bytes": 1260853624,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 512,
+        "gates_per_clause": 32768,
         "time_ms": 244386,
         "comm_bytes": 1292282552,
         "verifier_sent_bytes": 31428928,
         "verifier_recv_bytes": 1260853624,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 32768,
+        "gates_per_clause": 64,
+        "time_ms": 49506,
+        "comm_bytes": 268215664,
+        "verifier_sent_bytes": 9978880,
+        "verifier_recv_bytes": 258236784,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 25000,
@@ -1829,12 +3292,34 @@
         "steps": 25000,
         "clauses": 32768,
         "gates_per_clause": 64,
+        "time_ms": 33495,
+        "comm_bytes": 268215664,
+        "verifier_sent_bytes": 9978880,
+        "verifier_recv_bytes": 258236784,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 25000,
+        "clauses": 32768,
+        "gates_per_clause": 64,
         "time_ms": 13542,
         "comm_bytes": 268215664,
         "verifier_sent_bytes": 9978880,
         "verifier_recv_bytes": 258236784,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 25000,
+        "clauses": 32768,
+        "gates_per_clause": 64,
+        "time_ms": 54012,
+        "comm_bytes": 268215664,
+        "verifier_sent_bytes": 9978880,
+        "verifier_recv_bytes": 258236784,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 25000,
@@ -1862,12 +3347,34 @@
         "steps": 25000,
         "clauses": 32768,
         "gates_per_clause": 64,
+        "time_ms": 68177,
+        "comm_bytes": 268215664,
+        "verifier_sent_bytes": 9978880,
+        "verifier_recv_bytes": 258236784,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 32768,
+        "gates_per_clause": 64,
         "time_ms": 54030,
         "comm_bytes": 268215664,
         "verifier_sent_bytes": 9978880,
         "verifier_recv_bytes": 258236784,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 64,
+        "gates_per_clause": 512,
+        "time_ms": 28064,
+        "comm_bytes": 156728744,
+        "verifier_sent_bytes": 6403872,
+        "verifier_recv_bytes": 150324872,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 12500,
@@ -1884,12 +3391,34 @@
         "steps": 12500,
         "clauses": 64,
         "gates_per_clause": 512,
+        "time_ms": 18138,
+        "comm_bytes": 156728744,
+        "verifier_sent_bytes": 6403872,
+        "verifier_recv_bytes": 150324872,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 12500,
+        "clauses": 64,
+        "gates_per_clause": 512,
         "time_ms": 6311,
         "comm_bytes": 156728744,
         "verifier_sent_bytes": 6403872,
         "verifier_recv_bytes": 150324872,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 12500,
+        "clauses": 64,
+        "gates_per_clause": 512,
+        "time_ms": 30059,
+        "comm_bytes": 156728744,
+        "verifier_sent_bytes": 6403872,
+        "verifier_recv_bytes": 150324872,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 12500,
@@ -1917,12 +3446,34 @@
         "steps": 12500,
         "clauses": 64,
         "gates_per_clause": 512,
+        "time_ms": 39131,
+        "comm_bytes": 156728744,
+        "verifier_sent_bytes": 6403872,
+        "verifier_recv_bytes": 150324872,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 64,
+        "gates_per_clause": 512,
         "time_ms": 30127,
         "comm_bytes": 156728744,
         "verifier_sent_bytes": 6403872,
         "verifier_recv_bytes": 150324872,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 32768,
+        "gates_per_clause": 4096,
+        "time_ms": 277334,
+        "comm_bytes": 1570181160,
+        "verifier_sent_bytes": 36791600,
+        "verifier_recv_bytes": 1533389560,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 12500,
@@ -1939,12 +3490,34 @@
         "steps": 12500,
         "clauses": 32768,
         "gates_per_clause": 4096,
+        "time_ms": 202048,
+        "comm_bytes": 1570181160,
+        "verifier_sent_bytes": 36791600,
+        "verifier_recv_bytes": 1533389560,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 12500,
+        "clauses": 32768,
+        "gates_per_clause": 4096,
         "time_ms": 78229,
         "comm_bytes": 1570181160,
         "verifier_sent_bytes": 36791600,
         "verifier_recv_bytes": 1533389560,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 12500,
+        "clauses": 32768,
+        "gates_per_clause": 4096,
+        "time_ms": 353875,
+        "comm_bytes": 1570181160,
+        "verifier_sent_bytes": 36791600,
+        "verifier_recv_bytes": 1533389560,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 12500,
@@ -1972,12 +3545,34 @@
         "steps": 12500,
         "clauses": 32768,
         "gates_per_clause": 4096,
+        "time_ms": 395367,
+        "comm_bytes": 1570181160,
+        "verifier_sent_bytes": 36791600,
+        "verifier_recv_bytes": 1533389560,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 32768,
+        "gates_per_clause": 4096,
         "time_ms": 321313,
         "comm_bytes": 1570181160,
         "verifier_sent_bytes": 36791600,
         "verifier_recv_bytes": 1533389560,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 4096,
+        "gates_per_clause": 512,
+        "time_ms": 60528,
+        "comm_bytes": 352121968,
+        "verifier_sent_bytes": 11766368,
+        "verifier_recv_bytes": 340355600,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 25000,
@@ -1994,12 +3589,34 @@
         "steps": 25000,
         "clauses": 4096,
         "gates_per_clause": 512,
+        "time_ms": 41362,
+        "comm_bytes": 352121968,
+        "verifier_sent_bytes": 11766368,
+        "verifier_recv_bytes": 340355600,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 25000,
+        "clauses": 4096,
+        "gates_per_clause": 512,
         "time_ms": 15329,
         "comm_bytes": 352121968,
         "verifier_sent_bytes": 11766368,
         "verifier_recv_bytes": 340355600,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 25000,
+        "clauses": 4096,
+        "gates_per_clause": 512,
+        "time_ms": 69031,
+        "comm_bytes": 352121968,
+        "verifier_sent_bytes": 11766368,
+        "verifier_recv_bytes": 340355600,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 25000,
@@ -2027,12 +3644,34 @@
         "steps": 25000,
         "clauses": 4096,
         "gates_per_clause": 512,
+        "time_ms": 86658,
+        "comm_bytes": 352121968,
+        "verifier_sent_bytes": 11766368,
+        "verifier_recv_bytes": 340355600,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 4096,
+        "gates_per_clause": 512,
         "time_ms": 68558,
         "comm_bytes": 352121968,
         "verifier_sent_bytes": 11766368,
         "verifier_recv_bytes": 340355600,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 32768,
+        "gates_per_clause": 64,
+        "time_ms": 64745,
+        "comm_bytes": 378719528,
+        "verifier_sent_bytes": 11766384,
+        "verifier_recv_bytes": 366953144,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 50000,
@@ -2049,12 +3688,34 @@
         "steps": 50000,
         "clauses": 32768,
         "gates_per_clause": 64,
+        "time_ms": 44851,
+        "comm_bytes": 378719528,
+        "verifier_sent_bytes": 11766384,
+        "verifier_recv_bytes": 366953144,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 50000,
+        "clauses": 32768,
+        "gates_per_clause": 64,
         "time_ms": 16547,
         "comm_bytes": 378719528,
         "verifier_sent_bytes": 11766384,
         "verifier_recv_bytes": 366953144,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 50000,
+        "clauses": 32768,
+        "gates_per_clause": 64,
+        "time_ms": 74048,
+        "comm_bytes": 378719528,
+        "verifier_sent_bytes": 11766384,
+        "verifier_recv_bytes": 366953144,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 50000,
@@ -2082,12 +3743,34 @@
         "steps": 50000,
         "clauses": 32768,
         "gates_per_clause": 64,
+        "time_ms": 92515,
+        "comm_bytes": 378719528,
+        "verifier_sent_bytes": 11766384,
+        "verifier_recv_bytes": 366953144,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 32768,
+        "gates_per_clause": 64,
         "time_ms": 74072,
         "comm_bytes": 378719528,
         "verifier_sent_bytes": 11766384,
         "verifier_recv_bytes": 366953144,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 8,
+        "gates_per_clause": 32768,
+        "time_ms": 189915,
+        "comm_bytes": 1218688064,
+        "verifier_sent_bytes": 29641424,
+        "verifier_recv_bytes": 1189046640,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 12500,
@@ -2104,12 +3787,34 @@
         "steps": 12500,
         "clauses": 8,
         "gates_per_clause": 32768,
+        "time_ms": 133282,
+        "comm_bytes": 1218688064,
+        "verifier_sent_bytes": 29641424,
+        "verifier_recv_bytes": 1189046640,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 12500,
+        "clauses": 8,
+        "gates_per_clause": 32768,
         "time_ms": 41020,
         "comm_bytes": 1218688064,
         "verifier_sent_bytes": 29641424,
         "verifier_recv_bytes": 1189046640,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 12500,
+        "clauses": 8,
+        "gates_per_clause": 32768,
+        "time_ms": 229717,
+        "comm_bytes": 1218688064,
+        "verifier_sent_bytes": 29641424,
+        "verifier_recv_bytes": 1189046640,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 12500,
@@ -2137,12 +3842,34 @@
         "steps": 12500,
         "clauses": 8,
         "gates_per_clause": 32768,
+        "time_ms": 282210,
+        "comm_bytes": 1218688064,
+        "verifier_sent_bytes": 29641424,
+        "verifier_recv_bytes": 1189046640,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 8,
+        "gates_per_clause": 32768,
         "time_ms": 230176,
         "comm_bytes": 1218688064,
         "verifier_sent_bytes": 29641424,
         "verifier_recv_bytes": 1189046640,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 64,
+        "gates_per_clause": 4096,
+        "time_ms": 139595,
+        "comm_bytes": 876571200,
+        "verifier_sent_bytes": 22491424,
+        "verifier_recv_bytes": 854079776,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 25000,
@@ -2159,12 +3886,34 @@
         "steps": 25000,
         "clauses": 64,
         "gates_per_clause": 4096,
+        "time_ms": 96385,
+        "comm_bytes": 876571200,
+        "verifier_sent_bytes": 22491424,
+        "verifier_recv_bytes": 854079776,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 25000,
+        "clauses": 64,
+        "gates_per_clause": 4096,
         "time_ms": 29850,
         "comm_bytes": 876571200,
         "verifier_sent_bytes": 22491424,
         "verifier_recv_bytes": 854079776,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 25000,
+        "clauses": 64,
+        "gates_per_clause": 4096,
+        "time_ms": 166260,
+        "comm_bytes": 876571200,
+        "verifier_sent_bytes": 22491424,
+        "verifier_recv_bytes": 854079776,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 25000,
@@ -2192,12 +3941,34 @@
         "steps": 25000,
         "clauses": 64,
         "gates_per_clause": 4096,
+        "time_ms": 204291,
+        "comm_bytes": 876571200,
+        "verifier_sent_bytes": 22491424,
+        "verifier_recv_bytes": 854079776,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 64,
+        "gates_per_clause": 4096,
         "time_ms": 165701,
         "comm_bytes": 876571200,
         "verifier_sent_bytes": 22491424,
         "verifier_recv_bytes": 854079776,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 512,
+        "gates_per_clause": 512,
+        "time_ms": 100844,
+        "comm_bytes": 615816216,
+        "verifier_sent_bytes": 17128944,
+        "verifier_recv_bytes": 598687272,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 50000,
@@ -2214,12 +3985,34 @@
         "steps": 50000,
         "clauses": 512,
         "gates_per_clause": 512,
+        "time_ms": 68997,
+        "comm_bytes": 615816216,
+        "verifier_sent_bytes": 17128944,
+        "verifier_recv_bytes": 598687272,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 50000,
+        "clauses": 512,
+        "gates_per_clause": 512,
         "time_ms": 22327,
         "comm_bytes": 615816216,
         "verifier_sent_bytes": 17128944,
         "verifier_recv_bytes": 598687272,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 50000,
+        "clauses": 512,
+        "gates_per_clause": 512,
+        "time_ms": 117936,
+        "comm_bytes": 615816216,
+        "verifier_sent_bytes": 17128944,
+        "verifier_recv_bytes": 598687272,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 50000,
@@ -2247,12 +4040,34 @@
         "steps": 50000,
         "clauses": 512,
         "gates_per_clause": 512,
+        "time_ms": 147085,
+        "comm_bytes": 615816216,
+        "verifier_sent_bytes": 17128944,
+        "verifier_recv_bytes": 598687272,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 512,
+        "gates_per_clause": 512,
         "time_ms": 117481,
         "comm_bytes": 615816216,
         "verifier_sent_bytes": 17128944,
         "verifier_recv_bytes": 598687272,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 512,
+        "gates_per_clause": 64,
+        "time_ms": 14802,
+        "comm_bytes": 68357264,
+        "verifier_sent_bytes": 4616368,
+        "verifier_recv_bytes": 63740896,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 12500,
@@ -2269,12 +4084,34 @@
         "steps": 12500,
         "clauses": 512,
         "gates_per_clause": 64,
+        "time_ms": 8768,
+        "comm_bytes": 68357264,
+        "verifier_sent_bytes": 4616368,
+        "verifier_recv_bytes": 63740896,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 12500,
+        "clauses": 512,
+        "gates_per_clause": 64,
         "time_ms": 3665,
         "comm_bytes": 68357264,
         "verifier_sent_bytes": 4616368,
         "verifier_recv_bytes": 63740896,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 12500,
+        "clauses": 512,
+        "gates_per_clause": 64,
+        "time_ms": 13824,
+        "comm_bytes": 68357264,
+        "verifier_sent_bytes": 4616368,
+        "verifier_recv_bytes": 63740896,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 12500,
@@ -2302,12 +4139,34 @@
         "steps": 12500,
         "clauses": 512,
         "gates_per_clause": 64,
+        "time_ms": 19558,
+        "comm_bytes": 68357264,
+        "verifier_sent_bytes": 4616368,
+        "verifier_recv_bytes": 63740896,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 512,
+        "gates_per_clause": 64,
         "time_ms": 13754,
         "comm_bytes": 68357264,
         "verifier_sent_bytes": 4616368,
         "verifier_recv_bytes": 63740896,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 8,
+        "gates_per_clause": 512,
+        "time_ms": 28054,
+        "comm_bytes": 155752104,
+        "verifier_sent_bytes": 6403872,
+        "verifier_recv_bytes": 149348232,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 12500,
@@ -2324,12 +4183,34 @@
         "steps": 12500,
         "clauses": 8,
         "gates_per_clause": 512,
+        "time_ms": 18149,
+        "comm_bytes": 155752104,
+        "verifier_sent_bytes": 6403872,
+        "verifier_recv_bytes": 149348232,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 12500,
+        "clauses": 8,
+        "gates_per_clause": 512,
         "time_ms": 6327,
         "comm_bytes": 155752104,
         "verifier_sent_bytes": 6403872,
         "verifier_recv_bytes": 149348232,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 12500,
+        "clauses": 8,
+        "gates_per_clause": 512,
+        "time_ms": 30055,
+        "comm_bytes": 155752104,
+        "verifier_sent_bytes": 6403872,
+        "verifier_recv_bytes": 149348232,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 12500,
@@ -2357,12 +4238,34 @@
         "steps": 12500,
         "clauses": 8,
         "gates_per_clause": 512,
+        "time_ms": 39211,
+        "comm_bytes": 155752104,
+        "verifier_sent_bytes": 6403872,
+        "verifier_recv_bytes": 149348232,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 8,
+        "gates_per_clause": 512,
         "time_ms": 30008,
         "comm_bytes": 155752104,
         "verifier_sent_bytes": 6403872,
         "verifier_recv_bytes": 149348232,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 4096,
+        "gates_per_clause": 32768,
+        "time_ms": 264408,
+        "comm_bytes": 1614041824,
+        "verifier_sent_bytes": 38578976,
+        "verifier_recv_bytes": 1575462848,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 12500,
@@ -2379,12 +4282,34 @@
         "steps": 12500,
         "clauses": 4096,
         "gates_per_clause": 32768,
+        "time_ms": 189407,
+        "comm_bytes": 1614041824,
+        "verifier_sent_bytes": 38578976,
+        "verifier_recv_bytes": 1575462848,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 12500,
+        "clauses": 4096,
+        "gates_per_clause": 32768,
         "time_ms": 68531,
         "comm_bytes": 1614041824,
         "verifier_sent_bytes": 38578976,
         "verifier_recv_bytes": 1575462848,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 12500,
+        "clauses": 4096,
+        "gates_per_clause": 32768,
+        "time_ms": 316827,
+        "comm_bytes": 1614041824,
+        "verifier_sent_bytes": 38578976,
+        "verifier_recv_bytes": 1575462848,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 12500,
@@ -2412,12 +4337,34 @@
         "steps": 12500,
         "clauses": 4096,
         "gates_per_clause": 32768,
+        "time_ms": 385551,
+        "comm_bytes": 1614041824,
+        "verifier_sent_bytes": 38578976,
+        "verifier_recv_bytes": 1575462848,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 4096,
+        "gates_per_clause": 32768,
         "time_ms": 314159,
         "comm_bytes": 1614041824,
         "verifier_sent_bytes": 38578976,
         "verifier_recv_bytes": 1575462848,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 8,
+        "gates_per_clause": 64,
+        "time_ms": 24581,
+        "comm_bytes": 121585576,
+        "verifier_sent_bytes": 6403888,
+        "verifier_recv_bytes": 115181688,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 25000,
@@ -2434,12 +4381,34 @@
         "steps": 25000,
         "clauses": 8,
         "gates_per_clause": 64,
+        "time_ms": 15343,
+        "comm_bytes": 121585576,
+        "verifier_sent_bytes": 6403888,
+        "verifier_recv_bytes": 115181688,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 25000,
+        "clauses": 8,
+        "gates_per_clause": 64,
         "time_ms": 6088,
         "comm_bytes": 121585576,
         "verifier_sent_bytes": 6403888,
         "verifier_recv_bytes": 115181688,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 25000,
+        "clauses": 8,
+        "gates_per_clause": 64,
+        "time_ms": 24616,
+        "comm_bytes": 121585576,
+        "verifier_sent_bytes": 6403888,
+        "verifier_recv_bytes": 115181688,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 25000,
@@ -2467,12 +4436,34 @@
         "steps": 25000,
         "clauses": 8,
         "gates_per_clause": 64,
+        "time_ms": 33308,
+        "comm_bytes": 121585576,
+        "verifier_sent_bytes": 6403888,
+        "verifier_recv_bytes": 115181688,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 8,
+        "gates_per_clause": 64,
         "time_ms": 24467,
         "comm_bytes": 121585576,
         "verifier_sent_bytes": 6403888,
         "verifier_recv_bytes": 115181688,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 64,
+        "gates_per_clause": 64,
+        "time_ms": 40904,
+        "comm_bytes": 232912672,
+        "verifier_sent_bytes": 8191424,
+        "verifier_recv_bytes": 224721248,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 50000,
@@ -2489,12 +4480,34 @@
         "steps": 50000,
         "clauses": 64,
         "gates_per_clause": 64,
+        "time_ms": 26694,
+        "comm_bytes": 232912672,
+        "verifier_sent_bytes": 8191424,
+        "verifier_recv_bytes": 224721248,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 50000,
+        "clauses": 64,
+        "gates_per_clause": 64,
         "time_ms": 9106,
         "comm_bytes": 232912672,
         "verifier_sent_bytes": 8191424,
         "verifier_recv_bytes": 224721248,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 50000,
+        "clauses": 64,
+        "gates_per_clause": 64,
+        "time_ms": 44948,
+        "comm_bytes": 232912672,
+        "verifier_sent_bytes": 8191424,
+        "verifier_recv_bytes": 224721248,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 50000,
@@ -2522,12 +4535,34 @@
         "steps": 50000,
         "clauses": 64,
         "gates_per_clause": 64,
+        "time_ms": 58001,
+        "comm_bytes": 232912672,
+        "verifier_sent_bytes": 8191424,
+        "verifier_recv_bytes": 224721248,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 64,
+        "gates_per_clause": 64,
         "time_ms": 44871,
         "comm_bytes": 232912672,
         "verifier_sent_bytes": 8191424,
         "verifier_recv_bytes": 224721248,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 64,
+        "gates_per_clause": 4096,
+        "time_ms": 73371,
+        "comm_bytes": 444857736,
+        "verifier_sent_bytes": 13553888,
+        "verifier_recv_bytes": 431303848,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 12500,
@@ -2544,12 +4579,34 @@
         "steps": 12500,
         "clauses": 64,
         "gates_per_clause": 4096,
+        "time_ms": 50446,
+        "comm_bytes": 444857736,
+        "verifier_sent_bytes": 13553888,
+        "verifier_recv_bytes": 431303848,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 12500,
+        "clauses": 64,
+        "gates_per_clause": 4096,
         "time_ms": 16384,
         "comm_bytes": 444857736,
         "verifier_sent_bytes": 13553888,
         "verifier_recv_bytes": 431303848,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 12500,
+        "clauses": 64,
+        "gates_per_clause": 4096,
+        "time_ms": 85182,
+        "comm_bytes": 444857736,
+        "verifier_sent_bytes": 13553888,
+        "verifier_recv_bytes": 431303848,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 12500,
@@ -2577,12 +4634,34 @@
         "steps": 12500,
         "clauses": 64,
         "gates_per_clause": 4096,
+        "time_ms": 106650,
+        "comm_bytes": 444857736,
+        "verifier_sent_bytes": 13553888,
+        "verifier_recv_bytes": 431303848,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 64,
+        "gates_per_clause": 4096,
         "time_ms": 85264,
         "comm_bytes": 444857736,
         "verifier_sent_bytes": 13553888,
         "verifier_recv_bytes": 431303848,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 512,
+        "gates_per_clause": 64,
+        "time_ms": 41709,
+        "comm_bytes": 239188256,
+        "verifier_sent_bytes": 8191424,
+        "verifier_recv_bytes": 230996832,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 50000,
@@ -2599,12 +4678,34 @@
         "steps": 50000,
         "clauses": 512,
         "gates_per_clause": 64,
+        "time_ms": 27123,
+        "comm_bytes": 239188256,
+        "verifier_sent_bytes": 8191424,
+        "verifier_recv_bytes": 230996832,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 50000,
+        "clauses": 512,
+        "gates_per_clause": 64,
         "time_ms": 9096,
         "comm_bytes": 239188256,
         "verifier_sent_bytes": 8191424,
         "verifier_recv_bytes": 230996832,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 50000,
+        "clauses": 512,
+        "gates_per_clause": 64,
+        "time_ms": 45910,
+        "comm_bytes": 239188256,
+        "verifier_sent_bytes": 8191424,
+        "verifier_recv_bytes": 230996832,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 50000,
@@ -2632,12 +4733,34 @@
         "steps": 50000,
         "clauses": 512,
         "gates_per_clause": 64,
+        "time_ms": 59193,
+        "comm_bytes": 239188256,
+        "verifier_sent_bytes": 8191424,
+        "verifier_recv_bytes": 230996832,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 512,
+        "gates_per_clause": 64,
         "time_ms": 45968,
         "comm_bytes": 239188256,
         "verifier_sent_bytes": 8191424,
         "verifier_recv_bytes": 230996832,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 512,
+        "gates_per_clause": 4096,
+        "time_ms": 142475,
+        "comm_bytes": 906838080,
+        "verifier_sent_bytes": 22491424,
+        "verifier_recv_bytes": 884346656,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 25000,
@@ -2654,12 +4777,34 @@
         "steps": 25000,
         "clauses": 512,
         "gates_per_clause": 4096,
+        "time_ms": 99060,
+        "comm_bytes": 906838080,
+        "verifier_sent_bytes": 22491424,
+        "verifier_recv_bytes": 884346656,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 25000,
+        "clauses": 512,
+        "gates_per_clause": 4096,
         "time_ms": 30872,
         "comm_bytes": 906838080,
         "verifier_sent_bytes": 22491424,
         "verifier_recv_bytes": 884346656,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 25000,
+        "clauses": 512,
+        "gates_per_clause": 4096,
+        "time_ms": 170721,
+        "comm_bytes": 906838080,
+        "verifier_sent_bytes": 22491424,
+        "verifier_recv_bytes": 884346656,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 25000,
@@ -2687,12 +4832,34 @@
         "steps": 25000,
         "clauses": 512,
         "gates_per_clause": 4096,
+        "time_ms": 210712,
+        "comm_bytes": 906838080,
+        "verifier_sent_bytes": 22491424,
+        "verifier_recv_bytes": 884346656,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 512,
+        "gates_per_clause": 4096,
         "time_ms": 171038,
         "comm_bytes": 906838080,
         "verifier_sent_bytes": 22491424,
         "verifier_recv_bytes": 884346656,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 32768,
+        "gates_per_clause": 512,
+        "time_ms": 164378,
+        "comm_bytes": 980333632,
+        "verifier_sent_bytes": 24278944,
+        "verifier_recv_bytes": 956054688,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 50000,
@@ -2709,12 +4876,34 @@
         "steps": 50000,
         "clauses": 32768,
         "gates_per_clause": 512,
+        "time_ms": 117479,
+        "comm_bytes": 980333632,
+        "verifier_sent_bytes": 24278944,
+        "verifier_recv_bytes": 956054688,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 50000,
+        "clauses": 32768,
+        "gates_per_clause": 512,
         "time_ms": 43792,
         "comm_bytes": 980333632,
         "verifier_sent_bytes": 24278944,
         "verifier_recv_bytes": 956054688,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 50000,
+        "clauses": 32768,
+        "gates_per_clause": 512,
+        "time_ms": 195037,
+        "comm_bytes": 980333632,
+        "verifier_sent_bytes": 24278944,
+        "verifier_recv_bytes": 956054688,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 50000,
@@ -2742,12 +4931,34 @@
         "steps": 50000,
         "clauses": 32768,
         "gates_per_clause": 512,
+        "time_ms": 238312,
+        "comm_bytes": 980333632,
+        "verifier_sent_bytes": 24278944,
+        "verifier_recv_bytes": 956054688,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 32768,
+        "gates_per_clause": 512,
         "time_ms": 192896,
         "comm_bytes": 980333632,
         "verifier_sent_bytes": 24278944,
         "verifier_recv_bytes": 956054688,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 4096,
+        "gates_per_clause": 512,
+        "time_ms": 105790,
+        "comm_bytes": 668970008,
+        "verifier_sent_bytes": 17128896,
+        "verifier_recv_bytes": 651841112,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 50000,
@@ -2764,12 +4975,34 @@
         "steps": 50000,
         "clauses": 4096,
         "gates_per_clause": 512,
+        "time_ms": 73672,
+        "comm_bytes": 668970008,
+        "verifier_sent_bytes": 17128896,
+        "verifier_recv_bytes": 651841112,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 50000,
+        "clauses": 4096,
+        "gates_per_clause": 512,
         "time_ms": 24433,
         "comm_bytes": 668970008,
         "verifier_sent_bytes": 17128896,
         "verifier_recv_bytes": 651841112,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 50000,
+        "clauses": 4096,
+        "gates_per_clause": 512,
+        "time_ms": 126561,
+        "comm_bytes": 668970008,
+        "verifier_sent_bytes": 17128896,
+        "verifier_recv_bytes": 651841112,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 50000,
@@ -2797,12 +5030,34 @@
         "steps": 50000,
         "clauses": 4096,
         "gates_per_clause": 512,
+        "time_ms": 156046,
+        "comm_bytes": 668970008,
+        "verifier_sent_bytes": 17128896,
+        "verifier_recv_bytes": 651841112,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 4096,
+        "gates_per_clause": 512,
         "time_ms": 126527,
         "comm_bytes": 668970008,
         "verifier_sent_bytes": 17128896,
         "verifier_recv_bytes": 651841112,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 512,
+        "gates_per_clause": 64,
+        "time_ms": 25179,
+        "comm_bytes": 126202216,
+        "verifier_sent_bytes": 6403888,
+        "verifier_recv_bytes": 119798328,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 25000,
@@ -2819,12 +5074,34 @@
         "steps": 25000,
         "clauses": 512,
         "gates_per_clause": 64,
+        "time_ms": 15968,
+        "comm_bytes": 126202216,
+        "verifier_sent_bytes": 6403888,
+        "verifier_recv_bytes": 119798328,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 25000,
+        "clauses": 512,
+        "gates_per_clause": 64,
         "time_ms": 6168,
         "comm_bytes": 126202216,
         "verifier_sent_bytes": 6403888,
         "verifier_recv_bytes": 119798328,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 25000,
+        "clauses": 512,
+        "gates_per_clause": 64,
+        "time_ms": 25381,
+        "comm_bytes": 126202216,
+        "verifier_sent_bytes": 6403888,
+        "verifier_recv_bytes": 119798328,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 25000,
@@ -2852,12 +5129,34 @@
         "steps": 25000,
         "clauses": 512,
         "gates_per_clause": 64,
+        "time_ms": 33973,
+        "comm_bytes": 126202216,
+        "verifier_sent_bytes": 6403888,
+        "verifier_recv_bytes": 119798328,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 512,
+        "gates_per_clause": 64,
         "time_ms": 25328,
         "comm_bytes": 126202216,
         "verifier_sent_bytes": 6403888,
         "verifier_recv_bytes": 119798328,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 64,
+        "gates_per_clause": 64,
+        "time_ms": 24514,
+        "comm_bytes": 122098536,
+        "verifier_sent_bytes": 6403888,
+        "verifier_recv_bytes": 115694648,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 25000,
@@ -2874,12 +5173,34 @@
         "steps": 25000,
         "clauses": 64,
         "gates_per_clause": 64,
+        "time_ms": 15446,
+        "comm_bytes": 122098536,
+        "verifier_sent_bytes": 6403888,
+        "verifier_recv_bytes": 115694648,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 25000,
+        "clauses": 64,
+        "gates_per_clause": 64,
         "time_ms": 6026,
         "comm_bytes": 122098536,
         "verifier_sent_bytes": 6403888,
         "verifier_recv_bytes": 115694648,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 25000,
+        "clauses": 64,
+        "gates_per_clause": 64,
+        "time_ms": 24762,
+        "comm_bytes": 122098536,
+        "verifier_sent_bytes": 6403888,
+        "verifier_recv_bytes": 115694648,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 25000,
@@ -2907,12 +5228,34 @@
         "steps": 25000,
         "clauses": 64,
         "gates_per_clause": 64,
+        "time_ms": 33329,
+        "comm_bytes": 122098536,
+        "verifier_sent_bytes": 6403888,
+        "verifier_recv_bytes": 115694648,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 64,
+        "gates_per_clause": 64,
         "time_ms": 24546,
         "comm_bytes": 122098536,
         "verifier_sent_bytes": 6403888,
         "verifier_recv_bytes": 115694648,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 8,
+        "gates_per_clause": 4096,
+        "time_ms": 138764,
+        "comm_bytes": 872787840,
+        "verifier_sent_bytes": 22491424,
+        "verifier_recv_bytes": 850296416,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 25000,
@@ -2929,12 +5272,34 @@
         "steps": 25000,
         "clauses": 8,
         "gates_per_clause": 4096,
+        "time_ms": 96261,
+        "comm_bytes": 872787840,
+        "verifier_sent_bytes": 22491424,
+        "verifier_recv_bytes": 850296416,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 25000,
+        "clauses": 8,
+        "gates_per_clause": 4096,
         "time_ms": 29564,
         "comm_bytes": 872787840,
         "verifier_sent_bytes": 22491424,
         "verifier_recv_bytes": 850296416,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 25000,
+        "clauses": 8,
+        "gates_per_clause": 4096,
+        "time_ms": 165283,
+        "comm_bytes": 872787840,
+        "verifier_sent_bytes": 22491424,
+        "verifier_recv_bytes": 850296416,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 25000,
@@ -2962,12 +5327,34 @@
         "steps": 25000,
         "clauses": 8,
         "gates_per_clause": 4096,
+        "time_ms": 204096,
+        "comm_bytes": 872787840,
+        "verifier_sent_bytes": 22491424,
+        "verifier_recv_bytes": 850296416,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 25000,
+        "clauses": 8,
+        "gates_per_clause": 4096,
         "time_ms": 165003,
         "comm_bytes": 872787840,
         "verifier_sent_bytes": 22491424,
         "verifier_recv_bytes": 850296416,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 64,
+        "gates_per_clause": 512,
+        "time_ms": 98474,
+        "comm_bytes": 599820824,
+        "verifier_sent_bytes": 17128944,
+        "verifier_recv_bytes": 582691880,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 50000,
@@ -2984,12 +5371,34 @@
         "steps": 50000,
         "clauses": 64,
         "gates_per_clause": 512,
+        "time_ms": 67625,
+        "comm_bytes": 599820824,
+        "verifier_sent_bytes": 17128944,
+        "verifier_recv_bytes": 582691880,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 50000,
+        "clauses": 64,
+        "gates_per_clause": 512,
         "time_ms": 21965,
         "comm_bytes": 599820824,
         "verifier_sent_bytes": 17128944,
         "verifier_recv_bytes": 582691880,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 50000,
+        "clauses": 64,
+        "gates_per_clause": 512,
+        "time_ms": 114735,
+        "comm_bytes": 599820824,
+        "verifier_sent_bytes": 17128944,
+        "verifier_recv_bytes": 582691880,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 50000,
@@ -3017,12 +5426,34 @@
         "steps": 50000,
         "clauses": 64,
         "gates_per_clause": 512,
+        "time_ms": 142834,
+        "comm_bytes": 599820824,
+        "verifier_sent_bytes": 17128944,
+        "verifier_recv_bytes": 582691880,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 64,
+        "gates_per_clause": 512,
         "time_ms": 114688,
         "comm_bytes": 599820824,
         "verifier_sent_bytes": 17128944,
         "verifier_recv_bytes": 582691880,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 64,
+        "gates_per_clause": 32768,
+        "time_ms": 744461,
+        "comm_bytes": 4860689536,
+        "verifier_sent_bytes": 108291648,
+        "verifier_recv_bytes": 4752397888,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 50000,
@@ -3039,12 +5470,34 @@
         "steps": 50000,
         "clauses": 64,
         "gates_per_clause": 32768,
+        "time_ms": 524994,
+        "comm_bytes": 4860689536,
+        "verifier_sent_bytes": 108291648,
+        "verifier_recv_bytes": 4752397888,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 50000,
+        "clauses": 64,
+        "gates_per_clause": 32768,
         "time_ms": 157334,
         "comm_bytes": 4860689536,
         "verifier_sent_bytes": 108291648,
         "verifier_recv_bytes": 4752397888,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 50000,
+        "clauses": 64,
+        "gates_per_clause": 32768,
+        "time_ms": 911801,
+        "comm_bytes": 4860689536,
+        "verifier_sent_bytes": 108291648,
+        "verifier_recv_bytes": 4752397888,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 50000,
@@ -3072,12 +5525,34 @@
         "steps": 50000,
         "clauses": 64,
         "gates_per_clause": 32768,
+        "time_ms": 1112053,
+        "comm_bytes": 4860689536,
+        "verifier_sent_bytes": 108291648,
+        "verifier_recv_bytes": 4752397888,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "steps": 50000,
+        "clauses": 64,
+        "gates_per_clause": 32768,
         "time_ms": 912650,
         "comm_bytes": 4860689536,
         "verifier_sent_bytes": 108291648,
         "verifier_recv_bytes": 4752397888,
         "latency_ms": 10,
         "bandwith_mbits": 50
+    },
+    {
+        "steps": 12500,
+        "clauses": 64,
+        "gates_per_clause": 32768,
+        "time_ms": 190873,
+        "comm_bytes": 1226564800,
+        "verifier_sent_bytes": 29641424,
+        "verifier_recv_bytes": 1196923376,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
     },
     {
         "steps": 12500,
@@ -3094,12 +5569,34 @@
         "steps": 12500,
         "clauses": 64,
         "gates_per_clause": 32768,
+        "time_ms": 134025,
+        "comm_bytes": 1226564800,
+        "verifier_sent_bytes": 29641424,
+        "verifier_recv_bytes": 1196923376,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "steps": 12500,
+        "clauses": 64,
+        "gates_per_clause": 32768,
         "time_ms": 42056,
         "comm_bytes": 1226564800,
         "verifier_sent_bytes": 29641424,
         "verifier_recv_bytes": 1196923376,
         "latency_ms": 0,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 12500,
+        "clauses": 64,
+        "gates_per_clause": 32768,
+        "time_ms": 231089,
+        "comm_bytes": 1226564800,
+        "verifier_sent_bytes": 29641424,
+        "verifier_recv_bytes": 1196923376,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
     },
     {
         "steps": 12500,
@@ -3122,6 +5619,17 @@
         "verifier_recv_bytes": 1196923376,
         "latency_ms": 10,
         "bandwith_mbits": 1000
+    },
+    {
+        "steps": 12500,
+        "clauses": 64,
+        "gates_per_clause": 32768,
+        "time_ms": 282820,
+        "comm_bytes": 1226564800,
+        "verifier_sent_bytes": 29641424,
+        "verifier_recv_bytes": 1196923376,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
     },
     {
         "steps": 12500,
