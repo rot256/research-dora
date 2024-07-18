@@ -5,134 +5,47 @@ import random
 
 from circus import *
 
-INPUTS = 100      # inputs of branch
-OUTPUTS = 100     # outputs of branch
-BRANCHES_0 = 50_000 # number of branches to run (number of switches)
-BRANCHES_1 = 100_000 # number of branches to run (number of switches)
+INPUTS = 100        # inputs of branch
+OUTPUTS = 100       # outputs of branch
+BRANCHES_0 = 12_500 # number of branches to run (number of switches)
+BRANCHES_1 = 25_000 # number of branches to run (number of switches)
+BRANCHES_2 = 50_000 # number of branches to run (number of switches)
 
-'''
-params_clauses = [10, 100, 1_000, 10_000]
-params_gates = [10, 100, 1_000, 10_000]
+field = sys.argv[1]
+output = sys.argv[2]
 
-params_sets = list(itertools.product(params_clauses, params_gates))
-params_sets = [
-    (2**3, 2**18),
-    (2**6, 2**15),
-    (2**9, 2**12),
-    (2**12, 2**9),
-    (2**15, 2**6)
+ffs = [
+    Field(340282366920938463463374607431768211297, 'f128'),
+    Field(2305843009213693951, 'f61')
 ]
-'''
 
-try:
-    bench = os.path.join(sys.argv[1], f'benchmarks/')
-    print(f"removing: {bench}")
-    os.remove(bench)
-except OSError:
-    pass
+for ff in ffs:
+    if ff.name == field:
+        break
+else:
+    raise ValueError(f"field {field} not found")
 
+
+# create output directory
 from pathlib import Path
-Path(sys.argv[1]).mkdir(parents=True, exist_ok=True)
-
-# write benchmark script
-script_path = os.path.join(sys.argv[1], 'bench_all.sh')
-with open(script_path, 'w') as f:
-    f.write('''#!/bin/bash
-
-set -e
-
-PORT=7876
-
-for DELAY in 0 10 100; do
-    # set simulated network delay using traffic control:
-    echo "Run benchmarks with delay: ${DELAY}ms"
-
-    sudo tc qdisc del dev lo root || true
-    sudo tc qdisc add dev lo root handle 1:0 netem delay ${DELAY}msec
-    ping -c 1 127.0.0.1
-
-    # simulate network conditions for particular port (source or destination)
-    # sudo tc qdisc del dev lo root || true
-    # sudo tc qdisc add dev lo handle 1: root htb
-    # sudo tc class add dev lo parent 1: classid 1:1 htb rate 1gbit
-    # sudo tc qdisc add dev lo parent 1:1 handle 10: netem delay ${DELAY}msec
-    # sudo tc filter add dev lo protocol ip parent 1: prio 1 u32 match ip dport $PORT 0xffff flowid 1:1
-    # sudo tc filter add dev lo protocol ip parent 1: prio 1 u32 match ip sport $PORT 0xffff flowid 1:1
-
-    # run each benchmark with given delay
-    for d in benchmarks/* ; do
-        echo "Running test: $d"
-
-        # start prover
-        RUSTFLAGS='-C target-cpu=native' cargo run --release --bin dietmc_0p -- \\
-            --text \\
-            --lpn medium \\
-            --relation $d/relation* \\
-            --instance $d/public* \\
-            --connection-addr 127.0.0.1:${PORT} \\
-            prover \\
-            --witness $d/private* 2> $d/${DELAY}_prover.out &
-
-        pid_prv=$!
-
-        # start verifier
-        RUSTFLAGS='-C target-cpu=native' cargo run --release --bin dietmc_0p -- \\
-            --text \\
-            --lpn medium \\
-            --relation $d/relation* \\
-            --instance $d/public* \\
-            --connection-addr 127.0.0.1:${PORT} 2> $d/${DELAY}_verifier.out &
-        pid_vrf=$!
-
-        # wait for both to terminate
-        wait $pid_prv
-        wait $pid_vrf
-
-        # print times
-        grep "time circ exec:" $d/${DELAY}_prover.out
-        grep "time circ exec:" $d/${DELAY}_verifier.out
-    done
-
-    sudo tc qdisc del dev lo root || true
-done
-
-echo "Benchmark complete."
-''')
-
-# make executable
-import stat
-st = os.stat(script_path)
-os.chmod(script_path, st.st_mode | stat.S_IEXEC)
-
-BOUND = 2**27
+Path(output).mkdir(parents=True, exist_ok=False)
 
 params_clauses  = [2**3, 2**6, 2**9, 2**12, 2**15]
-params_gates    = [2**15, 2**12, 2**9, 2**6]
-params_branches = [BRANCHES_0, BRANCHES_1]
-params_branches = [25_000]
+params_gates    = [2**6, 2**9, 2**12, 2**15]
+params_branches = [BRANCHES_0, BRANCHES_1, BRANCHES_2]
 
 # product of all params
 params_sets = list(itertools.product(params_clauses, params_gates, params_branches))
 
 # do not exceed bound (we will run out of memory :( )
-params_sets = [par for par in params_sets if par[0] * par[1] <= BOUND]
+# params_sets = [par for par in params_sets if par[0] + par[1] <= BOUND]
 
-# start with biggest params
-params_sets = sorted(params_sets, key=lambda x: (-x[0] * x[1], -x[0]))
-
-print(f"num parameters: {len(params_sets)}")
-
-# params_clauses = [10, 100]
-# params_gates = [10, 100]
-# rsync -azP --exclude '*target/*' -r swanky-dora/ ubuntu@ec2-3-144-192-158.us-east-2.compute.amazonaws.com:~/swanky
 for (CLAUSES, GATES, BRANCHES) in params_sets:
     random.seed(0xDEADBEEF)
 
     print(f"clauses: {CLAUSES}, gates: {GATES}, inputs: {INPUTS}, outputs: {OUTPUTS}, branches: {BRANCHES}")
 
     circuit = Circuit()
-
-    ff = Field(340282366920938463463374607431768211297)
 
     bf = circuit.backend(ff)
 
@@ -226,9 +139,8 @@ for (CLAUSES, GATES, BRANCHES) in params_sets:
     import os
 
     # added so that we execute biggest -> smallest
-    size = BRANCHES * CLAUSES * GATES
-    order = 10**16 - size
-    direc = os.path.join(sys.argv[1], f'benchmarks/branches_{order:016}_{BRANCHES}_clauses_{CLAUSES}_gates_{GATES}/')
+    size = BRANCHES * GATES
+    direc = os.path.join(output, f'branches_{size:016}_{BRANCHES}_clauses_{CLAUSES}_gates_{GATES}/')
 
     from pathlib import Path
     Path(direc).mkdir(parents=True, exist_ok=True)
@@ -251,7 +163,11 @@ for (CLAUSES, GATES, BRANCHES) in params_sets:
         "gates": GATES,
         "inputs": num_inputs,
         "outputs": num_outputs,
-    })
+        "field": {
+            "size": ff.size,
+            "name": ff.name
+        }
+    }, indent=4)
 
     with open(meta, 'w') as f:
         f.write(s)
@@ -270,8 +186,7 @@ for (CLAUSES, GATES, BRANCHES) in params_sets:
     with open(public, 'w') as f:
         f.write("version 2.0.0;\n");
         f.write("public_input;\n");
-        f.write("@type field 2305843009213693951;\n")
+        f.write(f"@type field {ff.size};\n")
         f.write("@begin\n")
         f.write("    <0>;\n")
         f.write("@end")
-
