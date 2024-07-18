@@ -35,8 +35,9 @@ class FieldElem:
 
 
 class Field:
-    def __init__(self, size):
+    def __init__(self, size, name):
         self.size = size
+        self.name = name
 
     def new(self, value):
         if isinstance(value, FieldElem):
