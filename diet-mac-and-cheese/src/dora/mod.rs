@@ -40,7 +40,7 @@ use generic_array::typenum::Unsigned;
 // Making this a multiple of the number of clauses ensures that the
 // asymptotic cost of a disjunction is the cost of a single clause
 const COMPACT_MUL: usize = 10;
-const COMPACT_MIN: usize = 10_000;
+const COMPACT_MIN: usize = 50_000;
 
 fn fiat_shamir<F: FiniteField>() -> bool {
     <F as FiniteField>::NumberOfBitsInBitDecomposition::to_usize() > 100
