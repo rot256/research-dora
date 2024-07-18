@@ -123,7 +123,7 @@ where
 
     pub fn insert(
         &mut self,
-        prover: &mut DietMacAndCheeseProver<V, F, C>,
+        _prover: &mut DietMacAndCheeseProver<V, F, C>,
         addr: &[MacProver<V, F>; SIZE_ADDR],
         value: &[MacProver<V, F>; SIZE_VALUE],
     ) -> Result<()> {
