@@ -1,0 +1,11 @@
+{
+    "branches": 50000,
+    "clauses": 512,
+    "gates": 64,
+    "inputs": 64,
+    "outputs": 64,
+    "field": {
+        "size": 2305843009213693951,
+        "name": "f61"
+    }
+}

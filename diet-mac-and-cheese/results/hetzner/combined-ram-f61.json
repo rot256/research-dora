@@ -1,0 +1,2972 @@
+[
+    {
+        "ram_steps": 4194304,
+        "ram_size": 8192,
+        "time_ms": 23281,
+        "comm_bytes": 214318688,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208423952,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 262144,
+        "time_ms": 43958,
+        "comm_bytes": 850087456,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 829892688,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 1048576,
+        "time_ms": 199285,
+        "comm_bytes": 881544736,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 861349968,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 1048576,
+        "time_ms": 51438,
+        "comm_bytes": 465372232,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 454114984,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 16384,
+        "time_ms": 89678,
+        "comm_bytes": 840257056,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 820062288,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 131072,
+        "time_ms": 66564,
+        "comm_bytes": 428672072,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 417414824,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 524288,
+        "time_ms": 47580,
+        "comm_bytes": 444400712,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 433143464,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 131072,
+        "time_ms": 46430,
+        "comm_bytes": 428672072,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 417414824,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 2048,
+        "time_ms": 65835,
+        "comm_bytes": 423511112,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412253864,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 1048576,
+        "time_ms": 25378,
+        "comm_bytes": 465372232,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 454114984,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 32768,
+        "time_ms": 191789,
+        "comm_bytes": 840912416,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 820717648,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 2048,
+        "time_ms": 21528,
+        "comm_bytes": 423511112,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412253864,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 65536,
+        "time_ms": 81656,
+        "comm_bytes": 426050632,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 414793384,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 65536,
+        "time_ms": 41332,
+        "comm_bytes": 216612448,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 210717712,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 2048,
+        "time_ms": 10738,
+        "comm_bytes": 214072928,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208178192,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 1048576,
+        "time_ms": 47589,
+        "comm_bytes": 881544736,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 861349968,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 1048576,
+        "time_ms": 14997,
+        "comm_bytes": 258637912,
+        "verifier_sent_bytes": 7682240,
+        "verifier_recv_bytes": 250955672,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 1048576,
+        "time_ms": 91071,
+        "comm_bytes": 881544736,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 861349968,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 2048,
+        "time_ms": 33461,
+        "comm_bytes": 214072928,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208178192,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 131072,
+        "time_ms": 23901,
+        "comm_bytes": 219233888,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 213339152,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 524288,
+        "time_ms": 24814,
+        "comm_bytes": 234962528,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 229067792,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 131072,
+        "time_ms": 34035,
+        "comm_bytes": 219233888,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 213339152,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 262144,
+        "time_ms": 158041,
+        "comm_bytes": 850087456,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 829892688,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 2048,
+        "time_ms": 159483,
+        "comm_bytes": 839683616,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819488848,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 1048576,
+        "time_ms": 92787,
+        "comm_bytes": 881544736,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 861349968,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 1048576,
+        "time_ms": 29936,
+        "comm_bytes": 258637912,
+        "verifier_sent_bytes": 7682240,
+        "verifier_recv_bytes": 250955672,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 524288,
+        "time_ms": 90157,
+        "comm_bytes": 860573216,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 840378448,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 8192,
+        "time_ms": 45994,
+        "comm_bytes": 423756872,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412499624,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 2048,
+        "time_ms": 81073,
+        "comm_bytes": 423511112,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412253864,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 16384,
+        "time_ms": 40954,
+        "comm_bytes": 214646368,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208751632,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 1048576,
+        "time_ms": 50060,
+        "comm_bytes": 258637912,
+        "verifier_sent_bytes": 7682240,
+        "verifier_recv_bytes": 250955672,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 1048576,
+        "time_ms": 163162,
+        "comm_bytes": 881544736,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 861349968,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 262144,
+        "time_ms": 23901,
+        "comm_bytes": 224476768,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 218582032,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 131072,
+        "time_ms": 50620,
+        "comm_bytes": 219233888,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 213339152,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 1048576,
+        "time_ms": 106370,
+        "comm_bytes": 465372232,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 454114984,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 1024,
+        "time_ms": 160094,
+        "comm_bytes": 839642656,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819447888,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 32768,
+        "time_ms": 41025,
+        "comm_bytes": 215301728,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 209406992,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 262144,
+        "time_ms": 90244,
+        "comm_bytes": 850087456,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 829892688,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 32768,
+        "time_ms": 81485,
+        "comm_bytes": 424739912,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 413482664,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 1048576,
+        "time_ms": 61040,
+        "comm_bytes": 258637912,
+        "verifier_sent_bytes": 7682240,
+        "verifier_recv_bytes": 250955672,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 131072,
+        "time_ms": 99286,
+        "comm_bytes": 428672072,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 417414824,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 32768,
+        "time_ms": 87824,
+        "comm_bytes": 840912416,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 820717648,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 262144,
+        "time_ms": 46740,
+        "comm_bytes": 433914952,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 422657704,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 1048576,
+        "time_ms": 88042,
+        "comm_bytes": 465372232,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 454114984,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 16384,
+        "time_ms": 81247,
+        "comm_bytes": 424084552,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412827304,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 2048,
+        "time_ms": 40759,
+        "comm_bytes": 214072928,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208178192,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 32768,
+        "time_ms": 129016,
+        "comm_bytes": 840912416,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 820717648,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 65536,
+        "time_ms": 89802,
+        "comm_bytes": 842223136,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 822028368,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 262144,
+        "time_ms": 129853,
+        "comm_bytes": 850087456,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 829892688,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 1048576,
+        "time_ms": 97331,
+        "comm_bytes": 881544736,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 861349968,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 4096,
+        "time_ms": 159911,
+        "comm_bytes": 839765536,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819570768,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 8192,
+        "time_ms": 93436,
+        "comm_bytes": 839929376,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819734608,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 2048,
+        "time_ms": 41210,
+        "comm_bytes": 839683616,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819488848,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 32768,
+        "time_ms": 66312,
+        "comm_bytes": 424739912,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 413482664,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 16384,
+        "time_ms": 66229,
+        "comm_bytes": 424084552,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412827304,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 2048,
+        "time_ms": 46019,
+        "comm_bytes": 423511112,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412253864,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 131072,
+        "time_ms": 24370,
+        "comm_bytes": 219233888,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 213339152,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 2048,
+        "time_ms": 87699,
+        "comm_bytes": 839683616,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819488848,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 4096,
+        "time_ms": 45980,
+        "comm_bytes": 423593032,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412335784,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 524288,
+        "time_ms": 44849,
+        "comm_bytes": 860573216,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 840378448,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 524288,
+        "time_ms": 23139,
+        "comm_bytes": 444400712,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 433143464,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 32768,
+        "time_ms": 45066,
+        "comm_bytes": 840912416,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 820717648,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 8192,
+        "time_ms": 10719,
+        "comm_bytes": 214318688,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208423952,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 65536,
+        "time_ms": 98470,
+        "comm_bytes": 426050632,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 414793384,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 16384,
+        "time_ms": 41870,
+        "comm_bytes": 840257056,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 820062288,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 65536,
+        "time_ms": 46191,
+        "comm_bytes": 426050632,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 414793384,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 65536,
+        "time_ms": 10955,
+        "comm_bytes": 216612448,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 210717712,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 1024,
+        "time_ms": 49512,
+        "comm_bytes": 214031968,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208137232,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 131072,
+        "time_ms": 192873,
+        "comm_bytes": 844844576,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 824649808,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 1024,
+        "time_ms": 12112,
+        "comm_bytes": 214031968,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208137232,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 4096,
+        "time_ms": 79492,
+        "comm_bytes": 423593032,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412335784,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 8192,
+        "time_ms": 156421,
+        "comm_bytes": 839929376,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819734608,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 65536,
+        "time_ms": 23830,
+        "comm_bytes": 216612448,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 210717712,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 4096,
+        "time_ms": 127706,
+        "comm_bytes": 839765536,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819570768,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 1024,
+        "time_ms": 47718,
+        "comm_bytes": 423470152,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412212904,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 8192,
+        "time_ms": 33428,
+        "comm_bytes": 214318688,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208423952,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 8192,
+        "time_ms": 66163,
+        "comm_bytes": 423756872,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412499624,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 131072,
+        "time_ms": 160849,
+        "comm_bytes": 844844576,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 824649808,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 1024,
+        "time_ms": 24029,
+        "comm_bytes": 214031968,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208137232,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 65536,
+        "time_ms": 46114,
+        "comm_bytes": 426050632,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 414793384,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 1024,
+        "time_ms": 23079,
+        "comm_bytes": 423470152,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412212904,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 4096,
+        "time_ms": 39839,
+        "comm_bytes": 214154848,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208260112,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 32768,
+        "time_ms": 160165,
+        "comm_bytes": 840912416,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 820717648,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 1024,
+        "time_ms": 97924,
+        "comm_bytes": 423470152,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412212904,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 65536,
+        "time_ms": 22141,
+        "comm_bytes": 426050632,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 414793384,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 65536,
+        "time_ms": 23329,
+        "comm_bytes": 216612448,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 210717712,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 65536,
+        "time_ms": 50027,
+        "comm_bytes": 216612448,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 210717712,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 8192,
+        "time_ms": 21542,
+        "comm_bytes": 423756872,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412499624,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 524288,
+        "time_ms": 11447,
+        "comm_bytes": 234962528,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 229067792,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 4096,
+        "time_ms": 23141,
+        "comm_bytes": 214154848,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208260112,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 131072,
+        "time_ms": 48260,
+        "comm_bytes": 428672072,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 417414824,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 2048,
+        "time_ms": 23285,
+        "comm_bytes": 214072928,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208178192,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 16384,
+        "time_ms": 33799,
+        "comm_bytes": 214646368,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208751632,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 1048576,
+        "time_ms": 47996,
+        "comm_bytes": 881544736,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 861349968,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 524288,
+        "time_ms": 159307,
+        "comm_bytes": 860573216,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 840378448,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 2048,
+        "time_ms": 191792,
+        "comm_bytes": 839683616,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819488848,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 262144,
+        "time_ms": 88903,
+        "comm_bytes": 850087456,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 829892688,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 32768,
+        "time_ms": 33820,
+        "comm_bytes": 215301728,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 209406992,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 32768,
+        "time_ms": 156439,
+        "comm_bytes": 840912416,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 820717648,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 1024,
+        "time_ms": 128149,
+        "comm_bytes": 839642656,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819447888,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 2048,
+        "time_ms": 89431,
+        "comm_bytes": 839683616,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819488848,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 131072,
+        "time_ms": 80164,
+        "comm_bytes": 428672072,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 417414824,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 8192,
+        "time_ms": 40704,
+        "comm_bytes": 214318688,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208423952,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 4096,
+        "time_ms": 98072,
+        "comm_bytes": 423593032,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412335784,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 4096,
+        "time_ms": 87826,
+        "comm_bytes": 839765536,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819570768,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 65536,
+        "time_ms": 34131,
+        "comm_bytes": 216612448,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 210717712,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 131072,
+        "time_ms": 93859,
+        "comm_bytes": 844844576,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 824649808,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 4096,
+        "time_ms": 41679,
+        "comm_bytes": 839765536,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819570768,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 262144,
+        "time_ms": 11332,
+        "comm_bytes": 224476768,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 218582032,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 1024,
+        "time_ms": 39754,
+        "comm_bytes": 214031968,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208137232,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 4096,
+        "time_ms": 23058,
+        "comm_bytes": 423593032,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412335784,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 32768,
+        "time_ms": 93463,
+        "comm_bytes": 840912416,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 820717648,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 4096,
+        "time_ms": 24068,
+        "comm_bytes": 214154848,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208260112,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 32768,
+        "time_ms": 21849,
+        "comm_bytes": 424739912,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 413482664,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 524288,
+        "time_ms": 91141,
+        "comm_bytes": 860573216,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 840378448,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 2048,
+        "time_ms": 128483,
+        "comm_bytes": 839683616,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819488848,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 32768,
+        "time_ms": 23190,
+        "comm_bytes": 215301728,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 209406992,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 131072,
+        "time_ms": 11898,
+        "comm_bytes": 219233888,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 213339152,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 1024,
+        "time_ms": 89414,
+        "comm_bytes": 839642656,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819447888,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 32768,
+        "time_ms": 49776,
+        "comm_bytes": 215301728,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 209406992,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 1024,
+        "time_ms": 191948,
+        "comm_bytes": 839642656,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819447888,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 16384,
+        "time_ms": 45762,
+        "comm_bytes": 424084552,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412827304,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 16384,
+        "time_ms": 21783,
+        "comm_bytes": 424084552,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412827304,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 1024,
+        "time_ms": 23284,
+        "comm_bytes": 214031968,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208137232,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 131072,
+        "time_ms": 82057,
+        "comm_bytes": 428672072,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 417414824,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 16384,
+        "time_ms": 23074,
+        "comm_bytes": 214646368,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208751632,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 131072,
+        "time_ms": 46272,
+        "comm_bytes": 844844576,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 824649808,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 32768,
+        "time_ms": 45738,
+        "comm_bytes": 424739912,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 413482664,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 16384,
+        "time_ms": 49814,
+        "comm_bytes": 214646368,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208751632,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 8192,
+        "time_ms": 44702,
+        "comm_bytes": 839929376,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819734608,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 1024,
+        "time_ms": 98148,
+        "comm_bytes": 839642656,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819447888,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 16384,
+        "time_ms": 98232,
+        "comm_bytes": 424084552,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412827304,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 32768,
+        "time_ms": 23743,
+        "comm_bytes": 215301728,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 209406992,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 131072,
+        "time_ms": 41556,
+        "comm_bytes": 219233888,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 213339152,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 16384,
+        "time_ms": 45903,
+        "comm_bytes": 424084552,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412827304,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 1024,
+        "time_ms": 45822,
+        "comm_bytes": 423470152,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412212904,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 16384,
+        "time_ms": 10723,
+        "comm_bytes": 214646368,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208751632,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 16384,
+        "time_ms": 23267,
+        "comm_bytes": 214646368,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208751632,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 65536,
+        "time_ms": 42808,
+        "comm_bytes": 842223136,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 822028368,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 32768,
+        "time_ms": 98331,
+        "comm_bytes": 424739912,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 413482664,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 131072,
+        "time_ms": 23867,
+        "comm_bytes": 428672072,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 417414824,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 32768,
+        "time_ms": 46058,
+        "comm_bytes": 424739912,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 413482664,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 1024,
+        "time_ms": 41788,
+        "comm_bytes": 839642656,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819447888,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 32768,
+        "time_ms": 10815,
+        "comm_bytes": 215301728,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 209406992,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 4096,
+        "time_ms": 47700,
+        "comm_bytes": 423593032,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412335784,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 1024,
+        "time_ms": 79416,
+        "comm_bytes": 423470152,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412212904,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 4096,
+        "time_ms": 11394,
+        "comm_bytes": 214154848,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208260112,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 4096,
+        "time_ms": 192185,
+        "comm_bytes": 839765536,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819570768,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 262144,
+        "time_ms": 22904,
+        "comm_bytes": 433914952,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 422657704,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 4096,
+        "time_ms": 89532,
+        "comm_bytes": 839765536,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819570768,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 65536,
+        "time_ms": 66787,
+        "comm_bytes": 426050632,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 414793384,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 524288,
+        "time_ms": 130545,
+        "comm_bytes": 860573216,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 840378448,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 4096,
+        "time_ms": 49615,
+        "comm_bytes": 214154848,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208260112,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 8192,
+        "time_ms": 81208,
+        "comm_bytes": 423756872,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412499624,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 131072,
+        "time_ms": 40699,
+        "comm_bytes": 219233888,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 213339152,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 1048576,
+        "time_ms": 166844,
+        "comm_bytes": 881544736,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 861349968,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 16384,
+        "time_ms": 79597,
+        "comm_bytes": 424084552,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412827304,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 1048576,
+        "time_ms": 49396,
+        "comm_bytes": 465372232,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 454114984,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 65536,
+        "time_ms": 23594,
+        "comm_bytes": 426050632,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 414793384,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 32768,
+        "time_ms": 79642,
+        "comm_bytes": 424739912,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 413482664,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 262144,
+        "time_ms": 193005,
+        "comm_bytes": 850087456,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 829892688,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 262144,
+        "time_ms": 24105,
+        "comm_bytes": 224476768,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 218582032,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 8192,
+        "time_ms": 49584,
+        "comm_bytes": 214318688,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208423952,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 4096,
+        "time_ms": 81198,
+        "comm_bytes": 423593032,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412335784,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 262144,
+        "time_ms": 34551,
+        "comm_bytes": 224476768,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 218582032,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 1024,
+        "time_ms": 10749,
+        "comm_bytes": 214031968,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208137232,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 4096,
+        "time_ms": 156438,
+        "comm_bytes": 839765536,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819570768,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 8192,
+        "time_ms": 128203,
+        "comm_bytes": 839929376,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819734608,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 524288,
+        "time_ms": 53463,
+        "comm_bytes": 234962528,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 229067792,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 1024,
+        "time_ms": 33393,
+        "comm_bytes": 214031968,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208137232,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 8192,
+        "time_ms": 11522,
+        "comm_bytes": 214318688,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208423952,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 8192,
+        "time_ms": 47692,
+        "comm_bytes": 423756872,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412499624,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 1048576,
+        "time_ms": 41711,
+        "comm_bytes": 258637912,
+        "verifier_sent_bytes": 7682240,
+        "verifier_recv_bytes": 250955672,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 1048576,
+        "time_ms": 71068,
+        "comm_bytes": 465372232,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 454114984,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 8192,
+        "time_ms": 23967,
+        "comm_bytes": 214318688,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208423952,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 131072,
+        "time_ms": 88867,
+        "comm_bytes": 844844576,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 824649808,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 8192,
+        "time_ms": 23242,
+        "comm_bytes": 423756872,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412499624,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 1024,
+        "time_ms": 66239,
+        "comm_bytes": 423470152,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412212904,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 2048,
+        "time_ms": 46380,
+        "comm_bytes": 839683616,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819488848,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 524288,
+        "time_ms": 102467,
+        "comm_bytes": 444400712,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 433143464,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 65536,
+        "time_ms": 87977,
+        "comm_bytes": 842223136,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 822028368,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 16384,
+        "time_ms": 192151,
+        "comm_bytes": 840257056,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 820062288,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 1024,
+        "time_ms": 21396,
+        "comm_bytes": 423470152,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412212904,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 4096,
+        "time_ms": 40638,
+        "comm_bytes": 214154848,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208260112,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 262144,
+        "time_ms": 67023,
+        "comm_bytes": 433914952,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 422657704,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 8192,
+        "time_ms": 98095,
+        "comm_bytes": 423756872,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412499624,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 32768,
+        "time_ms": 89411,
+        "comm_bytes": 840912416,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 820717648,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 1024,
+        "time_ms": 156372,
+        "comm_bytes": 839642656,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819447888,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 262144,
+        "time_ms": 47127,
+        "comm_bytes": 433914952,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 422657704,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 32768,
+        "time_ms": 40027,
+        "comm_bytes": 215301728,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 209406992,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 65536,
+        "time_ms": 11749,
+        "comm_bytes": 216612448,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 210717712,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 65536,
+        "time_ms": 127772,
+        "comm_bytes": 842223136,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 822028368,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 1048576,
+        "time_ms": 28737,
+        "comm_bytes": 258637912,
+        "verifier_sent_bytes": 7682240,
+        "verifier_recv_bytes": 250955672,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 16384,
+        "time_ms": 39948,
+        "comm_bytes": 214646368,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208751632,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 262144,
+        "time_ms": 161795,
+        "comm_bytes": 850087456,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 829892688,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 4096,
+        "time_ms": 21548,
+        "comm_bytes": 423593032,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412335784,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 16384,
+        "time_ms": 11729,
+        "comm_bytes": 214646368,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208751632,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 262144,
+        "time_ms": 46692,
+        "comm_bytes": 850087456,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 829892688,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 8192,
+        "time_ms": 41826,
+        "comm_bytes": 839929376,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819734608,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 1024,
+        "time_ms": 40673,
+        "comm_bytes": 214031968,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208137232,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 65536,
+        "time_ms": 40280,
+        "comm_bytes": 216612448,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 210717712,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 8192,
+        "time_ms": 39862,
+        "comm_bytes": 214318688,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208423952,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 8192,
+        "time_ms": 87518,
+        "comm_bytes": 839929376,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819734608,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 1024,
+        "time_ms": 44841,
+        "comm_bytes": 839642656,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819447888,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 262144,
+        "time_ms": 100235,
+        "comm_bytes": 433914952,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 422657704,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 32768,
+        "time_ms": 11764,
+        "comm_bytes": 215301728,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 209406992,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 131072,
+        "time_ms": 46433,
+        "comm_bytes": 428672072,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 417414824,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 16384,
+        "time_ms": 128345,
+        "comm_bytes": 840257056,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 820062288,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 4096,
+        "time_ms": 66140,
+        "comm_bytes": 423593032,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412335784,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 524288,
+        "time_ms": 68375,
+        "comm_bytes": 444400712,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 433143464,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 16384,
+        "time_ms": 88335,
+        "comm_bytes": 840257056,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 820062288,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 524288,
+        "time_ms": 47823,
+        "comm_bytes": 444400712,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 433143464,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 65536,
+        "time_ms": 192025,
+        "comm_bytes": 842223136,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 822028368,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 1048576,
+        "time_ms": 23810,
+        "comm_bytes": 465372232,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 454114984,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 2048,
+        "time_ms": 156362,
+        "comm_bytes": 839683616,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819488848,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 1048576,
+        "time_ms": 49008,
+        "comm_bytes": 258637912,
+        "verifier_sent_bytes": 7682240,
+        "verifier_recv_bytes": 250955672,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 8192,
+        "time_ms": 23151,
+        "comm_bytes": 214318688,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208423952,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 262144,
+        "time_ms": 94104,
+        "comm_bytes": 850087456,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 829892688,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 8192,
+        "time_ms": 45951,
+        "comm_bytes": 423756872,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412499624,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 1048576,
+        "time_ms": 86327,
+        "comm_bytes": 465372232,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 454114984,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 1048576,
+        "time_ms": 13956,
+        "comm_bytes": 258637912,
+        "verifier_sent_bytes": 7682240,
+        "verifier_recv_bytes": 250955672,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 4096,
+        "time_ms": 44628,
+        "comm_bytes": 839765536,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819570768,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 524288,
+        "time_ms": 24722,
+        "comm_bytes": 234962528,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 229067792,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 4096,
+        "time_ms": 33384,
+        "comm_bytes": 214154848,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208260112,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 524288,
+        "time_ms": 35937,
+        "comm_bytes": 234962528,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 229067792,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 131072,
+        "time_ms": 23530,
+        "comm_bytes": 219233888,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 213339152,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 32768,
+        "time_ms": 23285,
+        "comm_bytes": 424739912,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 413482664,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 262144,
+        "time_ms": 51555,
+        "comm_bytes": 224476768,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 218582032,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 65536,
+        "time_ms": 79872,
+        "comm_bytes": 426050632,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 414793384,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 8192,
+        "time_ms": 79430,
+        "comm_bytes": 423756872,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412499624,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 1024,
+        "time_ms": 81114,
+        "comm_bytes": 423470152,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412212904,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 8192,
+        "time_ms": 89695,
+        "comm_bytes": 839929376,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819734608,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 16384,
+        "time_ms": 23249,
+        "comm_bytes": 424084552,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412827304,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 4096,
+        "time_ms": 11385,
+        "comm_bytes": 214154848,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208260112,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 8192,
+        "time_ms": 191843,
+        "comm_bytes": 839929376,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819734608,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 1048576,
+        "time_ms": 133193,
+        "comm_bytes": 881544736,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 861349968,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 16384,
+        "time_ms": 156290,
+        "comm_bytes": 840257056,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 820062288,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 524288,
+        "time_ms": 82946,
+        "comm_bytes": 444400712,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 433143464,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 524288,
+        "time_ms": 195737,
+        "comm_bytes": 860573216,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 840378448,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 1024,
+        "time_ms": 23353,
+        "comm_bytes": 214031968,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208137232,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 65536,
+        "time_ms": 93463,
+        "comm_bytes": 842223136,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 822028368,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 2048,
+        "time_ms": 23070,
+        "comm_bytes": 423511112,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412253864,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 524288,
+        "time_ms": 12477,
+        "comm_bytes": 234962528,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 229067792,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 2048,
+        "time_ms": 24082,
+        "comm_bytes": 214072928,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208178192,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 262144,
+        "time_ms": 49200,
+        "comm_bytes": 433914952,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 422657704,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 65536,
+        "time_ms": 48136,
+        "comm_bytes": 426050632,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 414793384,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 524288,
+        "time_ms": 84775,
+        "comm_bytes": 444400712,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 433143464,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 131072,
+        "time_ms": 46087,
+        "comm_bytes": 844844576,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 824649808,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 16384,
+        "time_ms": 159948,
+        "comm_bytes": 840257056,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 820062288,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 2048,
+        "time_ms": 98116,
+        "comm_bytes": 423511112,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412253864,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 2048,
+        "time_ms": 49534,
+        "comm_bytes": 214072928,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208178192,
+        "latency_ms": 100,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 524288,
+        "time_ms": 44206,
+        "comm_bytes": 234962528,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 229067792,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 16384,
+        "time_ms": 44824,
+        "comm_bytes": 840257056,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 820062288,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 65536,
+        "time_ms": 24255,
+        "comm_bytes": 216612448,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 210717712,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 131072,
+        "time_ms": 157071,
+        "comm_bytes": 844844576,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 824649808,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 2048,
+        "time_ms": 47749,
+        "comm_bytes": 423511112,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412253864,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 262144,
+        "time_ms": 24951,
+        "comm_bytes": 224476768,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 218582032,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 32768,
+        "time_ms": 42066,
+        "comm_bytes": 840912416,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 820717648,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 524288,
+        "time_ms": 24845,
+        "comm_bytes": 444400712,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 433143464,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 2048,
+        "time_ms": 11491,
+        "comm_bytes": 214072928,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208178192,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 524288,
+        "time_ms": 163173,
+        "comm_bytes": 860573216,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 840378448,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 2048,
+        "time_ms": 92671,
+        "comm_bytes": 839683616,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819488848,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 1024,
+        "time_ms": 45964,
+        "comm_bytes": 423470152,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412212904,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 524288,
+        "time_ms": 43149,
+        "comm_bytes": 234962528,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 229067792,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 2048,
+        "time_ms": 79422,
+        "comm_bytes": 423511112,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412253864,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 131072,
+        "time_ms": 90137,
+        "comm_bytes": 844844576,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 824649808,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 262144,
+        "time_ms": 42466,
+        "comm_bytes": 224476768,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 218582032,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 262144,
+        "time_ms": 24460,
+        "comm_bytes": 433914952,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 422657704,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 524288,
+        "time_ms": 49463,
+        "comm_bytes": 860573216,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 840378448,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 524288,
+        "time_ms": 25887,
+        "comm_bytes": 234962528,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 229067792,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 4096,
+        "time_ms": 51537,
+        "comm_bytes": 423593032,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412335784,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 1048576,
+        "time_ms": 29465,
+        "comm_bytes": 258637912,
+        "verifier_sent_bytes": 7682240,
+        "verifier_recv_bytes": 250955672,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 131072,
+        "time_ms": 22384,
+        "comm_bytes": 428672072,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 417414824,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 2048,
+        "time_ms": 46049,
+        "comm_bytes": 423511112,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412253864,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 524288,
+        "time_ms": 95402,
+        "comm_bytes": 860573216,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 840378448,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 1024,
+        "time_ms": 93119,
+        "comm_bytes": 839642656,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819447888,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 32768,
+        "time_ms": 24237,
+        "comm_bytes": 215301728,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 209406992,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 65536,
+        "time_ms": 48469,
+        "comm_bytes": 842223136,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 822028368,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 16384,
+        "time_ms": 24155,
+        "comm_bytes": 214646368,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208751632,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 262144,
+        "time_ms": 41467,
+        "comm_bytes": 224476768,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 218582032,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 262144,
+        "time_ms": 81209,
+        "comm_bytes": 433914952,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 422657704,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 65536,
+        "time_ms": 160045,
+        "comm_bytes": 842223136,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 822028368,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 16384,
+        "time_ms": 47822,
+        "comm_bytes": 424084552,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 412827304,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 32768,
+        "time_ms": 47852,
+        "comm_bytes": 424739912,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 413482664,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 2048,
+        "time_ms": 23088,
+        "comm_bytes": 214072928,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208178192,
+        "latency_ms": 0,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 131072,
+        "time_ms": 11218,
+        "comm_bytes": 219233888,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 213339152,
+        "latency_ms": 0,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 1048576,
+        "time_ms": 48785,
+        "comm_bytes": 465372232,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 454114984,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 4096,
+        "time_ms": 23250,
+        "comm_bytes": 214154848,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208260112,
+        "latency_ms": 100,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 131072,
+        "time_ms": 129055,
+        "comm_bytes": 844844576,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 824649808,
+        "latency_ms": 100,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 524288,
+        "time_ms": 49609,
+        "comm_bytes": 444400712,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 433143464,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 4096,
+        "time_ms": 93575,
+        "comm_bytes": 839765536,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819570768,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 8192,
+        "time_ms": 159813,
+        "comm_bytes": 839929376,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 819734608,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 262144,
+        "time_ms": 12169,
+        "comm_bytes": 224476768,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 218582032,
+        "latency_ms": 10,
+        "bandwith_mbits": 1000
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 16384,
+        "time_ms": 93284,
+        "comm_bytes": 840257056,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 820062288,
+        "latency_ms": 10,
+        "bandwith_mbits": 100
+    },
+    {
+        "ram_steps": 16777216,
+        "ram_size": 65536,
+        "time_ms": 156715,
+        "comm_bytes": 842223136,
+        "verifier_sent_bytes": 20194768,
+        "verifier_recv_bytes": 822028368,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 8388608,
+        "ram_size": 262144,
+        "time_ms": 83075,
+        "comm_bytes": 433914952,
+        "verifier_sent_bytes": 11257248,
+        "verifier_recv_bytes": 422657704,
+        "latency_ms": 10,
+        "bandwith_mbits": 50
+    },
+    {
+        "ram_steps": 4194304,
+        "ram_size": 2048,
+        "time_ms": 39852,
+        "comm_bytes": 214072928,
+        "verifier_sent_bytes": 5894736,
+        "verifier_recv_bytes": 208178192,
+        "latency_ms": 0,
+        "bandwith_mbits": 50
+    }
+]

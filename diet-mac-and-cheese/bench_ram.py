@@ -81,14 +81,18 @@ class Verifier:
         while 1:
             try:
                 self.prover.process.wait(5)
-                assert self.prover.process.returncode == 0, self.prover.output.read().decode()
+                if self.prover.process.returncode != 0:
+                    print(self.prover.output.read().decode())
+                    raise Exception('Prover failed')
                 break
             except subprocess.TimeoutExpired:
                 pass
 
             try:
                 self.process.wait(5)
-                assert self.process.returncode == 0, self.output.read().decode()
+                if self.process.returncode != 0:
+                    print(self.output.read().decode())
+                    raise Exception('Verifier failed')
                 break
             except subprocess.TimeoutExpired:
                 pass
@@ -199,6 +203,10 @@ if __name__ == '__main__':
             "ram": True,
             "ram_size": ram_size,
             "ram_steps": ram_steps,
+            "field": {
+                "name": "f61",
+                "size": 2305843009213693951
+            }
         }
 
         remaining_time = estimator.remaining()
@@ -248,7 +256,7 @@ if __name__ == '__main__':
         }
 
         with open(path, 'w') as f:
-            json.dump(result, f)
+            json.dump(result, f, indent=4)
 
         # update the estimator
         estimator.done(item)

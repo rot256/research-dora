@@ -152,6 +152,7 @@ def execute(root, runs):
     start_time = time.time()
 
     est = WorkEstimator(est=work_of_meta)
+    todo = []
 
     # calculate the total work
     for (net, bench) in runs:
@@ -160,39 +161,41 @@ def execute(root, runs):
         meta = json.load(open(meta))
         result = os.path.join(path, result_file(net))
         if os.path.exists(result):
+            print(f'{YELLOW}skipping {bench}{END}')
             continue
         est.add(meta)
+        todo.append((net, bench, meta))
 
-    for (num, (net, bench)) in enumerate(runs):
-        # read the meta data
+    # sort the todo list by (network, work)
+    def sort_key(x):
+        net, bench, meta = x
+        return (net, - work_of_meta(meta))
+
+    todo = sorted(todo, key=sort_key)
+
+    # run the remaining benchmarks
+    for (num, (net, bench, meta)) in enumerate(todo):
         path = os.path.join(root, bench)
-        meta = os.path.join(path, 'meta.json')
-        meta = json.load(open(meta))
-
-        remain = est.remaining()
-
-        # check if we already ran this benchmark
         result = os.path.join(path, result_file(net))
-        if os.path.exists(result):
-            print(f'{YELLOW}### [{num+1}/{total}] : Skipping {bench} {net} ###{END}')
-            continue
 
+        # estimate the remaining time
+        remain = est.remaining()
         print(f'{BLUE}Estimated Time Remaining: {remain} seconds{END}')
-
-        print(f'{YELLOW}### [{num+1}/{total}] : Running {bench} {net} ###{END}')
+        print(f'{YELLOW}### [{num+1}/{len(todo)}] : Running {bench} {net} ###{END}')
 
         # apply network settings
         net_check = network.apply(net)
         assert net_check is not None
 
         s = "Benchmark:\n"
-        s += f"- Index: {num+1}/{total}\n"
+        s += f"- Remain: {num+1}/{len(todo)}\n"
         s += f"- Network: {net}\n"
         s += f"- Meta: {meta}\n"
         s += f"- Est. Time Remaining: {remain:.2f}s\n"
         s += f"- Start Time: {datetime.datetime.now()}\n"
         s += f"- Uname: {uname}\n"
         s += f"- Hostname: {hostname}\n"
+        s += f"- Result: {result}\n"
         s += f"\n"
         s += f"{net_check["after"]["iperf"]}\n"
         s += f"\n"

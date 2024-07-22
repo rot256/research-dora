@@ -87,7 +87,7 @@ class WorkEstimator:
         return float(time_per_unit * remaining)
 
 BAD_RATE = 60 * 10
-GOOD_RATE = 6
+GOOD_RATE = 60
 LAST_BAD_HTTP = 0
 LAST_NOTIFY = 0
 
