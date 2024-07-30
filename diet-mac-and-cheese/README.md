@@ -49,7 +49,7 @@ This will take a while (couple of days) to run...
 
 Especially the `f128` results will take a while...
 
-If you want to be notified of the progress you can use [ntfy.sh](ntfy.sh) as follows:
+If you want to be notified of the progress you can use [ntfy.sh](https://ntfy.sh) as follows:
 
 ```bash
 NOTIFY_ID=my-ntfy-id ./bench_all.sh
