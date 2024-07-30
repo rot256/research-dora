@@ -21,10 +21,6 @@ We generate random circuits for benchmarking purposes, circuits are sampled as f
 - We then sample addition/multiplication gates uniformly at random.
 - The inputs of each gate are picked uniformly at random from all previously computed gate outputs.
 
-In a way this represents a worst-case: clauses do not share any structure and
-the number of addition/multiplication gatess may vary across the clauses in the disjunction.
-The prover picks clauses to execute uniformly at random from the set.
-
 ### Regenerating The Circuits
 
 First remove the old benchmark circuits / results:
