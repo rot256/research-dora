@@ -1,7 +1,6 @@
 # Paper Artifacts for Dora
 
-This is the paper artifacts (implementation and raw benchmark results)
-for the [Dora paper](https://eprint.iacr.org/2023/1749).
+This is the paper artifacts (implementation and raw benchmark results) for the Dora paper.
 The implementation is based on `swanky` a Rust library for MPC and OT-based zero-knowledge proofs created by [Galois](https://galois.com/).
 Part of the implementation was understaken while interning at Galois in the summer of 2023.
 
