@@ -3,7 +3,7 @@
 This is the paper artifacts (implementation and raw benchmark results)
 for the [Dora paper](https://eprint.iacr.org/2023/1749).
 The implementation is based on `swanky` a Rust library for MPC and OT-based zero-knowledge proofs created by [Galois](https://galois.com/).
-Part of the implementation was understaken (by Mathias Hall-Andersen) while interning at Galois in the summer of 2023.
+Part of the implementation was understaken while interning at Galois in the summer of 2023.
 
 The relevant parts of `swanky` for the Dora paper recide in `diet-mac-and-cheese` which is a single threaded implementation of QuickSilver,
 see this directory for more information about how to reproduce the results of the paper.

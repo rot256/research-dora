@@ -57,7 +57,6 @@ pub(crate) enum Prover {
 /// Cli.
 #[derive(Parser)]
 #[clap(name = "Dora RAM")]
-#[clap(author = "Mathias Hall-Andersen <mathias@hall-andersen.dk>")]
 #[clap(version = "0.1")]
 pub(crate) struct Cli {
     /// Set addr for tcp connection
